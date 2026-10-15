@@ -82,7 +82,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .roles i { font-style: normal; color: var(--text-dim); margin: 0 4px; }
 /* Headline and statement use the full content width.
    (text-wrap: balance on h1 keeps its lines roughly equal in length.) */
-.intro h1 { font-size: 34px; letter-spacing: -.01em; }
+/* Headline size: 34px on wide screens, shrinking with the screen width down to 22px on phones. */
+.intro h1 { font-size: clamp(22px, 5.5vw, 34px); letter-spacing: -.01em; }
 /* One column per paragraph: one paragraph spans the whole width, two sit side by side. */
 .statement { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 28px; }
 .statement p { font-size: 16.5px; }
