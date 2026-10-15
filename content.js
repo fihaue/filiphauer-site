@@ -654,13 +654,15 @@ Site.projects = [
   {
     id: "little-xeno-chemistry",
     title: "Little Xeno-Chemistry (If The Bot Was a Socialist)", short: "Little Xeno-Chemistry", year: "2018", level: "grid", practice: "installations",
-    category: "Simulation", org: "Unity", type: "Simulation, C# in Unity",
-    meta: "Simulation (C# in Unity)", tags: ["installations"],
+    category: "Simulation", org: "Display", type: "Simulation, C# in Unity",
+    meta: "Simulation (C# in Unity) · Display, Prague", tags: ["installations"],
     summary: "A live game-engine image that removes the player's input entirely.",
-    text: ["Radovan Richta's Civilisation at the Crossroads (1966), with “society” replaced by “artificial intelligence”, runs beside two screens generating a world and a society that infinitely approach 100%. A live game-engine image that removes the player's input entirely."],
+    text: ["Radovan Richta's Civilisation at the Crossroads (1966), with “society” replaced by “artificial intelligence”, runs beside two screens generating a world and a society that infinitely approach 100%. A live game-engine image that removes the player's input entirely.",
+      "Made for and exhibited in the group exhibition [Civilizace na rozcestí: strůjci vědecko-technické revoluce](https://www.display.cz/en/projects/civilizace-na-rozcesti-strujci-vedecko-technicke-revoluce) at [Display](https://www.display.cz/en), Prague (2018)."
+    ],
     gallery: 2,
     videos: [{ label: "Video 1", embed: "https://www.youtube-nocookie.com/embed/vonMgDhrdvc" }, { label: "Video 2", embed: "https://www.youtube-nocookie.com/embed/bn6GLo7-v-k" }],
-    links: [["Function", "https://www.wolframalpha.com/input/?i=%2528100*x%2529%252F%2528x+%252B+100%2529+from+0+to+3600"]]
+    links: [["Display", "https://www.display.cz/en/projects/civilizace-na-rozcesti-strujci-vedecko-technicke-revoluce"], ["Function", "https://www.wolframalpha.com/input/?i=%2528100*x%2529%252F%2528x+%252B+100%2529+from+0+to+3600"]]
   },
   {
     id: "your-sustainable-future", with: "Jakub Pospíšil",
