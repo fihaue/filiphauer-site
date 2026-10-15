@@ -47,12 +47,12 @@ Site.texts = {
   // Browser tab title and the description search engines show.
   page: {
     title: "Filip Hauer — game designer, artist and researcher",
-    description: "Filip Hauer — intermedia artist, game designer and researcher based in Copenhagen. Critical and speculative games about work, game exchange and collective futures."
+    description: "Filip Hauer is intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures."
   },
 
   // Short news line above the statement. Set text to "" to hide it.
   news: {
-    text: "Andre Miri Cipa launches 22 October 2026 · Museum of Romani Culture, Brno",
+    text: "Andre Miri Cipa launches 22 October 2026 on Steam",
     link: "#andre-miri-cipa"
   },
 
