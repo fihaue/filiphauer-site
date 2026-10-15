@@ -98,6 +98,10 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
 .highlights { display: grid; gap: var(--gap); }
 .highlight { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); background: var(--surface); }
 .highlight .card-body { padding: 22px 24px; }
+/* The image fills its whole column, down to the bottom of the card, even when
+   the text beside it is taller. It is never shorter than its normal 4:3 shape;
+   object-fit: cover crops it instead of stretching it. */
+.highlight > .cover { height: 100%; min-height: 0; }
 .highlight h4 { font-size: 22px; }
 .highlight h4 a { color: var(--heading); }
 .highlight .button { justify-self: start; margin-top: 4px; }
@@ -149,6 +153,7 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
   .index-row .type { display: none; }
   .grid-e, .grid-f { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
   .highlight, .studio-grid { grid-template-columns: 1fr; }
+  .highlight > .cover { height: auto; }   /* phones: image on top, normal 4:3 shape */
   .collab-row { grid-template-columns: 48px minmax(0, 1fr); }
   .collab-row .names { grid-column: 2; font-size: 14px; }
   .thumb-card .title { font-size: 14px; }

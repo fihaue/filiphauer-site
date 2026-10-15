@@ -226,7 +226,7 @@ Site.texts = {
   // Contact section.
   contact: {
     intro: "For collaborations, exhibitions, teaching and game design work:",
-    email: "fi.hauer@gmail.com",
+    email: "mail@filiphauer.com",
     links: [
       ["itch.io",   "https://filip-hauer.itch.io"],
       ["Instagram", "https://www.instagram.com/fihauer/"],
@@ -547,8 +547,8 @@ Site.projects = [
     id: "for-how-many-are-your-futures",
     title: "For How Many Are Your Futures?",
     year: "2022", level: "featured", practice: "games",
-    category: "Board game", org: "CoFUTURES Oslo",
-    type: "Research board game",
+    category: "Tabletop game", org: "CoFUTURES Oslo",
+    type: "Tabletop game",
     meta: "CoFUTURES, University of Oslo · print & play",
     tags: ["games", "research"],
     summary: "Each turn, players choose agendas that alter their stats and decide which future of work they end up in. Free to print and play.",
@@ -636,7 +636,7 @@ Site.projects = [
   { id: "allegorithmic-politics", title: "Allegorithmic Politics of Game Exchange", year: "2023", level: "grid", practice: "writing",
     category: "Writing", org: "DiGRA 2023", type: "Conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
   { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", year: "2022", level: "grid", practice: "writing",
-    category: "Writing", org: "A2", type: "Essay", tags: ["writing"], external: "https://www.advojka.cz/archiv/2022/5/vecny-navrat-do-tamrielu" },
+    category: "Writing", org: "A2", type: "Essay", tags: ["writing"], external: "https://advojka.cz/a2-article/2022-5-vecny-navrat-do-tamrielu/" },
   { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
     category: "Writing", org: "Utopia Libri", type: "Essay", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
   { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",

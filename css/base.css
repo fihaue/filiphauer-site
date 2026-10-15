@@ -90,6 +90,10 @@ body:not([data-layout="g"]) .only-g { display: none; }
 }
 /* One column per paragraph: one paragraph spans the whole width, two sit side by side. */
 .statement { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 28px; }
+/* Quote marks around the statement, so it reads like a quote:
+   “ before the first paragraph and ” after the last one. */
+.statement p:first-child::before { content: "\201C"; }   /* “ */
+.statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
 
 /* ---------------------------------------------------------- sections */
@@ -191,7 +195,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .contact { display: grid; gap: 14px; justify-items: start; }
 /* One size for the whole block: intro line, email and links all use --intro-size. */
 .contact p, .contact .email, .contact .link-row { font-size: var(--intro-size); font-weight: 300; line-height: 1.6; }
-.email { color: var(--heading); }
+/* Intro text white; the email is a normal violet link like the others. */
+.contact p { color: var(--heading); }
 .contact .link-row a::after { font-size: .7em; }
 .footer { padding: 36px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: #666; }
 
