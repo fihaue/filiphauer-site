@@ -121,8 +121,8 @@ Site.texts = {
 
   // Bio next to the CV. One text = one paragraph.
   bio: [
-    "Filip Hauer (b. 1990) is an intermedia artist, game designer and researcher in game studies and the critical possibilities of play within arts and mainstream cultures. He lives and works in Copenhagen.",
-    "His dissertation, defended at the Academy of Fine Arts in Prague in 2025, explored the links between game worlds, the future of work and player agency. From 2018 to 2025 he worked at Bohemia Interactive, most recently as UI/UX designer on Arma Reforger, and co-founded Blue Pulsar kolektiv, which released 11th Dream and Lithium on Steam. In 2025–2026 he was lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology."
+    "Filip Hauer is an intermedia artist, game designer and researcher working in game studies and on the critical possibilities of play in art and mainstream culture.",
+    "In his dissertation, defended at the Academy of Fine Arts in Prague, Filip explored the links between game worlds, the future of work and player agency. From 2018 to 2025 he worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger, and co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv he made Lithium, released on Steam in 2025. Following his PhD, in 2025–26 he was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology."
   ],
 
   // CV blocks, in display order. Each block folds open/closed on the page.
@@ -136,14 +136,14 @@ Site.texts = {
       title: "Education & study stays",
       open: true,
       entries: [
-        ["2020–25", "**PhD**, Academy of Fine Arts in Prague, Studio of New Media I. Dissertation: [Digital Games and Allegorithmic Work: The Politics of Exchange, Alienation and Performative Ideology](#thesis). Supervisor Tomáš Svoboda, consultant Vjera Borozan. Defended May 2025."],
+        ["2020–25", "**PhD**, Academy of Fine Arts in Prague, Studio of New Media I. Dissertation: [Digital Games and Allegorithmic Work: The Politics of Exchange, Alienation and Performative Ideology](#thesis). Supervisor: Tomáš Svoboda; consultant: Vjera Borozan. Defended in May 2025."],
         ["2022",    "**Research internship**, [CoFUTURES](https://cofutures.org/), University of Oslo, Norway (May 2022)"],
         ["2012–18", "**MgA**, Academy of Fine Arts in Prague"],
         ["2016–18", "School of Tomáš Vaněk, Academy of Fine Arts in Prague", "sub"],
         ["2016",    "**Study stay**, In Situ3, Royal Academy of Fine Arts Antwerp, Belgium", "sub"],
         ["2015",    "School of Dušan Záhoranský and Pavla Sceránková, Academy of Fine Arts in Prague", "sub"],
         ["2012–15", "School of Jiří Příhoda, Academy of Fine Arts in Prague", "sub"],
-        ["2010–12", "Institute of Art and Design, Pilsen — Multimedia design"]
+        ["2010–12", "Institute of Art and Design, Pilsen — Multimedia Design"]
         // TODO: add any other study stays, exchanges or residencies here
       ]
     },
@@ -156,7 +156,7 @@ Site.texts = {
         ["2023", "Workers Out of Office: Dreaming About Work"],
         ["2022", "For How Many Are Your Futures? — print & play"],
         ["2021", "Dreaming About Work 0.9: For Loop Contingency — itch.io"],
-        ["2021", "11th Dream — Steam (Blue Pulsar)"],
+        ["2021", "11th Dream — Steam (Blue Pulsar Games)"],
         ["2018", "Perfect Strike: After Vita Activa — itch.io"]
       ]
     },
@@ -164,16 +164,16 @@ Site.texts = {
       title: "Positions",
       entries: [
         ["2025–26", "Lead game designer & researcher, Andre Miri Cipa (SEGROMA), [Faculty of Fine Arts, Brno University of Technology](https://www.favu.vut.cz/)"],
-        ["2021–25", "UI/UX designer, Bohemia Interactive — Arma Reforger; UI/UX design system and manual"],
+        ["2021–25", "UI/UX designer, Bohemia Interactive — Arma Reforger (UI/UX design system and design manual)"],
         ["2018–21", "Junior graphic designer and artist, Bohemia Interactive"],
-        ["2018–25", "Co-founder & game designer, Blue Pulsar kolektiv"],
+        ["2018–25", "Co-founder & game designer, Blue Pulsar Games"],
         ["2017–19", "Co-founder & curator, [IDEAL Prostor](https://www.facebook.com/iideal.space/), Prague"]
       ]
     },
     {
       title: "Solo exhibitions",
       entries: [
-        ["2024", "Roman Road & London DLC, with Zuzana Jírová, POP-UP Galerie AVU, Prague — [text](https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na)"],
+        ["2024", "Roman Road & London DLC, with Zuzana Jírová, POP-UP Galerie AVU, Prague — [text by Ondřej Trhoň](https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na)"],
         ["2023", "Workers Out of Office: Dreaming About Work, Industra, Brno"],
         ["2021", "Dreaming About Work 0.9: For Loop Contingency, Galerie mladých, TIC Brno"],
         ["2018", "Workcraft 5.0, with Jakub Pospíšil, Studio Prám, Prague"],
@@ -182,7 +182,7 @@ Site.texts = {
         ["2016", "Spend Your Day Right, Ateliér intermediální tvorby 1, AVU"],
         ["2016", "Open Source domovy, with Jakub Pospíšil, GAVU"],
         ["2016", "Re Time, UKG Prague"],
-        ["2015", "Spatial Cuts, with Jakub Pospíšil, Studio Letná AVU"]
+        ["2015", "Spatial Cuts, with Jakub Pospíšil, Studio Letná, AVU"]
       ]
     },
     {
@@ -203,7 +203,7 @@ Site.texts = {
         ["2015",    "Oh-oh-oh-ohh, oh-oh-oh-ohh, Just for one day, Greenhouse Berlin"],
         ["2015",    "Halo!, Galerie AVU"],
         ["2014",    "Art and Shadow, Galerie NoD"],
-        ["2011",    "Nine Pictures from Legnava, with Jan Petýrek, Legnava (Slovakia)"],
+        ["2011",    "Nine Pictures from Legnava, with Jan Petýrek, Legnava, Slovakia"],
         ["2011",    "Symposium Consonance, Sýpka Klenová"]
       ]
     },
