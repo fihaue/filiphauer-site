@@ -10,12 +10,13 @@ window.Site = window.Site || {};
 Site.config = {
 
   // Which layout loads when no ?layout= is in the address.
-  // "a" … "f" — see the list below.
-  defaultLayout: "g",
+  // "a" … "g" — see the list below. Other layouts stay reachable
+  // with ?layout=x in the address (e.g. ?layout=g).
+  defaultLayout: "f",
 
-  // Shows the A–F switcher bar at the top of the page.
-  // Keep true while testing; set to false when the site goes live.
-  showLayoutSwitcher: true,
+  // Shows the A–G switcher bar at the top of the page.
+  // true while testing layouts; false = visitors don't see it.
+  showLayoutSwitcher: false,
 
   // Used for the "Copy link" button in project popups.
   siteUrl: "https://new.filiphauer.com",
