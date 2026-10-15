@@ -59,7 +59,7 @@ Site.texts = {
   // The green line above the headline (shown with " / " between items).
   roles: ["Researcher", "Critical game designer", "Intermedia artist", "Copenhagen"],
 
-  headline: "Critical and speculative game research, art and design about work, game exchange and collective futures.",
+  headline: "Critical and speculative game studies research, art and design on work, game markets, ideologies and shared futures.",
 
   // Statement under the headline. One text = one paragraph.
   statement: [
@@ -67,12 +67,12 @@ Site.texts = {
   ],
 
   // Description of the big image under the statement (for screen readers).
-  heroImageAlt: "Workers Out of Office, gameplay",
+  heroImageAlt: "Workers Out of Office, city overview",
 
   // Left sidebar. Some links only show in certain layouts.
   sidebar: {
     name: "Filip Hauer",
-    place: "Copenhagen",
+    place: "Copenhagen/Prague",
     work: "Work",
     research: "Research",
     games: "Critical games",
@@ -165,7 +165,7 @@ Site.texts = {
       entries: [
         ["2025–26", "Lead game designer & researcher, Andre Miri Cipa (SEGROMA), [Faculty of Fine Arts, Brno University of Technology](https://www.favu.vut.cz/)"],
         ["2021–25", "UI/UX designer, Bohemia Interactive — Arma Reforger; UI/UX design system and manual"],
-        ["2018–21", "Junior graphic designer, then artist, Bohemia Interactive"],
+        ["2018–21", "Junior graphic designer and artist, Bohemia Interactive"],
         ["2018–25", "Co-founder & game designer, Blue Pulsar kolektiv"],
         ["2017–19", "Co-founder & curator, [IDEAL Prostor](https://www.facebook.com/iideal.space/), Prague"]
       ]
@@ -253,7 +253,7 @@ Site.tags = {
 
 /* Practice sections for layout F, in display order. */
 Site.practices = [
-  { id: "games",         label: "Critical games",       blurb: "Critical and speculative games, from Steam and mobile releases to gallery pieces." },
+  { id: "games",         label: "Critical games",       blurb: "Critical and speculative games, working with artistic research and game studies methods to enter into dialogue with political and social themes." },
   { id: "writing",       label: "Research & writing",   blurb: "PhD research and essays on game exchange, alienation and player agency." },
   { id: "installations", label: "Art and installation", blurb: "Installations and video works on automation, play and labour." },
   { id: "curation",      label: "Curation",             blurb: "Exhibitions and artist-run spaces." },
@@ -284,7 +284,7 @@ Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-d
    Each entry points to a project (same popup, same images) and adds
    the role-focused facts a studio reviewer looks for. */
 Site.studio = {
-  intro: "Game designer with shipped titles on Steam and mobile and four years building the UI/UX system of a large commercial game. Systems design, game economies, narrative and interface design.",
+  intro: "Game designer and researcher with a focus on speculative game design and game studies. I have shipped titles on Steam and mobile and spent four years building the UI/UX system of a AAA game. Systems design, game economies, narrative and interface design.",
   skills: ["Systems & game design", "Game economies", "UI/UX design systems", "Narrative design", "2D/3D art", "Unity (C#)"], // TODO: check this list
   cvLink: "", // TODO: link to a studio CV PDF, e.g. "files/filip-hauer-cv-games.pdf"
   entries: [
