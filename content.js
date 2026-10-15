@@ -715,8 +715,25 @@ Site.projects = [
   },
   { id: "earthly-survival", with: "John Hill", title: "Earthly Survival: Monstrous Games", year: "2022", level: "grid", practice: "curation",
     category: "Curation", org: "etc. galerie", type: "Exhibition", tags: ["curation"], external: "https://etcgalerie.cz/en/earthly-survival-monstrous-games/" },
-  { id: "ideal-prostor", with: "Jolanta Nowaczyk, Jakub Pospíšil, Argišt Alaverdyan, Šimon Sýkora", title: "IDEAL Prostor", year: "2017–19", level: "grid", practice: "curation",
-    category: "Curation", org: "Prague", type: "Artist-run space", tags: ["curation", "collaborations"], external: "https://www.facebook.com/iideal.space/" },
+  {
+    id: "ideal-prostor", with: "Jolanta Nowaczyk, Jakub Pospíšil, Argišt Alaverdyan, Šimon Sýkora",
+    title: "IDEAL Prostor", year: "2017–19", level: "grid", practice: "curation",
+    category: "Curation", org: "Prague", type: "Artist-run space",
+    meta: "Co-founder & curator · artist-run space, Prague 4",
+    tags: ["curation", "collaborations"],
+    summary: "An artist-run space in Prague giving young, not yet established artists room, equipment and support for exhibitions, events and talks.",
+    text: [
+      "IDEAL was an artist-run space in Prague that I co-founded and co-curated from 2017 to 2019: a non-commercial gallery and community space for exhibitions, events and talks, supporting mostly the younger, not yet established generation of artists.",
+      "Its open-ended project, Cognitive Mapping, presented the work of young artists through exhibitions, events, performances and talks, and documented everything as an emerging archive: a free cognitive map of the relationships between the ideas shown in the space. Rather than a group with a joint programme, IDEAL was our studio, but also a place where a young generation of international artists could show their early and experimental work. It also tried to become an organic part of its neighbourhood, a rather cut-off part of Prague with a history of utopian architecture. After two years in Prague 4, the space closed in 2019.",
+      "The catalogue Cognitive Mapping: 2 Years of IDEAL Kolektiv, 2017–2019 documents the exhibitions and talks of both years, in Czech and English."
+    ],
+    gallery: 0,
+    videos: [],
+    links: [
+      ["Download the catalogue (PDF, 21 MB)", "files/ideal-cognitive-mapping-2017-2019.pdf"],
+      ["IDEAL on Facebook", "https://www.facebook.com/iideal.space/"]
+    ]
+  },
 
   /* ------------------------------------------------------------ ARCHIVE */
 

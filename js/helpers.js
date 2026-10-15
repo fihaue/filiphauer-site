@@ -122,12 +122,15 @@ Site.helpers = {
       .map(t => `<a href="#${t}">${Site.tags[t] || t}</a>`).join("")}</span>`;
   },
 
-  /* Row of outside links, each opens in a new tab. */
+  /* Row of links, each opens in a new tab.
+     A PDF stored on this site (e.g. "files/….pdf") gets "download",
+     so clicking it saves the file instead of only opening it. */
   linkRow(p) {
     const e = Site.helpers.escape;
     if (!p.links || p.links.length === 0) return "";
+    const isOwnPdf = url => /\.pdf$/i.test(url) && !/^https?:/i.test(url);
     return `<p class="link-row">${p.links
-      .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener">${e(label)}</a>`).join("")}</p>`;
+      .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener"${isOwnPdf(url) ? " download" : ""}>${e(label)}</a>`).join("")}</p>`;
   },
 
   /* Turns the project's text array into paragraphs, headings, quotes, code. */
