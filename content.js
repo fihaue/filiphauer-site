@@ -57,13 +57,13 @@ Site.texts = {
   },
 
   // The green line above the headline (shown with " / " between items).
-  roles: ["Researcher", "Critical game designer", "Intermedia artist", "Copenhagen"],
+  roles: ["Researcher", "Critical game designer", "Intermedia artist"],
 
-  headline: "Critical and speculative game studies research, art and design on work, game markets, ideologies and shared futures.",
+  headline: "Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures.",
 
   // Statement under the headline. One text = one paragraph.
   statement: [
-    "Filip Hauer is an intermedia artist, designer and researcher whose work focuses on exploring the speculative potential of digital games. His projects address themes such as game exchange, ideology, performativity and labour through critical, speculative and alienated game art. With a focus on critical play and player agency, Filip seeks to question stereotypical communication practices."
+    "Filip explores the speculative potential of digital games. His projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, Filip seeks to question stereotypical communication practices."
   ],
 
   // Description of the big image under the statement (for screen readers).

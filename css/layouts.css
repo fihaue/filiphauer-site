@@ -83,7 +83,8 @@
   padding: 44px 0; border-top: 1px solid var(--line); scroll-margin-top: 110px;
 }
 .practice:first-of-type { margin-top: 22px; }
-.practice-head { position: sticky; top: 110px; align-self: start; display: grid; gap: 8px; }
+/* Section title + description stay at the top of their section (they don't follow the scroll). */
+.practice-head { align-self: start; display: grid; gap: 8px; }
 .practice-head h3 { font-size: 22px; }
 .practice-head p { font-size: 13.5px; line-height: 1.55; }
 
