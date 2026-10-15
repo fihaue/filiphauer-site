@@ -80,8 +80,11 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(107, 230, 123, .15); }
 .roles { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
 .roles i { font-style: normal; color: var(--text-dim); margin: 0 4px; }
-.intro h1 { font-size: clamp(30px, 4.2vw, 54px); max-width: 18ch; letter-spacing: -.01em; }
-.statement { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 1000px; }
+/* Headline and statement use the full content width.
+   (text-wrap: balance on h1 keeps its lines roughly equal in length.) */
+.intro h1 { font-size: clamp(30px, 4.2vw, 54px); letter-spacing: -.01em; }
+/* One column per paragraph: one paragraph spans the whole width, two sit side by side. */
+.statement { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 28px; }
 .statement p { font-size: 16.5px; }
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
 
@@ -227,7 +230,7 @@ body:has(.layout-switcher:not([hidden])) .sidebar { top: 92px; }
   .sidebar nav a[href="#archive"], .sidebar-foot { display: none; }
   main { margin-left: 0; padding: 0 16px; }
   html { scroll-padding-top: 64px; }
-  .statement { grid-template-columns: 1fr; gap: 12px; }
+  .statement { grid-auto-flow: row; gap: 12px; }
   .archive-item summary { grid-template-columns: 52px minmax(0, 1fr); }
   .archive-item .type { grid-column: 2; }
   .archive-body { padding-left: 0; grid-template-columns: 1fr; }
