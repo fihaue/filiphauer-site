@@ -51,9 +51,10 @@ window.Site = window.Site || {};
     h.$("#intro-image").alt = T.heroImageAlt || "";
     h.$("#portrait").alt = T.portraitAlt || "";
 
-    // CV: one folding block per entry in Site.texts.cv
+    // CV: one folding block per entry in Site.texts.cv.
+    // hideIn: ["f"] adds class "hide-in-f", which the CSS hides in layout F.
     h.$("#cv").innerHTML = (T.cv || []).map(block => `
-      <details ${block.open ? "open" : ""}>
+      <details class="${(block.hideIn || []).map(k => "hide-in-" + k).join(" ")}" ${block.open ? "open" : ""}>
         <summary>${h.escape(block.title)}</summary>
         <ul>${(block.entries || []).map(([years, text, kind]) => `
           <li><span>${h.escape(years)}</span><span${kind === "sub" ? ' class="sub"' : ""}>${h.rich(text)}</span></li>`).join("")}

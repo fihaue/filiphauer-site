@@ -74,19 +74,22 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .news {
   justify-self: start; display: inline-flex; align-items: center; gap: 10px;
   border: 1px solid var(--line); border-radius: 99px; padding: 6px 14px;
-  font-size: 13px; color: var(--green); margin-bottom: 18px;
+  font-size: 13px; color: var(--violet); margin-bottom: 18px;
 }
-.news:hover { border-color: var(--green); text-decoration: none; }
-.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(107, 230, 123, .15); }
+.news:hover { border-color: var(--violet); text-decoration: none; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 0 4px rgba(123, 134, 245, .15); }
 .roles { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
 .roles i { font-style: normal; color: var(--text-dim); margin: 0 4px; }
-/* Headline and statement use the full content width.
-   (text-wrap: balance on h1 keeps its lines roughly equal in length.) */
-/* Headline size: 34px on wide screens, shrinking with the screen width down to 22px on phones. */
-.intro h1 { font-size: clamp(22px, 5.5vw, 34px); letter-spacing: -.01em; }
+/* Headline and statement look the same: one size, the body font weight, white.
+   Both use the full content width. --intro-size: 20px on wide screens, 18px on phones
+   (also used by the Contact section). */
+:root { --intro-size: clamp(18px, 2.4vw, 20px); }
+.intro h1, .statement p {
+  font-size: var(--intro-size); font-weight: 300; line-height: 1.6;
+  color: var(--heading); letter-spacing: 0; text-wrap: pretty;
+}
 /* One column per paragraph: one paragraph spans the whole width, two sit side by side. */
 .statement { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 28px; }
-.statement p { font-size: 16.5px; }
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
 
 /* ---------------------------------------------------------- sections */
@@ -186,8 +189,10 @@ body:not([data-layout="g"]) .only-g { display: none; }
 
 /* ---------------------------------------------------------- contact */
 .contact { display: grid; gap: 14px; justify-items: start; }
-.email { font-size: clamp(24px, 3.4vw, 40px); font-weight: 500; color: var(--heading); border-bottom: 2px solid var(--green); }
-.email:hover { color: var(--green); text-decoration: none; }
+/* One size for the whole block: intro line, email and links all use --intro-size. */
+.contact p, .contact .email, .contact .link-row { font-size: var(--intro-size); font-weight: 300; line-height: 1.6; }
+.email { color: var(--heading); }
+.contact .link-row a::after { font-size: .7em; }
 .footer { padding: 36px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: #666; }
 
 /* ---------------------------------------------------------- toast */

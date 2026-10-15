@@ -59,11 +59,11 @@ Site.texts = {
   // The green line above the headline (shown with " / " between items).
   roles: ["Researcher", "Critical game designer", "Intermedia artist"],
 
-  headline: "Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures.",
+  headline: "Filip Hauer (1990) is an intermedia artist, game designer and researcher currently based in Copenhagen. He is researching critical and speculative games, with a focus on how they can imagine and represent contemporary work, politics, game markets and shared futures.",
 
   // Statement under the headline. One text = one paragraph.
   statement: [
-    "Filip explores the speculative potential of digital games. His projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, Filip seeks to question stereotypical communication practices."
+    "I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I seek to question stereotypical communication practices."
   ],
 
   // Description of the big image under the statement (for screen readers).
@@ -121,13 +121,16 @@ Site.texts = {
 
   // Bio next to the CV. One text = one paragraph.
   bio: [
-    "Filip Hauer is an intermedia artist, game designer and researcher working in game studies and on the critical possibilities of play in art and mainstream culture.",
-    "In his dissertation, defended at the Academy of Fine Arts in Prague, Filip explored the links between game worlds, the future of work and player agency. From 2018 to 2025 he worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger. In 2018 Filip co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv he made Lithium, released on Steam in 2025. Following his PhD, in 2025–26 he was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology."
+    "I am an intermedia artist, game designer and researcher working in game studies and on the critical possibilities of play in art and mainstream culture.",
+    "My work explores the speculative potential of digital games. My projects address themes such as game exchange, ideology, performativity and labour through critical and speculative game art and through player agency. Within my research, art and design, I examine the problematic practices commonly found in popular games. In my practice, I particularly value critical design and art as tools to communicate social and environmental issues from multiple perspectives.",
+    "In my dissertation, defended at the Academy of Fine Arts in Prague, I explored the links between game worlds, the future of work and player agency. Following my PhD, in 2025–26 I was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology.",
+    "From 2018 to 2025 I worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger. In 2018 I also co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv I made Lithium, released on Steam in 2025."
   ],
 
   // CV blocks, in display order. Each block folds open/closed on the page.
   //   title   heading of the block
   //   open    true = shown open when the page loads
+  //   hideIn  optional list of layouts where the block is hidden, e.g. ["f"]
   //   entries [ "years", "text" ]          normal line
   //           [ "years", "text", "sub" ]   indented line (a part of the line above,
   //                                         e.g. a studio or study stay within a degree)
@@ -149,6 +152,7 @@ Site.texts = {
     },
     {
       title: "Games",
+      hideIn: ["f"],
       entries: [
         ["2026", "Andre Miri Cipa — iOS, Android, Windows, macOS"],
         ["2025", "Lithium — Steam (Blue Pulsar kolektiv)"],
@@ -162,6 +166,7 @@ Site.texts = {
     },
     {
       title: "Positions",
+      hideIn: ["f"],
       entries: [
         ["2025–26", "Lead game designer & researcher, Andre Miri Cipa (SEGROMA), [Faculty of Fine Arts, Brno University of Technology](https://www.favu.vut.cz/)"],
         ["2021–25", "UI/UX designer, Bohemia Interactive — Arma Reforger (UI/UX design system and design manual)"],
@@ -223,7 +228,6 @@ Site.texts = {
     links: [
       ["itch.io",   "https://filip-hauer.itch.io"],
       ["Instagram", "https://www.instagram.com/fihauer/"],
-      ["Facebook",  "https://www.facebook.com/fihauer/"],
       ["Blog",      "http://filiphauer.blogspot.com"],
       ["ORCID",     "https://orcid.org/0009-0004-3111-6345"]
     ]
