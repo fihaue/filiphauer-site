@@ -1,0 +1,40 @@
+# Checks content.js every time something is saved (committed) to the repository.
+# If content.js has a typing mistake, this shows a red ✗ next to the commit on GitHub
+# and GitHub emails you, so you can fix it before visitors notice.
+name: Check content
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: content.js is valid JavaScript
+        run: node --check content.js
+
+      - name: Every project has the required fields and its cover image
+        run: |
+          node -e '
+            global.window = globalThis;
+            eval(require("fs").readFileSync("content.js", "utf8"));
+            const fs = require("fs");
+            const problems = [];
+            const ids = new Set();
+            for (const p of Site.projects) {
+              for (const f of ["id", "title", "year", "level"]) if (!p[f]) problems.push(`A project is missing "${f}": ${p.title || p.id || "(unnamed)"}`);
+              if (ids.has(p.id)) problems.push(`Two projects share the id "${p.id}"`);
+              ids.add(p.id);
+              const img = `images/${p.id}-cover.jpg`;
+              if (!fs.existsSync(img)) problems.push(`Missing image: ${img}`);
+            }
+            for (const key of ["headline", "statement", "cv", "contact", "ui"]) if (!Site.texts[key]) problems.push(`Site.texts is missing "${key}"`);
+            if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
+            console.log(`OK: ${Site.projects.length} projects, all texts present.`);
+          '

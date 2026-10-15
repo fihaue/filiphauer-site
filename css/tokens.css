@@ -1,0 +1,34 @@
+/* =====================================================================
+   DESIGN TOKENS — colours, font and sizes for the whole site.
+   ---------------------------------------------------------------------
+   Change a value here and it updates everywhere. The colours are
+   taken from the Adobe Portfolio site.
+   ===================================================================== */
+
+:root {
+  /* Colours */
+  --bg:         #222222;  /* page background */
+  --surface:    #2a2a2a;  /* cards, popup bars */
+  --surface-2:  #313131;  /* card on hover */
+  --line:       #383838;  /* thin dividing lines */
+  --text:       #999999;  /* body text */
+  --text-dim:   #767676;  /* small meta text */
+  --nav:        #888888;  /* sidebar links */
+  --heading:    #eeeeee;  /* titles, active links */
+  --green:      #6be67b;  /* accent: years, labels, highlights */
+  --violet:     #7b86f5;  /* links */
+  --ink:        #141414;  /* text on light buttons */
+
+  /* Font */
+  --font: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Layout sizes */
+  --sidebar-width: 250px;
+  --content-max:   1180px;
+  --gap:           24px;
+
+  /* Image shapes — must match the image sizes in the README */
+  --cover-ratio:   4 / 3;   /* cover.jpg   1600 × 1200 */
+  --hero-ratio:    16 / 9;  /* hero.jpg    1920 × 1080 */
+}

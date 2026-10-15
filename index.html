@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TEST VERSION: keeps search engines away. Delete this line when the site goes live. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Filip Hauer — game designer, artist and researcher</title>
+  <meta name="description" content="Filip Hauer — intermedia artist, game designer and researcher based in Copenhagen. Critical and speculative games about work, game exchange and collective futures.">
+
+  <!-- Preview when the link is shared (social media, messages) -->
+  <meta property="og:title" content="Filip Hauer">
+  <meta property="og:description" content="Critical and speculative games about work, game exchange and collective futures.">
+  <meta property="og:image" content="https://new.filiphauer.com/images/site-og-image.jpg">
+
+  <!-- Font: Lexend from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap">
+
+  <!-- Styles: colours & sizes first, then page, layouts, popup -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+
+<!-- Layout switcher bar (filled by js/main.js; hidden when config.showLayoutSwitcher = false) -->
+<div id="layout-switcher" class="layout-switcher" hidden></div>
+
+<!-- =====================================================================
+     This file only holds the STRUCTURE of the page.
+     ALL TEXTS come from content.js (top folder) — edit them there.
+     Elements with data-text="…" are filled with that text from content.js.
+     ===================================================================== -->
+
+<!-- Shown only if content.js has a mistake (see README) -->
+<div id="content-error" class="content-error" role="alert" hidden></div>
+
+<a class="skip-link" href="#work" data-text="ui.skipLink"></a>
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="sidebar">
+  <a class="logo" href="#top" data-text="sidebar.name"></a>
+  <nav aria-label="Sections">
+    <a href="#work"          class="hide-in-g"                     data-text="sidebar.work"></a>
+    <a href="#research"      class="hide-in-e hide-in-f hide-in-g" data-text="sidebar.research"></a>
+    <a href="#games"         class="only-g"                        data-text="sidebar.games"></a>
+    <a href="#writing"       class="only-g"                        data-text="sidebar.writing"></a>
+    <a href="#installations" class="only-g"                        data-text="sidebar.installations"></a>
+    <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
+    <a href="#archive"                                             data-text="sidebar.archive"></a>
+    <a href="#about"                                               data-text="sidebar.about"></a>
+    <a href="#contact"                                             data-text="sidebar.contact"></a>
+  </nav>
+  <p class="sidebar-foot" data-text="sidebar.place"></p>
+</aside>
+
+<main>
+
+  <!-- ===================== STATEMENT ===================== -->
+  <header class="intro" id="top">
+    <a class="news" id="news" hidden><span class="dot"></span><span id="news-text"></span></a>
+    <p class="roles" id="roles"></p>
+    <h1 data-text="headline"></h1>
+    <div class="statement" id="statement"></div>
+
+    <!-- Layout G: three entry links (from Site.pathways in content.js) -->
+    <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
+
+    <img class="intro-image" id="intro-image" src="images/site-hero.jpg" alt="">
+  </header>
+
+  <!-- ===================== WORK (drawn by js/layouts.js) ===================== -->
+  <section class="section" id="work" aria-labelledby="work-title">
+    <h2 class="section-title hide-in-g" id="work-title" data-text="sections.work"></h2>
+    <nav class="tag-filter" id="tag-filter" aria-label="Filter by tag"></nav>
+    <div id="work-view"></div>
+  </section>
+
+  <!-- ===================== RESEARCH (hidden in E/F/G, where writing is in the grid) ===================== -->
+  <section class="section hide-in-e hide-in-f hide-in-g" id="research" aria-labelledby="research-title">
+    <h2 class="section-title" id="research-title" data-text="sections.research"></h2>
+    <div id="research-view"></div>
+  </section>
+
+  <!-- ===================== ARCHIVE ===================== -->
+  <section class="section" id="archive" aria-labelledby="archive-title">
+    <h2 class="section-title" id="archive-title" data-text="sections.archive"></h2>
+    <div class="archive" id="archive-list"></div>
+  </section>
+
+  <!-- ===================== ABOUT & CV ===================== -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title" data-text="sections.about"></h2>
+    <div class="about">
+      <div class="bio" id="bio">
+        <img class="portrait" id="portrait" src="images/site-portrait.jpg" alt="" loading="lazy">
+      </div>
+      <div class="cv" id="cv"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <h2 class="section-title" id="contact-title" data-text="sections.contact"></h2>
+    <p data-text="contact.intro"></p>
+    <a class="email" id="email"></a>
+    <p class="link-row" id="contact-links"></p>
+  </section>
+
+  <footer class="footer" data-text="footer"></footer>
+</main>
+
+<!-- ===================== PROJECT POPUP (filled by js/popup.js) ===================== -->
+<dialog id="project-popup" class="popup" aria-labelledby="popup-title">
+  <div class="popup-frame">
+    <div class="popup-bar">
+      <span class="popup-address" id="popup-address"></span>
+      <button type="button" id="popup-copy" data-text="ui.copyLink"></button>
+      <button type="button" id="popup-close" data-label="ui.close">✕</button>
+    </div>
+    <div class="popup-content" id="popup-content"></div>
+    <div class="popup-nav">
+      <button type="button" id="popup-prev"></button>
+      <button type="button" id="popup-next" class="next"></button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- If content.js has a typing mistake, show where instead of a blank page. -->
+<script>
+  window.addEventListener("error", function (ev) {
+    if (!ev.filename || ev.filename.indexOf("content.js") === -1) return;
+    var box = document.getElementById("content-error");
+    box.hidden = false;
+    box.textContent = "content.js has a mistake on line " + ev.lineno + ": " + ev.message +
+                      ". Check for a missing comma, quote or bracket on that line or the one above it.";
+  });
+</script>
+
+<!-- Scripts, in this order: settings → ALL TEXTS → helpers → layouts → popup → start -->
+<script src="js/config.js"></script>
+<script src="content.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/layouts.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

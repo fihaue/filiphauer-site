@@ -1,0 +1,53 @@
+/* =====================================================================
+   PROJECT POPUP
+   ===================================================================== */
+
+.popup {
+  border: 0; padding: 0; margin: auto;
+  width: min(940px, 100vw - 32px);
+  max-height: min(90vh, 100% - 32px);
+  background: var(--bg); color: var(--text);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+}
+.popup::backdrop { background: rgba(10, 10, 10, .8); backdrop-filter: blur(3px); }
+.popup[open] { animation: popup-in .22s ease-out; }
+@keyframes popup-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* Three rows: top bar, scrolling content, bottom prev/next */
+.popup-frame { display: grid; grid-template-rows: auto 1fr auto; max-height: inherit; }
+
+.popup-bar {
+  display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.popup-address { flex: 1; min-width: 0; font: 12px var(--mono); color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.popup-bar button {
+  background: transparent; border: 1px solid var(--line); color: var(--heading);
+  font: inherit; font-size: 13px; padding: 5px 10px; cursor: pointer;
+}
+.popup-bar button:hover { border-color: var(--nav); }
+
+.popup-content { overflow: auto; padding-bottom: 28px; }
+.popup-hero { width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
+.popup-content .img-missing.popup-hero { aspect-ratio: var(--hero-ratio); }
+.popup-text { display: grid; gap: 12px; padding: 24px 28px 0; max-width: 74ch; }
+.popup-text h2 { font-size: clamp(24px, 3vw, 34px); }
+
+.popup-nav {
+  display: flex; justify-content: space-between; gap: 8px; padding: 10px 14px;
+  background: var(--surface); border-top: 1px solid var(--line);
+}
+.popup-nav button {
+  background: transparent; border: 0; color: var(--nav); font: inherit; font-size: 13px;
+  text-align: left; cursor: pointer; padding: 4px 2px;
+}
+.popup-nav button span { display: block; color: var(--heading); font-size: 14px; }
+.popup-nav button:hover { color: var(--heading); }
+.popup-nav .next { text-align: right; }
+
+/* Phones: popup fills the screen */
+@media (max-width: 760px) {
+  .popup { width: 100vw; max-width: 100vw; height: 100%; max-height: 100%; }
+  .popup-text { padding: 20px 18px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .popup[open] { animation: none; } }

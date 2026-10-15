@@ -1,0 +1,155 @@
+/* =====================================================================
+   LAYOUTS A–F — one block per layout, matching js/layouts.js.
+   ===================================================================== */
+
+/* All cover images share the same shape (see --cover-ratio in tokens.css). */
+.cover { width: 100%; aspect-ratio: var(--cover-ratio); object-fit: cover; }
+.card-body { display: grid; gap: 8px; align-content: start; min-width: 0; }
+
+
+/* ---------------------------------------------------------- A: grid, expand in place */
+.grid-a { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.card-a { background: var(--surface); }
+.card-a .card-body { padding: 20px 22px 22px; }
+.card-a h3 { font-size: 21px; }
+.card-a details { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 10px; }
+.card-a summary { color: var(--heading); font-size: 14px; cursor: pointer; list-style: none; }
+.card-a summary::-webkit-details-marker { display: none; }
+.card-a summary::before { content: "+ "; color: var(--green); }
+.card-a details[open] summary::before { content: "– "; }
+
+
+/* ---------------------------------------------------------- B: grid, popup cards */
+.grid-b { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.card-b { position: relative; background: var(--surface); display: flex; flex-direction: column; transition: background .2s; }
+.card-b:hover { background: var(--surface-2); }
+.card-b .card-body { padding: 18px 20px 20px; flex: 1; }
+.card-b h3 { font-size: 20px; }
+.card-b h3 a { color: var(--heading); }
+.card-b h3 a:hover { text-decoration: none; }
+.card-b h3 a::after { content: ""; position: absolute; inset: 0; }   /* makes the whole card clickable */
+.card-b .tag-pills { position: relative; z-index: 1; }                  /* …but tags stay clickable on their own */
+.open-hint { font-size: 13px; color: var(--heading); margin-top: auto; padding-top: 6px; }
+.open-hint::before { content: "↗ "; color: var(--green); }
+.card-b.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; }
+.card-b.wide .cover { height: 100%; }
+
+
+/* ---------------------------------------------------------- C: index list */
+.index-c { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 36px; align-items: start; }
+.index-rows { border-top: 1px solid var(--line); }
+.index-row {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 16px; align-items: baseline;
+  padding: 14px 6px; border-bottom: 1px solid var(--line); color: var(--text);
+}
+.index-row:hover, .index-row:focus-visible { background: var(--surface); text-decoration: none; }
+.index-row .year { color: var(--green); font-size: 14px; font-variant-numeric: tabular-nums; }
+.index-row .title { color: var(--heading); font-size: clamp(18px, 2.2vw, 24px); font-weight: 400; line-height: 1.25; }
+.index-row .title small { display: block; margin-top: 4px; font-size: 13px; color: var(--text-dim); font-weight: 300; }
+.index-row .type { font-size: 12.5px; color: var(--nav); text-align: right; }
+.index-preview { position: sticky; top: 110px; display: grid; gap: 12px; font-size: 14px; }
+
+
+/* ---------------------------------------------------------- D: editorial rows */
+.rows-d { display: grid; gap: 64px; }
+.row-d { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 36px; align-items: center; }
+.row-d:nth-child(even) .cover { order: 2; }   /* alternate image side */
+.row-d h3 { font-size: clamp(26px, 3.2vw, 40px); }
+.row-d .button { justify-self: start; margin-top: 6px; }
+.row-number { font-family: var(--mono); font-size: 12px; color: var(--text-dim); }
+
+
+/* ---------------------------------------------------------- E & F: thumbnail grids */
+.grid-e { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 22px; }
+.grid-f { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 20px; }
+
+.thumb-card { display: grid; gap: 6px; align-content: start; color: var(--text); min-width: 0; }
+.thumb-card:hover { text-decoration: none; }
+.thumb-card .cover { transition: filter .2s; }
+.thumb-card:hover .cover { filter: brightness(1.2); }
+.thumb-card .title { color: var(--heading); font-size: 15px; font-weight: 400; line-height: 1.35; margin-top: 6px; }
+.thumb-card:hover .title { color: var(--violet); }
+.thumb-card .external { color: var(--text-dim); font-size: 12px; }
+.cat { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim); line-height: 1.4; }
+.cat b { color: var(--green); font-weight: 400; }
+
+/* F: practice sections */
+.practice-jump { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; margin-bottom: 8px; }
+.practice-jump a { color: var(--nav); }
+.practice-jump a:hover { color: var(--heading); text-decoration: none; }
+.practice-jump sup, .practice-head sup { font-size: 11px; color: var(--green); margin-left: 4px; }
+.practice {
+  display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 28px;
+  padding: 44px 0; border-top: 1px solid var(--line); scroll-margin-top: 110px;
+}
+.practice:first-of-type { margin-top: 22px; }
+.practice-head { position: sticky; top: 110px; align-self: start; display: grid; gap: 8px; }
+.practice-head h3 { font-size: 22px; }
+.practice-head p { font-size: 13.5px; line-height: 1.55; }
+
+
+/* ---------------------------------------------------------- G: research first, studio route */
+.practice-body { display: grid; gap: 36px; min-width: 0; }
+body[data-layout="g"] #work { border-top: 0; padding-top: 0; }
+body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
+
+/* Large highlighted project cards (first projects in a section) */
+.highlights { display: grid; gap: var(--gap); }
+.highlight { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); background: var(--surface); }
+.highlight .card-body { padding: 22px 24px; }
+.highlight h4 { font-size: 22px; }
+.highlight h4 a { color: var(--heading); }
+.highlight .button { justify-self: start; margin-top: 4px; }
+
+/* Studio section: role-focused cards */
+.studio .practice-head .skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.studio .skills span { font-size: 12px; border: 1px solid var(--line); padding: 2px 8px; color: var(--heading); }
+.studio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.studio-card { background: var(--surface); display: flex; flex-direction: column; }
+.studio-card .card-body { padding: 18px 20px 22px; flex: 1; }
+.studio-card .kicker { font-size: 13px; }
+.studio-card h4 { font-size: 20px; }
+.did { list-style: none; display: grid; gap: 4px; font-size: 14.5px; }
+.did li { padding-left: 16px; position: relative; }
+.did li::before { content: "–"; position: absolute; left: 0; color: var(--green); }
+.studio-actions { display: grid; gap: 10px; margin-top: 6px; justify-items: start; }
+
+/* Collaborations: "with …" line on cards, and the names-first list */
+.with { font-size: 12.5px; color: var(--violet); line-height: 1.4; }
+.with::before { content: "↔ "; color: var(--green); }
+.collab-list { border-top: 1px solid var(--line); }
+.collab-row {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: baseline;
+  padding: 14px 6px; border-bottom: 1px solid var(--line); color: var(--text);
+}
+.collab-row:hover, .collab-row:focus-visible { background: var(--surface); text-decoration: none; }
+.collab-row .year { color: var(--green); font-size: 14px; font-variant-numeric: tabular-nums; }
+.collab-row .title { color: var(--heading); font-size: 17px; font-weight: 400; line-height: 1.3; }
+.collab-row .title small { display: block; margin-top: 3px; font-size: 12.5px; color: var(--text-dim); font-weight: 300; }
+.collab-row .names { color: var(--heading); font-size: 15px; }
+.collab-row:hover .title { color: var(--green); }
+
+/* ---------------------------------------------------------- tablets & phones */
+@media (max-width: 1100px) {
+  .grid-e { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 1000px) {
+  .index-c { grid-template-columns: 1fr; }
+  .index-preview { display: none; }
+  .practice { grid-template-columns: 1fr; gap: 18px; }
+  .practice-head { position: static; }
+}
+@media (max-width: 760px) {
+  .grid-a, .grid-b { grid-template-columns: 1fr; }
+  .card-b.wide { grid-template-columns: 1fr; }
+  .row-d { grid-template-columns: 1fr; gap: 16px; }
+  .row-d:nth-child(even) .cover { order: 0; }
+  .index-row { grid-template-columns: 48px minmax(0, 1fr); }
+  .index-row .type { display: none; }
+  .grid-e, .grid-f { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
+  .highlight, .studio-grid { grid-template-columns: 1fr; }
+  .collab-row { grid-template-columns: 48px minmax(0, 1fr); }
+  .collab-row .names { grid-column: 2; font-size: 14px; }
+  .thumb-card .title { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .card-b, .thumb-card .cover { transition: none; } }

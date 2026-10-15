@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- =====================================================================
+     404 / OLD ADDRESSES
+     GitHub Pages shows this page for any address that doesn't exist.
+     We use it to send the old Adobe Portfolio addresses to the right
+     place on the new one-page site. Add a line to OLD_PAGES to add more.
+     ===================================================================== -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Filip Hauer</title>
+  <script>
+    const OLD_PAGES = {
+      "/main":                          "/#top",
+      "/work-1":                        "/#work",
+      "/selected":                      "/#work",
+      "/cooperative":                   "/#work",
+      "/lithium":                       "/#lithium",
+      "/for-how-many-are-your-futures": "/#for-how-many-are-your-futures",
+      "/thesis":                        "/#thesis",
+      "/research-writing":              "/#research",
+      "/writing-and-research":          "/#research",
+      "/cv":                            "/#about",
+      "/contact":                       "/#contact"
+    };
+    const path = location.pathname.replace(/\/+$/, "").toLowerCase();
+    if (OLD_PAGES[path]) location.replace(OLD_PAGES[path]);
+  </script>
+  <style>
+    body { background:#222; color:#999; font:300 16px/1.6 "Lexend", system-ui, sans-serif; display:grid; place-content:center; min-height:100vh; margin:0; padding:16px; text-align:center; }
+    a { color:#7b86f5; }
+    h1 { color:#eee; font-weight:500; font-size:22px; }
+  </style>
+</head>
+<body>
+  <h1>This page doesn't exist</h1>
+  <p><a href="/">Go to filiphauer.com</a></p>
+</body>
+</html>
