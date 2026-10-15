@@ -176,7 +176,7 @@ Site.texts = {
         ["2024", "Roman Road & London DLC, with Zuzana Jírová, POP-UP Galerie AVU, Prague — [text](https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na)"],
         ["2023", "Workers Out of Office: Dreaming About Work, Industra, Brno"],
         ["2021", "Dreaming About Work 0.9: For Loop Contingency, Galerie mladých, TIC Brno"],
-        ["2018", "WorkCraft 5.0, with Jakub Pospíšil, Studio Prám, Prague"],
+        ["2018", "Workcraft 5.0, with Jakub Pospíšil, Studio Prám, Prague"],
         ["2017", "Your Sustainable Future, with Jakub Pospíšil, Galerie 123, Prague"],
         ["2017", "Never Ending Story; Life After Art, with Tereza Brussmannová, Galerie Alternativa, OGV Jihlava"],
         ["2016", "Spend Your Day Right, Ateliér intermediální tvorby 1, AVU"],
@@ -302,7 +302,7 @@ Site.studio = {
     {
       project: "11th-dream",
       role: "Game designer & artist",
-      team: "Blue Pulsar · team of four · in-house engine",
+      team: "Blue Pulsar · team of three · in-house engine",
       shipped: "Steam, 2021",
       did: [
         "Designed the game mechanics",
@@ -390,7 +390,7 @@ Site.projects = [
     // TODO: add one sentence on what the player does at the start of the summary.
     text: [
       "Andre Miri Cipa is an educational and research game on the position of Roma in the Czech Republic, referencing the global position of Roma culture and its lack of representation in contemporary game culture. The game builds on ethnographic and participatory research from the project's sociological and design branches, and serves as a platform for participatory inputs conveying experiences of racism from the perspective of the Roma community.",
-      "In the design branch, Filip brought in his research on critical and speculative games working with utopia and María Lugones's concept of “loving visiting”.",
+      "In the design branch, Filip brought in his research on critical and speculative games working with utopia and María Lugones's concepts of “world-travelling” and “loving perception”.",
       "Public release on 22 October 2026 at the gala evening of the Museum of Romani Culture in Brno, concluding the project together with the community it represents."
     ],
     gallery: 4,
@@ -461,7 +461,7 @@ Site.projects = [
     summary: "You save money for a trip abroad while texting Zuzana in London, in a 2040 of drought, a collapsing job market and capitalist feudalism.",
     text: [
       "You are saving money for a trip abroad, texting Zuzana, who has just returned to London to look for a new job. London DLC takes place in 2040, ten years before Workers Out of Office: Central Europe suffers from drought, the conservative right is gaining power, a desert is expanding on the border of Bohemia and Austria, and the job market is slowly collapsing. Zuzana wants to make it in the arts, but both of you spend most of your time fighting for economic survival.",
-      "Through their conversations the game opens questions of survival, of searching for one's ability to act meaningfully, and of the emerging technocracy and capitalist feudalism in a world of crisis. The crisis also opens a new way of finding meaningful agency, and asks how we might organise ourselves differently.",
+      "Through your conversations with Zuzana, the game opens questions about survival, the search for one's ability to act meaningfully, and the emerging technocracy and capitalist feudalism in a world of crisis. The crisis also opens a new way of finding one's ability to take meaningful agency, and the question of how to organise ourselves in new ways.",
       "Roman Road & London DLC, a joint project with Zuzana Jírová, POP-UP Galerie AVU, Prague. Accompanying text by Ondřej Trhoň."
     ],
     gallery: 4,
@@ -568,11 +568,11 @@ Site.projects = [
     type: "Third-person abstract shooter",
     meta: "Blue Pulsar: Filip Hauer, Michal Žák, Vojtěch Košař · mechanics, narrative, all 2D/3D visuals · Steam",
     tags: ["games", "collaborations"],
-    summary: "A fast-paced abstract shooter set after biological history, where bots became tools for other tools. Built by a team of four on Blue Pulsar's own engine.",
+    summary: "A fast-paced abstract shooter set after biological history, where bots became tools for other tools. Built by a team of three on Blue Pulsar's own engine.",
     text: [
       "``0X0010 AFTER BIOLOGICAL HISTORY\n0X0020 WHEN BOTS BECAME\n0X0030 TOOLS FOR OTHER TOOLS\n0X0040 WITH NO WORK\n0X0050 BUT UNCOMFORTABLE.\n0X0060 THE SYSTEM STARTED TO FAINT",
       "11th Dream is a fast-paced third-person abstract shooter for hard-core difficulty enthusiasts and speedrunners. Visit a place after biological history, where bots became tools for other tools: a world of automation without work, where the system has started to faint.",
-      "Built by a team of four on Blue Pulsar's own in-house engine. Filip designed the game mechanics and narrative and made all 2D and 3D visuals."
+      "Built by a team of three on Blue Pulsar's own in-house engine. Filip designed the game mechanics and narrative and made all 2D and 3D visuals."
     ],
     gallery: 4,
     videos: [{ label: "Trailer", embed: "https://www.youtube-nocookie.com/embed/HgfAPOjKP9A" }],
@@ -632,7 +632,7 @@ Site.projects = [
     category: "Writing", org: "DiGRA 2023", type: "Conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
   { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", year: "2022", level: "grid", practice: "writing",
     category: "Writing", org: "A2", type: "Essay", tags: ["writing"], external: "https://www.advojka.cz/archiv/2022/5/vecny-navrat-do-tamrielu" },
-  { id: "automatizace", title: "AutOmatizace", year: "2022", level: "grid", practice: "writing",
+  { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
     category: "Writing", org: "Utopia Libri", type: "Essay", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
 
   {
