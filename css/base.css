@@ -95,6 +95,7 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .statement p:first-child::before { content: "\201C"; }   /* “ */
 .statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
+@media (max-width: 760px) { .intro-image { display: none; } }   /* phones: no big image */
 
 /* ---------------------------------------------------------- sections */
 .section { padding: 64px 0; border-top: 1px solid var(--line); }
@@ -125,7 +126,9 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .full-text blockquote { margin-top: 14px; border-left: 2px solid var(--green); padding-left: 14px; color: var(--heading); }
 .full-text pre { margin-top: 10px; font: 400 12px/1.6 var(--mono); color: var(--green); white-space: pre-wrap; }
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 18px; }
-.gallery img, .gallery .img-missing { width: 100%; aspect-ratio: var(--cover-ratio); object-fit: cover; }
+/* Gallery images are 16:9. Any size works: a larger file (e.g. 3840 × 2160) is shown
+   scaled down here and at full sharpness in the full-screen viewer. */
+.gallery img, .gallery .img-missing { width: 100%; aspect-ratio: var(--gallery-ratio); object-fit: cover; }
 .empty { color: var(--text-dim); padding: 24px 0; }
 
 /* Videos: a play button until clicked, then the player */

@@ -31,4 +31,5 @@
   /* Image shapes — must match the image sizes in the README */
   --cover-ratio:   4 / 3;   /* _cover_   1600 × 1200 */
   --hero-ratio:    16 / 9;  /* _hero_    1920 × 1080 */
+  --gallery-ratio: 16 / 9;  /* _gallery_ 1920 × 1080 or larger, e.g. 2560 × 1440, 3840 × 2160 */
 }

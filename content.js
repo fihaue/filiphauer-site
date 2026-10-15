@@ -67,6 +67,7 @@ Site.texts = {
   ],
 
   // Description of the big image under the statement (for screen readers).
+  // (The image is shown on computers and tablets, hidden on phones.)
   heroImageAlt: "Dreaming About Work, installation at Galerie mladých, TIC Brno",
 
   // Left sidebar. Some links only show in certain layouts.
@@ -387,20 +388,24 @@ Site.projects = [
     year: "2026", level: "featured", practice: "games", isNew: true,
     category: "Game", org: "FaVU VUT Brno",
     type: "Educational & research game",
-    meta: "Lead game designer & researcher · SEGROMA, Faculty of Fine Arts, Brno University of Technology · iOS, Android, Windows, macOS",
+    meta: "Lead game designer & researcher · Faculty of Fine Arts, Brno University of Technology, with Masaryk University · iOS, Android, Windows, macOS · Czech & English",
     tags: ["games", "research", "collaborations"],
-    summary: "An educational and research game on the position of Roma in the Czech Republic, built on ethnographic and participatory research with the Roma community.",
-    // TODO: add one sentence on what the player does at the start of the summary.
+    summary: "Players enter the perspective of the Roma community chapter by chapter, in an educational game about experiences of everyday racism in the Czech Republic.",
     text: [
-      "Andre Miri Cipa is an educational and research game on the position of Roma in the Czech Republic, referencing the global position of Roma culture and its lack of representation in contemporary game culture. The game builds on ethnographic and participatory research from the project's sociological and design branches, and serves as a platform for participatory inputs conveying experiences of racism from the perspective of the Roma community.",
-      "In the design branch, Filip brought in his research on critical and speculative games working with utopia and María Lugones's concepts of “world-travelling” and “loving perception”.",
-      "Public release on 22 October 2026 at the gala evening of the Museum of Romani Culture in Brno, concluding the project together with the community it represents."
+      "Andre Miri Cipa is an educational game about experiences of everyday racism in the Czech Republic, made by a team of designers and Roma artists at the Faculty of Fine Arts, Brno University of Technology (FaVU VUT). It is based on participatory research with the Roma community conducted by researchers from the Faculty of Social Studies, Masaryk University (FSS MUNI), while experts from the Faculty of Education, Masaryk University (PED MUNI) contributed to its teaching structure and usability in schools. Together, the outcomes of this research became the framework for the game's design and art. Through narrative and interaction, the game tries to convey this experience critically.",
+      "It was my first serious game project after my PhD, and a chance to put the design principles from my dissertation into practice. As lead game designer, I worked with critical utopia and María Lugones's concept of “loving perception”: entering another's perspective with openness, rather than as an outside observer and evaluator, is a powerful tool for de-stereotyping experiences of discrimination in digital games.",
+      "Combining a critical game studies perspective on what games are and can be with the participation of the Roma community made it possible to build a realistic message. It also shaped how we approached representation, and how players are introduced to the community's perspective through the game's chapters.",
+      "The game will be used as a teaching tool in Czech schools. It is released for free to the public in Czech and English on 22 October 2026, at the gala evening of the Museum of Romani Culture in Brno. The research report and the teaching guide (“metodika”) are available in Czech on the [project website](https://andremiricipa.ffa.vutbr.cz/)."
     ],
     gallery: 4,
-    videos: [],
+    videos: [
+      { label: "Cinematic trailer (CZ)", embed: "https://www.youtube-nocookie.com/embed/sZ58f7H1mKQ" }
+    ],
     links: [
-      ["View on Steam", "https://store.steampowered.com/app/4972430/Andre_Miri_Cipa/"]
-    ] // TODO: App Store, Google Play, event page
+      ["Steam", "https://store.steampowered.com/app/4972430/Andre_Miri_Cipa/"],
+      ["Research report & teaching guide (CZ)", "https://andremiricipa.ffa.vutbr.cz/"],
+      ["Trailer on YouTube", "https://www.youtube.com/watch?v=sZ58f7H1mKQ"]
+    ] // TODO: App Store and Google Play links after release
   },
 
   {
@@ -485,11 +490,11 @@ Site.projects = [
     type: "Studio work",
     meta: "UI/UX designer · Bohemia Interactive",
     tags: ["studio"],
-    summary: "UI/UX designer on Arma Reforger, where Filip built the game's UI/UX design system and design manual.",
+    summary: "As UI/UX designer on Arma Reforger, I built the game's UI/UX design system and design manual.",
     text: [
-      "From 2021 to 2025 Filip worked as UI/UX designer on Arma Reforger, where he built the UI/UX design system and the manual the team used to design interfaces across the game.",
+      "From 2021 to 2025 I worked as a UI/UX designer on Arma Reforger, where I built the UI/UX design system and the manual the team used to design interfaces across the game.",
       // TODO: two concrete systems you designed + one problem you solved.
-      "Before that, he worked at Bohemia Interactive as junior graphic designer and artist (from 2018)."
+      "Before that, I worked at Bohemia Interactive as a junior graphic designer and artist (from 2018)."
     ],
     gallery: 4,
     videos: [],
@@ -575,7 +580,7 @@ Site.projects = [
     text: [
       "``0X0010 AFTER BIOLOGICAL HISTORY\n0X0020 WHEN BOTS BECAME\n0X0030 TOOLS FOR OTHER TOOLS\n0X0040 WITH NO WORK\n0X0050 BUT UNCOMFORTABLE.\n0X0060 THE SYSTEM STARTED TO FAINT",
       "11th Dream is a fast-paced third-person abstract shooter for hard-core difficulty enthusiasts and speedrunners. Visit a place after biological history, where bots became tools for other tools: a world of automation without work, where the system has started to faint.",
-      "Built by a team of three on Blue Pulsar's own in-house engine. Filip designed the game mechanics and narrative and made all 2D and 3D visuals."
+      "Built by a team of three on Blue Pulsar's own in-house engine. I designed the game mechanics and narrative and made all 2D and 3D visuals."
     ],
     gallery: 4,
     videos: [{ label: "Trailer", embed: "https://www.youtube-nocookie.com/embed/HgfAPOjKP9A" }],

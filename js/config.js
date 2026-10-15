@@ -37,7 +37,7 @@ Site.config = {
   imageSizes: {
     cover:    "1600 × 1200 (4:3) — thumbnail in every layout",
     hero:     "1920 × 1080 (16:9) — top of the project popup",
-    gallery:  "1600 × 1200 (4:3) — gallery inside the popup",
+    gallery:  "1920 × 1080 (16:9) or larger 16:9 — gallery inside the popup",
     siteHero: "1920 × 1080 (16:9) — big image under the statement",
     portrait: "1200 × 900 (4:3) — About section",
     ogImage:  "1200 × 630 — preview when the link is shared"

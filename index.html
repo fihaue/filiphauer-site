@@ -71,7 +71,9 @@
     <!-- Layout G: three entry links (from Site.pathways in content.js) -->
     <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
 
-    <img class="intro-image" id="intro-image" src="images/site_hero_1.png" alt="">
+    <!-- Big image under the statement. Hidden on phones (css/base.css);
+         loading="lazy" means phones don't download it either. -->
+    <img class="intro-image" id="intro-image" src="images/site_hero_1.png" alt="" loading="lazy">
   </header>
 
   <!-- ===================== WORK (drawn by js/layouts.js) ===================== -->

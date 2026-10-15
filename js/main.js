@@ -48,7 +48,8 @@ window.Site = window.Site || {};
     // Statement and bio paragraphs (may contain **bold** and [links](…))
     h.$("#statement").innerHTML = (T.statement || []).map(p => `<p>${h.rich(p)}</p>`).join("");
     h.$("#bio").insertAdjacentHTML("beforeend", (T.bio || []).map(p => `<p>${h.rich(p)}</p>`).join(""));
-    h.$("#intro-image").alt = T.heroImageAlt || "";
+    const heroImage = h.$("#intro-image");   // the big image under the statement (may be removed)
+    if (heroImage) heroImage.alt = T.heroImageAlt || "";
     h.$("#portrait").alt = T.portraitAlt || "";
 
     // CV: one folding block per entry in Site.texts.cv.
