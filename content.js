@@ -122,7 +122,7 @@ Site.texts = {
   // Bio next to the CV. One text = one paragraph.
   bio: [
     "Filip Hauer is an intermedia artist, game designer and researcher working in game studies and on the critical possibilities of play in art and mainstream culture.",
-    "In his dissertation, defended at the Academy of Fine Arts in Prague, Filip explored the links between game worlds, the future of work and player agency. From 2018 to 2025 he worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger, and co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv he made Lithium, released on Steam in 2025. Following his PhD, in 2025–26 he was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology."
+    "In his dissertation, defended at the Academy of Fine Arts in Prague, Filip explored the links between game worlds, the future of work and player agency. From 2018 to 2025 he worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger. In 2018 Filip co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv he made Lithium, released on Steam in 2025. Following his PhD, in 2025–26 he was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology."
   ],
 
   // CV blocks, in display order. Each block folds open/closed on the page.
