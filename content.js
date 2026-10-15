@@ -211,7 +211,7 @@ Site.texts = {
       title: "Curating",
       entries: [
         ["2022",    "[Earthly Survival: Monstrous Games](https://etcgalerie.cz/en/earthly-survival-monstrous-games/), with John Hill, etc. galerie, Prague"],
-        ["2017–19", "IDEAL Prostor, artist-run space, Prague"]
+        ["2017–19", "[IDEAL Prostor](https://www.facebook.com/iideal.space/), artist-run space, Prague"]
       ]
     }
   ],
