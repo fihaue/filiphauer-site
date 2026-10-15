@@ -13,7 +13,7 @@
   <!-- Preview when the link is shared (social media, messages) -->
   <meta property="og:title" content="Filip Hauer">
   <meta property="og:description" content="Critical and speculative games about work, game exchange and collective futures.">
-  <meta property="og:image" content="https://new.filiphauer.com/images/site-og-image.jpg">
+  <meta property="og:image" content="https://new.filiphauer.com/images/site_og-image_1.png">
 
   <!-- Font: Lexend from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
     <!-- Layout G: three entry links (from Site.pathways in content.js) -->
     <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
 
-    <img class="intro-image" id="intro-image" src="images/site-hero.jpg" alt="">
+    <img class="intro-image" id="intro-image" src="images/site_hero_1.png" alt="">
   </header>
 
   <!-- ===================== WORK (drawn by js/layouts.js) ===================== -->
@@ -98,7 +98,7 @@
     <h2 class="section-title" id="about-title" data-text="sections.about"></h2>
     <div class="about">
       <div class="bio" id="bio">
-        <img class="portrait" id="portrait" src="images/site-portrait.jpg" alt="" loading="lazy">
+        <img class="portrait" id="portrait" src="images/site_portrait_1.png" alt="" loading="lazy">
       </div>
       <div class="cv" id="cv"></div>
     </div>
@@ -131,6 +131,15 @@
   </div>
 </dialog>
 
+<!-- ===================== FULL-SCREEN IMAGE VIEWER (js/lightbox.js) ===================== -->
+<dialog id="lightbox" class="lightbox" data-label="ui.imageViewer">
+  <img id="lightbox-img" alt="">
+  <p class="lightbox-count" id="lightbox-count"></p>
+  <button type="button" class="lightbox-close" id="lightbox-close" data-label="ui.close">✕</button>
+  <button type="button" class="lightbox-prev" id="lightbox-prev" data-label="ui.previous">←</button>
+  <button type="button" class="lightbox-next" id="lightbox-next" data-label="ui.next">→</button>
+</dialog>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- If content.js has a typing mistake, show where instead of a blank page. -->
@@ -150,6 +159,7 @@
 <script src="js/helpers.js"></script>
 <script src="js/layouts.js"></script>
 <script src="js/popup.js"></script>
+<script src="js/lightbox.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

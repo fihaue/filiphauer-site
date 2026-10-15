@@ -72,18 +72,29 @@ Site.helpers = {
   },
 
   /* ---------- image paths: every layout uses these same files ----------
-     All images live in ONE folder, named after the project id:
-       images/lithium-cover.jpg, images/lithium-hero.jpg, images/lithium-gallery-1.jpg … */
+     All images live in ONE folder, named  category_project_type_number.png:
+       images/games_lithium_cover_1.png, images/games_lithium_hero_1.png,
+       images/games_lithium_gallery_1.png …
+     category = the project's `practice` (games, writing, installations,
+     curation, studio), or "archive" for projects without one.
+     So if you move a project to another practice, rename its images too. */
 
-  coverImage(p)      { return `images/${p.id}-cover.jpg`; },
-  heroImage(p)       { return `images/${p.id}-hero.jpg`; },
-  galleryImage(p, n) { return `images/${p.id}-gallery-${n}.jpg`; },
+  imageName(p, type, n) { return `images/${p.practice || "archive"}_${p.id}_${type}_${n}.png`; },
+  coverImage(p)         { return Site.helpers.imageName(p, "cover", 1); },
+  heroImage(p)          { return Site.helpers.imageName(p, "hero", 1); },
+  galleryImage(p, n)    { return Site.helpers.imageName(p, "gallery", n); },
 
   /* <img> tag with lazy loading. If the file is missing, a striped box shows instead. */
   img(src, alt, className = "") {
     const e = Site.helpers.escape;
     return `<img class="${className}" src="${src}" alt="${e(alt)}" loading="lazy" decoding="async"
                  onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-missing ${className}'}))">`;
+  },
+
+  /* Same image, wrapped in a button: clicking it opens it full screen (js/lightbox.js). */
+  zoomImg(src, alt, className = "") {
+    const e = Site.helpers.escape;
+    return `<button type="button" class="zoom" aria-label="${e(Site.helpers.t("ui.showFullScreen"))}: ${e(alt)}">${Site.helpers.img(src, alt, className)}</button>`;
   },
 
   /* ---------- small pieces of HTML shared by several layouts ---------- */

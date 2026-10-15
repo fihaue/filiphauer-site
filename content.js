@@ -67,7 +67,7 @@ Site.texts = {
   ],
 
   // Description of the big image under the statement (for screen readers).
-  heroImageAlt: "Workers Out of Office, city overview",
+  heroImageAlt: "Dreaming About Work, installation at Galerie mladých, TIC Brno",
 
   // Left sidebar. Some links only show in certain layouts.
   sidebar: {
@@ -109,7 +109,9 @@ Site.texts = {
     next: "Next",
     newBadge: "new",
     with: "with",
-    cvForStudios: "CV for studios (PDF)"
+    cvForStudios: "CV for studios (PDF)",
+    showFullScreen: "Show image full screen",
+    imageViewer: "Image viewer"
   },
 
 
@@ -228,7 +230,6 @@ Site.texts = {
     links: [
       ["itch.io",   "https://filip-hauer.itch.io"],
       ["Instagram", "https://www.instagram.com/fihauer/"],
-      ["Blog",      "http://filiphauer.blogspot.com"],
       ["ORCID",     "https://orcid.org/0009-0004-3111-6345"]
     ]
   },
@@ -346,7 +347,7 @@ Site.studio = {
 
      id        unique, lowercase, dashes. Used in the web address
                (new.filiphauer.com/#lithium) AND as the start of its
-               image file names (images/lithium-cover.jpg …).
+               image file names (images/games_lithium_cover_1.png …).
      title     full title.
      short     optional shorter title for tight spaces (prev/next).
      year      shown as text, so "2023–24" or "2022/25" is fine.
@@ -367,7 +368,7 @@ Site.studio = {
      text      full text for the popup. One text = one paragraph.
                Special starts:  "## " sub-heading,  "> " quote,
                                 "``" monospaced block (keeps line breaks)
-     gallery   how many gallery images exist: images/<id>-gallery-1.jpg …
+     gallery   how many gallery images exist: images/<practice>_<id>_gallery_1.png …
      videos    list of { label, embed }: embed plays in the popup.
      links     list of [ "Label", "https://…" ].
      external  optional URL: the card links straight to it (↗) instead
@@ -638,6 +639,8 @@ Site.projects = [
     category: "Writing", org: "A2", type: "Essay", tags: ["writing"], external: "https://www.advojka.cz/archiv/2022/5/vecny-navrat-do-tamrielu" },
   { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
     category: "Writing", org: "Utopia Libri", type: "Essay", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
+  { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",
+    category: "Writing", org: "etc. galerie", type: "Essay (PDF)", tags: ["writing"], external: "https://etcgalerie.cz/wp-content/uploads/2023/04/ETC_ESMG_A4_TISK.pdf" },
 
   {
     id: "workcraft", with: "Jakub Pospíšil",

@@ -29,6 +29,6 @@
   --gap:           24px;
 
   /* Image shapes — must match the image sizes in the README */
-  --cover-ratio:   4 / 3;   /* cover.jpg   1600 × 1200 */
-  --hero-ratio:    16 / 9;  /* hero.jpg    1920 × 1080 */
+  --cover-ratio:   4 / 3;   /* _cover_   1600 × 1200 */
+  --hero-ratio:    16 / 9;  /* _hero_    1920 × 1080 */
 }

@@ -29,7 +29,7 @@ window.Site = window.Site || {};
 
     h.$("#popup-address").textContent = `${Site.config.siteUrl.replace(/^https?:\/\//, "")}/#${p.id}`;
     h.$("#popup-content").innerHTML = `
-      ${h.img(h.heroImage(p), p.title, "popup-hero")}
+      ${h.zoomImg(h.heroImage(p), p.title, "popup-hero")}
       <div class="popup-text">
         ${h.kicker(p)}
         <h2 id="popup-title">${e(p.title)}</h2>

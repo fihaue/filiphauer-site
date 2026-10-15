@@ -268,7 +268,7 @@ window.Site = window.Site || {};
   function gallery(p) {
     if (!p.gallery) return "";
     let html = "";
-    for (let n = 1; n <= p.gallery; n++) html += h.img(h.galleryImage(p, n), `${p.title}, image ${n}`, "gallery-img");
+    for (let n = 1; n <= p.gallery; n++) html += h.zoomImg(h.galleryImage(p, n), `${p.title}, image ${n}`, "gallery-img");
     return `<div class="gallery">${html}</div>`;
   }
 
@@ -283,7 +283,7 @@ window.Site = window.Site || {};
       (!wide && p.level === "grid" && p.practice !== "writing" && p.practice !== "curation"));
     items.sort(h.newestFirst);
 
-    // Every archive entry has one image: images/<id>-cover.jpg (small in the row, larger when opened).
+    // Every archive entry has one image: images/<category>_<id>_cover_1.png (small in the row, larger when opened).
     return items.map(p => `
       <details class="archive-item" id="archive-${p.id}">
         <summary>
@@ -292,7 +292,7 @@ window.Site = window.Site || {};
           <span class="type">${e(p.type)}</span>
         </summary>
         <div class="archive-body">
-          ${h.img(h.coverImage(p), p.title, "archive-img")}
+          ${h.zoomImg(h.coverImage(p), p.title, "archive-img")}
           <div class="archive-text">
             ${p.summary ? `<p>${e(p.summary)}</p>` : ""}
             ${h.hasPopup(p) ? `<p><a href="#${p.id}" data-open="${p.id}">${e(h.t("ui.openProject"))}</a></p>` : ""}
