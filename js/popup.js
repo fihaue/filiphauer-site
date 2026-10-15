@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    Uses the browser's built-in <dialog>, which already handles:
    Esc to close, keeping keyboard focus inside, and screen readers.
-   We add: filling it with project content, previous/next, copy link.
+   We add: filling it with project content and previous/next.
    ===================================================================== */
 
 window.Site = window.Site || {};
@@ -94,18 +94,6 @@ window.Site = window.Site || {};
     h.$("#popup-close").addEventListener("click", close);
     h.$("#popup-prev").addEventListener("click", ev => go(ev.currentTarget.dataset.go));
     h.$("#popup-next").addEventListener("click", ev => go(ev.currentTarget.dataset.go));
-
-    // Copy link button: copies e.g. https://new.filiphauer.com/#lithium
-    h.$("#popup-copy").addEventListener("click", async () => {
-      const id = location.hash.slice(1);
-      const url = `${Site.config.siteUrl}/${location.search}#${id}`;
-      try {
-        await navigator.clipboard.writeText(url);
-        Site.toast(h.t("ui.linkCopied"));
-      } catch {
-        Site.toast(url);
-      }
-    });
   }
 
   Site.popup = { open, close, setup, isOpen: () => dialog().open };

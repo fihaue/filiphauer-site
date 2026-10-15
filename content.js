@@ -102,8 +102,6 @@ Site.texts = {
     readMore: "Read more",
     openProject: "Open project",
     readAbstract: "Read the abstract",
-    copyLink: "Copy link",
-    linkCopied: "Link copied",
     close: "Close",
     previous: "Previous",
     next: "Next",
