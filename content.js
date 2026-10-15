@@ -47,7 +47,7 @@ Site.texts = {
   // Browser tab title and the description search engines show.
   page: {
     title: "Filip Hauer — game designer, artist and researcher",
-    description: "Filip Hauer is intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures."
+    description: "Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures."
   },
 
   // Short news line above the statement. Set text to "" to hide it.
@@ -395,7 +395,9 @@ Site.projects = [
     ],
     gallery: 4,
     videos: [],
-    links: [] // TODO: App Store, Google Play, event page
+    links: [
+      ["View on Steam", "https://store.steampowered.com/app/4972430/Andre_Miri_Cipa/"]
+    ] // TODO: App Store, Google Play, event page
   },
 
   {
