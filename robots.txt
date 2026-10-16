@@ -1,3 +1,5 @@
 # Test version: keep search engines out. Replace with "Allow: /" when the site goes live.
 User-agent: *
 Disallow: /
+
+Sitemap: https://new.filiphauer.com/sitemap.xml

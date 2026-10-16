@@ -7,13 +7,59 @@
   <!-- TEST VERSION: keeps search engines away. Delete this line when the site goes live. -->
   <meta name="robots" content="noindex, nofollow">
 
+  <!-- SEARCH & SHARING. Search engines and social networks read these lines directly
+       (they don't run content.js), so they repeat page.title / page.description from
+       content.js. The "Check content" action on GitHub warns if they get out of sync.
+       Going live: change the domain in CNAME, then replace every "new.filiphauer.com" below
+       with "filiphauer.com" (the GitHub check lists any you missed). -->
   <title>Filip Hauer — game designer, artist and researcher</title>
-  <meta name="description" content="Filip Hauer — intermedia artist, game designer and researcher based in Copenhagen. Critical and speculative games about work, game exchange and collective futures.">
+  <meta name="description" content="Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures.">
+  <link rel="canonical" href="https://new.filiphauer.com/">
 
-  <!-- Preview when the link is shared (social media, messages) -->
-  <meta property="og:title" content="Filip Hauer">
-  <meta property="og:description" content="Critical and speculative games about work, game exchange and collective futures.">
+  <!-- Preview when the link is shared (Facebook, LinkedIn, messages, X, Bluesky) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Filip Hauer">
+  <meta property="og:url" content="https://new.filiphauer.com/">
+  <meta property="og:title" content="Filip Hauer — game designer, artist and researcher">
+  <meta property="og:description" content="Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures.">
   <meta property="og:image" content="https://new.filiphauer.com/images/site_og-image_1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dreaming About Work, installation at Galerie mladých, TIC Brno">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Facts about Filip for search engines (schema.org "Person"), not shown on the page -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Filip Hauer",
+  "url": "https://new.filiphauer.com/",
+  "image": "https://new.filiphauer.com/images/site_portrait_1.jpg",
+  "jobTitle": [
+    "Intermedia artist",
+    "Game designer",
+    "Researcher"
+  ],
+  "description": "Filip Hauer is an intermedia artist, game designer and researcher currently based in Copenhagen. Critical and speculative games about work, game exchange and shared futures.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Copenhagen",
+    "addressCountry": "DK"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Academy of Fine Arts in Prague",
+    "url": "https://www.avu.cz/"
+  },
+  "email": "mailto:mail@filiphauer.com",
+  "sameAs": [
+    "https://orcid.org/0009-0004-3111-6345",
+    "https://filip-hauer.itch.io",
+    "https://www.instagram.com/fihauer/"
+  ]
+}
+  </script>
 
   <!-- Browser tab icon and home-screen icon (the same icons as the old Adobe Portfolio site) -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -72,8 +118,11 @@
     <div class="intro-text">
       <a class="news" id="news" hidden><span class="dot"></span><span id="news-text"></span></a>
       <p class="roles" id="roles"></p>
-      <h1 data-text="headline"></h1>
-      <div class="statement" id="statement"></div>
+      <!-- The headline and statement are written here too, so search engines and link
+           previews see them without running scripts. js/main.js replaces them with the
+           texts from content.js; the GitHub check warns if the two get out of sync. -->
+      <h1 data-text="headline">Filip Hauer (1990) is an intermedia artist, game designer and researcher currently based in Copenhagen. He is researching critical and speculative games, with a focus on how they can imagine and represent contemporary work, politics, game markets and shared futures.</h1>
+      <div class="statement" id="statement"><p>I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I am questioning stereotypical communication practices.</p></div>
 
       <!-- Layout G: three entry links (from Site.pathways in content.js) -->
       <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>

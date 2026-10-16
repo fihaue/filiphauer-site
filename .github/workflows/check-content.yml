@@ -43,3 +43,41 @@ jobs:
             if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
             console.log(`OK: ${Site.projects.length} projects, all texts present.`);
           '
+
+      - name: Search texts in index.html match content.js
+        run: |
+          node -e '
+            global.window = globalThis;
+            const fs = require("fs");
+            eval(fs.readFileSync("content.js", "utf8"));
+            const html = fs.readFileSync("index.html", "utf8");
+            const un = s => s.replace(/&quot;/g, "\"").replace(/&#x27;/g, "'"'"'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+            const plain = s => s.replace(/\*\*/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+            const grab = re => { const m = html.match(re); return m ? un(m[1]) : null; };
+            const T = Site.texts, problems = [];
+            const want = [
+              ["<title>",                 grab(/<title>([^<]*)<\/title>/),                              T.page.title],
+              ["meta description",        grab(/<meta name="description" content="([^"]*)"/),           T.page.description],
+              ["og:title",                grab(/<meta property="og:title" content="([^"]*)"/),          T.page.title],
+              ["og:description",          grab(/<meta property="og:description" content="([^"]*)"/),    T.page.description],
+              ["headline (h1)",           grab(/<h1 data-text="headline">([^<]*)<\/h1>/),               T.headline],
+              ["statement",               grab(/<div class="statement" id="statement"><p>([^<]*)<\/p>/), plain((T.statement || [])[0] || "")]
+            ];
+            for (const [name, inHtml, inContent] of want)
+              if (inHtml !== inContent) problems.push(`index.html ${name} differs from content.js.\n  index.html: ${inHtml}\n  content.js: ${inContent}`);
+            if (problems.length) { console.log(problems.join("\n\n") + "\n\nCopy the content.js text into index.html (search engines read index.html)."); process.exit(1); }
+            console.log("OK: index.html search texts match content.js.");
+          '
+
+      - name: Site address is the same everywhere (matches CNAME)
+        run: |
+          domain=$(tr -d ' \n\r' < CNAME)
+          echo "Domain in CNAME: $domain"
+          # every https://…filiphauer.com address in these files must use the CNAME domain
+          wrong=$(grep -noE 'https?://[a-z.]*filiphauer\.com' index.html sitemap.xml robots.txt js/config.js | grep -v "://$domain\$" || true)
+          if [ -n "$wrong" ]; then
+            echo "These addresses don't match CNAME ($domain). Change them to https://$domain :"
+            echo "$wrong"
+            exit 1
+          fi
+          echo "OK: index.html, sitemap.xml, robots.txt and js/config.js all use https://$domain"
