@@ -190,7 +190,8 @@ window.Site = window.Site || {};
       frame.allowFullscreen = true;
       frame.title = btn.getAttribute("aria-label");
       const wrap = document.createElement("div");
-      wrap.className = "video playing";
+      wrap.className = btn.className + " playing";
+      wrap.style.cssText = btn.style.cssText;   // keeps an audio player's own height
       wrap.appendChild(frame);
       btn.replaceWith(wrap);
     });

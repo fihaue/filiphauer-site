@@ -185,14 +185,26 @@ Site.helpers = {
   /* Videos, two kinds:
        { label, embed: "https://…" }       YouTube / Vimeo: a play button until clicked,
                                            then the outside player loads (faster page).
+                                           The button shows a still from this site:
+                                           images/<category>_<id>_poster_<n>.jpg (n = the
+                                           video's place in the list), or poster: "images/….jpg".
+                                           No poster file → plain dark box.
+       { label, embed: "https://w.soundcloud.com/player/?url=…", audio: true, height: 166 }
+                                           same, but a short bar for a sound player;
+                                           height = the player's own height in px
+                                           (SoundCloud 166, Bandcamp 120). Can have a
+                                           poster too (e.g. the album cover), same naming.
        { label, file: "videos/….mp4",      a video file stored on this site, played by the
          poster: "images/….jpg" }          browser's own player. poster = optional still image.
                                            preload="none": nothing downloads until play. */
   videos(p) {
     const e = Site.helpers.escape;
-    return (p.videos || []).map(v => v.file
-      ? `<video class="video-file" controls playsinline preload="none" src="${e(v.file)}"${v.poster ? ` poster="${e(v.poster)}"` : ""} aria-label="${e(v.label)}"></video>`
-      : `<button class="video" type="button" data-embed="${e(v.embed)}" aria-label="Play video: ${e(v.label)}">
-         <span>${e(v.label)}</span></button>`).join("");
+    return (p.videos || []).map((v, i) => {
+      if (v.file) return `<video class="video-file" controls playsinline preload="none" src="${e(v.file)}"${v.poster ? ` poster="${e(v.poster)}"` : ""} aria-label="${e(v.label)}"></video>`;
+      const poster = v.poster || Site.helpers.imageName(p, "poster", i + 1);
+      return `<button class="video${v.audio ? " audio" : ""}" type="button" data-embed="${e(v.embed)}"${v.height ? ` style="height: ${Number(v.height)}px"` : ""} aria-label="Play ${v.audio ? "sound" : "video"}: ${e(v.label)}">
+         ${poster ? `<img class="video-poster" src="${e(poster)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
+         <span>${e(v.label)}</span></button>`;
+    }).join("");
   }
 };

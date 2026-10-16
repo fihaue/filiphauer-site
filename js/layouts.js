@@ -270,7 +270,7 @@ window.Site = window.Site || {};
     if (!p.gallery) return "";
     let html = "";
     for (let n = 1; n <= p.gallery; n++) html += h.zoomImg(h.galleryImage(p, n), h.altText(p, "gallery", n), "gallery-img");
-    return `<div class="gallery">${html}</div>`;
+    return `<div class="gallery${p.galleryUncropped ? " uncropped" : ""}">${html}</div>`;
   }
 
   /* -------------------------------------------------------------------

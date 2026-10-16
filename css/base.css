@@ -131,6 +131,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 /* Gallery images are 16:9. Any size works: a larger file (e.g. 3840 × 2160) is shown
    scaled down here and at full sharpness in the full-screen viewer. */
 .gallery img, .gallery .img-missing { width: 100%; aspect-ratio: var(--gallery-ratio); object-fit: cover; }
+.gallery > :only-child { grid-column: 1 / -1; }   /* a single gallery image: full width */
+.gallery.uncropped img { aspect-ratio: auto; height: auto; }   /* galleryUncropped: true in content.js */
 .empty { color: var(--text-dim); padding: 24px 0; }
 
 /* Videos: a play button until clicked, then the player */
@@ -140,9 +142,14 @@ body:not([data-layout="g"]) .only-g { display: none; }
   background: #1b1b1b; border: 0; color: var(--heading); font: inherit; font-size: 14px; cursor: pointer;
 }
 .video::before { content: "▶"; color: var(--green); font-size: 22px; }
+/* Still image under the play button (images/…_poster_n.jpg), darkened so the label stays readable */
+.video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.55); transition: filter .2s; }
+.video:hover .video-poster { filter: brightness(.7); }
+.video::before, .video > span { position: relative; z-index: 1; text-shadow: 0 1px 6px rgba(0, 0, 0, .6); }
 .video:hover::before { transform: scale(1.1); }
 .video.playing::before { content: none; }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video.audio { aspect-ratio: auto; height: 166px; }   /* sound player; content.js can set its own height */
 /* Video files stored on the site (videos/…), played by the browser's own player */
 .video-file { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 16px; background: #1b1b1b; }
 

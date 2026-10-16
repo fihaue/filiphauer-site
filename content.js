@@ -426,9 +426,15 @@ Site.studio = {
                Special starts:  "## " sub-heading,  "> " quote,
                                 "``" monospaced block (keeps line breaks)
      gallery   how many gallery images exist: images/<practice>_<id>_gallery_1.jpg …
+     credits   optional photo credit shown small under the popup's top image:
+                 credits: { hero: "Photo: Name Surname" }
+     galleryUncropped  optional true → gallery images keep their own shape
+               instead of being cropped to 16:9.
      videos    list of videos shown in the popup, either
                  { label: "Trailer", embed: "https://www.youtube-nocookie.com/embed/…" }
-                 (YouTube / Vimeo), or a file stored on this site:
+                 (YouTube / Vimeo; the play button shows the still
+                 images/<practice>_<id>_poster_<n>.jpg, n = the video's place
+                 in the list), or a file stored on this site:
                  { label: "Trailer", file: "videos/lithium-trailer.mp4",
                    poster: "images/games_lithium_hero_1.jpg" }   (poster optional)
                Files go in the videos/ folder: MP4 (H.264), ideally under 50 MB,
@@ -493,19 +499,19 @@ Site.projects = [
     tags: ["games", "collaborations", "installations"],
     summary: "Players take one of three asymmetric roles, Activists, Locals or the City, and negotiate over a shared map toward a democratic resistance to lithium mining.",
     text: [
-      "Lithium investigates lithium mining in Cínovec, Czech Republic, within the global context of energy transformation, and focuses on how local communities can mobilise to defend their landscapes. Its original game mechanic decentralises the player's agency: instead of acting as a hegemonic hero, the player builds a coalition with the local population to innovate democratic decision-making from below.",
-      "The game includes interviews with local actors and experts on the environmental impacts of lithium mining, and asks whether lithium mining is a solution to the climate crisis at all.",
+      "Investigating lithium mining in Czech Cínovec within the global context of energy transformation is the central theme of the ecogame Lithium, developed by the interdisciplinary Blue Pulsar kolektiv for the exhibition Symptoms of the Future at the Hraničář Gallery (14th September 2024 - 16th February 2025). The game was released for the first time on Friday, 28 March 2025, via Steam in Czech and English.",
+      "Lithium focuses on the possibilities of mobilizing local communities to defend their landscapes from lithium mining. It builds on an original game mechanic that works by decentralizing the player's agency in the game world. The game mechanics motivate players to build a coalition with the local population to innovate democratic decision-making from below. Lithium includes interviews with local actors and experts on the environmental impacts of lithium mining. As part of the Symptoms of the Future exhibition, the game asks whether lithium mining is a solution to the climate crisis.",
+      "Authors: Blue Pulsar kolektiv (Filip Hauer, Gabriela Štvrtňová, Veronika Petrova, Michal Žák, Vojtěch Košař)",
+      "[Available on Steam for Windows and macOS.](https://store.steampowered.com/app/3439740/Lithium/)",
+      "Release date: 28/03/2025 16:00",
       "Players take one of three asymmetric roles: Activists, Locals or the City, each with different resources, goals and leverage, negotiating over a shared hex map. The design problem was making three unequal positions all feel playable and true to the local situation. The answer came down to building the card decks from research and interviews with local actors, and tuning what each group can spend and what its particular strengths are in political negotiation.",
-      "My contribution: game design and concept, systems and economy design, card and faction balancing, visual direction, UI design and implementation, C# scripting and production.",
-      "Commissioned by Hraničář and developed by Blue Pulsar kolektiv for the exhibition Symptoms of the Future, Hraničář Gallery, Ústí nad Labem (14 September 2024 – 16 February 2025). Released on Steam on 28 March 2025.",
-      "Blue Pulsar kolektiv: Filip Hauer, Gabriela Štvrtňová, Veronika Petrova, Michal Žák, Vojtěch Košař."
+      "My contribution: game design and concept, systems and economy design, card and faction balancing, visual direction, UI design and implementation, C# scripting and production."
     ],
     gallery: 4,
     videos: [
       { label: "Trailer", file: "videos/lithium-trailer.mp4", poster: "images/games_lithium_hero_1.jpg" }
     ],
     links: [
-      ["Play on Steam", "https://store.steampowered.com/app/3439740/Lithium/"],
       ["Symptoms of the Future", "https://hranicar-usti.cz/program/symptomy-budoucnosti-zahajeni/"]
     ]
   },
@@ -547,15 +553,13 @@ Site.projects = [
     text: [
       "You are saving money for a trip abroad, texting Zuzana, who has just returned to London to look for a new job. London DLC takes place in 2040, ten years before Workers Out of Office: Central Europe suffers from drought, the conservative right is gaining power, a desert is expanding on the border of Bohemia and Austria, and the job market is slowly collapsing. Zuzana wants to make it in the arts, but both of you spend most of your time fighting for economic survival.",
       "Through your conversations with Zuzana, the game opens questions about survival, the search for one's ability to act meaningfully, and the emerging technocracy and capitalist feudalism in a world of crisis. The crisis also opens a new way of finding one's ability to take meaningful agency, and the question of how to organise ourselves in new ways.",
-      "Made for Roman Road & London DLC, a joint exhibition with Zuzana Jírová at POP-UP Galerie AVU, Prague. The fictional conversations in the game come from discussions in which Zuzana and I imagined living in the London DLC future. Accompanying text by Ondřej Trhoň."
+      "Made for Roman Road & London DLC, a joint exhibition with [Zuzana Jírová](https://www.zuzanajirova.com/works/) at POP-UP Galerie AVU, Prague. The fictional conversations in the game come from discussions in which Zuzana and I imagined living in the London DLC future. Accompanying [text by Ondřej Trhoň](https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na)."
     ],
     gallery: 4,
     videos: [
       { label: "Video", file: "videos/workers-out-of-office-london-dlc.mp4", poster: "images/games_workers-out-of-office-london-dlc_hero_1.jpg" }
     ],
-    links: [
-      ["Text by Ondřej Trhoň", "https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na"]
-    ]
+    links: []
   },
 
   {
@@ -572,9 +576,9 @@ Site.projects = [
     text: [
       "From 2021 to 2025 I worked as a UI/UX designer on [Arma Reforger](https://store.steampowered.com/app/1874880/Arma_Reforger/) and the upcoming Arma 4: interface and interaction design for a large multiplayer military simulation in continuous live development. I built the UI/UX design system and widget library used across the project, along with the design manual that set standards for the team, and worked on menus, HUD interaction, wireframes and usability throughout.",
       // TODO: two concrete systems you designed + one problem you solved.
-      "Before that, I worked at Bohemia Interactive as a junior graphic designer (from 2018) and artist (from 2019), supporting brand promotion with graphic and motion design across the studio's projects."
+      "My work on Arma Reforger is shown in detail in my design portfolio (PDF), available on request: [mail@filiphauer.com](mailto:mail@filiphauer.com)."
     ],
-    gallery: 4,
+    gallery: 0,
     videos: [],
     links: [["Arma Reforger on Steam", "https://store.steampowered.com/app/1874880/Arma_Reforger/"]]
   },
@@ -614,7 +618,7 @@ Site.projects = [
       "> “We work in a culture where the workplace is a battlefield.” — GPT-2",
       "Solo project by Filip Hauer. Installation at Galerie mladých, TIC Brno.",
       "## Thanks",
-      "Václav Janoščík (soundtrack), Michal Žák (programming of several parts of the game)."
+      "Michal Žák (programming of several parts of the game), Václav Janoščík (soundtrack, curation of the exhibition), Galerie mladých, TIC Brno."
     ],
     gallery: 4,
     videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/RR33j3hAPXE" }],
@@ -640,7 +644,7 @@ Site.projects = [
     gallery: 4,
     videos: [],
     links: [
-      ["Download PDF", "https://drive.google.com/file/d/1Qs66h5hBtht6Ngj3zdueSChmLeAdfF6h/view?usp=sharing"],
+      ["Download the game (PDF, 25 MB)", "files/dreaming-about-work-board-game.pdf"],
       ["Website", "https://futurework.cofutures.org"],
       ["CoFUTURES", "https://cofutures.org/"]
     ]
@@ -657,7 +661,7 @@ Site.projects = [
     summary: "A fast-paced abstract shooter set after biological history, where bots became tools for other tools. Built by a team of three at Blue Pulsar Games on the studio's own engine.",
     text: [
       "``0X0010 AFTER BIOLOGICAL HISTORY\n0X0020 WHEN BOTS BECAME\n0X0030 TOOLS FOR OTHER TOOLS\n0X0040 WITH NO WORK\n0X0050 BUT UNCOMFORTABLE.\n0X0060 THE SYSTEM STARTED TO FAINT",
-      "11th Dream is a fast-paced third-person abstract shooter for hard-core difficulty enthusiasts and speedrunners. Visit a place after biological history, where bots became tools for other tools: a world of automation without work, where the system has started to faint.",
+      "11th Dream is a fast-paced third-person abstract shooter. Visit a place after biological history, where bots became tools for other tools: a world of automation without work, where the system has started to faint.",
       "Built by a team of three at Blue Pulsar Games on our own engine, developed alongside the game. I designed the mechanics and the narrative and produced all the visuals, 2D and 3D: environments, characters, interface and the overall look. Building on an engine that was being written as we went meant design and technical constraints arrived together: the fiction, the systems and the visuals all had to be shaped by what the tools could actually do.",
       "Released in Steam Early Access in 2018, with the full release on 17 September 2021."
     ],
@@ -683,7 +687,7 @@ Site.projects = [
       "Do you ever imagine a world without your body? Perfect Strike is a game about work, a cognitive test of the future. Today, as in games, objects become goals in themselves, for which we create our tools and equipment. The game mechanic is a series of questions freely based on Hannah Arendt's The Human Condition.",
       "My first digital game, made as my master's thesis at the Academy of Fine Arts in Prague (supervisor Tomáš Vaněk, result: excellent). Shown in the Leinemann Kunstpreis: Negative Realism exhibition, Czech Centre Berlin, 2019."
     ],
-    gallery: 2,
+    gallery: 3,
     videos: [
       { label: "Video 1", embed: "https://www.youtube-nocookie.com/embed/dDO0Ct3ELNo" },
       { label: "Video 2", embed: "https://www.youtube-nocookie.com/embed/rGHIQhImUFE" }
@@ -719,7 +723,8 @@ Site.projects = [
     textAfter: [
       "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
     ],
-    gallery: 0, videos: [],
+    gallery: 1, galleryUncropped: true, videos: [],
+    alts: { gallery: ["Screenshots from three games made alongside the dissertation"] },
     links: [["Thesis at AVU", "https://theses.avu.cz/en/prace/2025/17177-phd-filip-hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
   },
 
@@ -743,6 +748,7 @@ Site.projects = [
     meta: "Gallery game with a paid performer, open-source software · with Jakub Pospíšil · Studio Prám, Prague", tags: ["installations", "collaborations", "games"],
     summary: "You score points for the physical labour of a paid performer.",
     text: ["A game in the gallery where you control a generic activity carried out for you by a paid worker, for whom the game creates work. You score points for his physical labour. Open source, playable at home."],
+    credits: { hero: "Photo: Studio Prám" },
     gallery: 2, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/qGfdxLXwqlI" }], links: []
   },
   {
@@ -774,8 +780,16 @@ Site.projects = [
     meta: "Installation: iron construction 400 × 220 × 220 cm, video projected on two canvases, three-channel audio", tags: ["installations"],
     summary: "An archetypal room drawn in iron, with sound and video from six friends' rooms.",
     text: ["A spatial drawing of an archetypal room (iron, 400 × 220 × 220 cm), video on two canvases and three-channel audio from the rooms of six friends, with interviews about where they spend most of their time. Asynchronous sound and image force viewers to thread their own story of the house."],
-    gallery: 2, videos: [{ label: "Video", embed: "https://player.vimeo.com/video/134356504" }],
-    links: [["Blog", "http://filiphauer.blogspot.com/2015/08/rooms-pokoje.html"]]
+    gallery: 2, videos: [
+      { label: "Video", embed: "https://player.vimeo.com/video/134356504" },
+      { label: "Outside / Venku", audio: true, height: 166, embed: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/fihauer/rooms-pokoje-outside-venku&color=%236be67b&auto_play=true&visual=false" },
+      { label: "Interviews / Rozhovory", audio: true, height: 166, embed: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/fihauer/rooms-pokoje-interviews-rozhovory&color=%236be67b&auto_play=true&visual=false" }
+    ],
+    links: [
+      ["Blog", "http://filiphauer.blogspot.com/2015/08/rooms-pokoje.html"],
+      ["Outside / Venku on SoundCloud", "https://soundcloud.com/fihauer/rooms-pokoje-outside-venku"],
+      ["Interviews / Rozhovory on SoundCloud", "https://soundcloud.com/fihauer/rooms-pokoje-interviews-rozhovory"]
+    ]
   },
   {
     id: "dreaming-about-work-01",
@@ -784,16 +798,7 @@ Site.projects = [
     meta: "4K video 07:54, computer simulation", tags: ["video", "games"],
     summary: "Machine-learning text introduces a Job Quitting Simulator spread across an eight-hour working day.",
     text: ["A video of text generated by a machine learning algorithm from the question “What if algorithms take our jobs?” introduces Job Quitting Simulator: a game spread across the 8 hours of a standard working day, in which the player rewrites displayed text or agrees with entered statements. An “allegorithmic” dream of work, where algorithms appear as xeno-players with their own program and motivation."],
-    gallery: 2, videos: [{ label: "Video", embed: "https://player.vimeo.com/video/436219285" }], links: []
-  },
-  {
-    id: "neural-network-death-song",
-    title: "Neural Network Death Song I.", imageAlt: "Neural Network Death Song I., 4K video", year: "2019", level: "grid", practice: "installations",
-    category: "Video", org: "4K video", type: "4K video",
-    meta: "4K video: neural-network text, synthesised voice", tags: ["video"],
-    summary: "A neural network rewrites a call to bow to the impersonal market forces.",
-    text: ["A neural network rewrites Václav Klaus's 2002 call to bow to the impersonal market forces, read by a synthesised voice over a still of a tree in rain. A death song for the age of climate denial and corporate machine learning."],
-    gallery: 0, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/0sCeRYWGi2U" }], links: []
+    gallery: 4, videos: [{ label: "Video", embed: "https://player.vimeo.com/video/436219285" }], links: []
   },
   {
     id: "some-of-my-friends-are-killers",
@@ -830,6 +835,21 @@ Site.projects = [
 
   /* ------------------------------------------------------------ ARCHIVE */
 
+  {
+    id: "neural-network-death-song",
+    title: "Neural Network Death Song I.", imageAlt: "Neural Network Death Song I., 4K video", year: "2019", level: "archive",
+    category: "Video", org: "4K video", type: "4K video",
+    meta: "4K video: neural-network text, synthesised voice", tags: ["video"],
+    text: [
+      "The danger is currently spectacular threats and economic uncertainty, publicised and depersonalised by PR agencies. Danger, as a political utility, is used, among other things, by conservative forces to attack environmental activists or to reduce emissions. The publicised danger in this case is a special mix of denying the acute impact of climate change and artificially created fear of preserving obsolete means of production (fossil fuels, internal combustion engines, ..). The whole discourse ends in a dystopian fear of the future after capitalism - which itself carries out suicide by aggressive disregard for nature. The publicised danger lies mainly in the loss of social status, labour and financial execution. The physical threat is shifted to an unclear abstract level in media coverage.",
+      "Neural Network Death Song is based on the text section above.",
+      "> “Let's bow to the impersonal market forces, respect the abstract rule of respect for property rights.”",
+      "The initial quote is a total denial of the living world in favour of the ideological construct of ruthless capitalism. The songs of death appear in various folk traditions as a combat threat or as a contemplative premortal song. In 2002, Klaus legitimised the ongoing destruction of nature, which continues to this day, until 2019 when glaciers in Greenland melt and humanity is on the verge of losing its natural environment.",
+      "Another threat is the advent of artificial intelligence and neural networks, which already define our daily lives. Neural networks are becoming the main instrument of corporate power, and in the public debate about them, we are still in a phase of denial, like the climate crisis. The danger becomes real in collecting data about our behaviour on the network or when the algorithm decides to dismiss us because of reduced performance.",
+      "The video combines generated neural network text (based on V.Klaus quote) with synthesised voice and still of a tree in rain. The climate crisis, conservative texts, or neural networks are a real threat to our body."
+    ],
+    gallery: 0, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/0sCeRYWGi2U" }], links: [["Video", "https://www.youtube.com/watch?v=0sCeRYWGi2U"]]
+  },
   {
     id: "never-ending-story", with: "Tereza Brussmannová",
     title: "Never Ending Story; Life After Art", imageAlt: "Never Ending Story; Life After Art, multimedia installation at Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava", short: "Never Ending Story",
@@ -876,8 +896,13 @@ Site.projects = [
     text: [
       "Weather Tax is speculative ambience for a non-existent game. Three EPs so far: Weather Camp 2008, Weather in 2025 and Spring & Mítov 2065."
     ],
-    gallery: 0,
-    videos: [],
+    gallery: 1,
+    alts: { gallery: ["Weather Tax teaser: wind turbines in fog over a grey sea"] },
+    videos: [
+      { label: "Weather Camp 2008 EP", audio: true, height: 120, embed: "https://bandcamp.com/EmbeddedPlayer/album=92650180/size=large/bgcol=1b1b1b/linkcol=6be67b/tracklist=false/artwork=small/transparent=true/" },
+      { label: "Weather in 2025 EP", audio: true, height: 120, embed: "https://bandcamp.com/EmbeddedPlayer/album=744931082/size=large/bgcol=1b1b1b/linkcol=6be67b/tracklist=false/artwork=small/transparent=true/" },
+      { label: "Spring & Mítov 2065 EP", audio: true, height: 120, embed: "https://bandcamp.com/EmbeddedPlayer/album=2187442152/size=large/bgcol=1b1b1b/linkcol=6be67b/tracklist=false/artwork=small/transparent=true/" }
+    ],
     links: [
       ["Weather Camp 2008 EP", "https://weathertax.bandcamp.com/album/weather-camp-2008-ep"],
       ["Weather in 2025 EP", "https://weathertax.bandcamp.com/album/weather-in-2025-ep"],
