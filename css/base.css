@@ -187,11 +187,15 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .bio { display: grid; gap: 14px; }
 .portrait { width: 100%; max-width: 440px; aspect-ratio: 4 / 3; object-fit: cover; }
 .cv { border-top: 1px solid var(--line); }
-.cv details { border-bottom: 1px solid var(--line); }
-.cv summary { padding: 14px 0; color: var(--heading); display: flex; justify-content: space-between; cursor: pointer; list-style: none; }
-.cv summary::-webkit-details-marker { display: none; }
-.cv summary::after { content: "+"; color: var(--green); }
-.cv details[open] summary::after { content: "–"; }
+.cv details, .foldout { border-bottom: 1px solid var(--line); }
+.cv summary, .foldout summary { padding: 14px 0; color: var(--heading); display: flex; justify-content: space-between; cursor: pointer; list-style: none; }
+.cv summary::-webkit-details-marker, .foldout summary::-webkit-details-marker { display: none; }
+.cv summary::after, .foldout summary::after { content: "+"; color: var(--green); }
+.cv details[open] summary::after, .foldout[open] summary::after { content: "–"; }
+/* Foldable sections in project popups (foldouts in content.js) */
+.foldout { border-top: 1px solid var(--line); }
+.foldout p { margin-bottom: 12px; }
+.text-after { margin-top: 16px; }
 .cv ul { list-style: none; padding-bottom: 16px; }
 .cv li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 4px 0; font-size: 14.5px; }
 .cv li span:first-child { color: var(--green); }

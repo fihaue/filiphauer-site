@@ -146,6 +146,20 @@ Site.helpers = {
     }).join("");
   },
 
+  /* Foldable sections in the popup (like the CV blocks), from the project's
+     foldouts: [{ title: "Abstract", text: ["paragraph", …] }] in content.js.
+     Closed until clicked; add  open: true  to show one open. */
+  foldouts(p) {
+    const e = Site.helpers.escape;
+    return (p.foldouts || []).map(f => `
+      <details class="foldout" ${f.open ? "open" : ""}>
+        <summary>${e(f.title)}</summary>
+        ${(f.text || []).map(t => `<p>${Site.helpers.rich(t)}</p>`).join("")}
+      </details>`).join("")
+      // textAfter: paragraphs shown below the foldouts (e.g. "To request the PDF …")
+      + (p.textAfter || []).map(t => `<p class="text-after">${Site.helpers.rich(t)}</p>`).join("");
+  },
+
   /* Videos, two kinds:
        { label, embed: "https://…" }       YouTube / Vimeo: a play button until clicked,
                                            then the outside player loads (faster page).

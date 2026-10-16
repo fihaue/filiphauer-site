@@ -37,6 +37,7 @@ window.Site = window.Site || {};
         ${h.withLine(p)}
         ${h.tagPills(p)}
         <div class="full-text">${h.fullText(p)}</div>
+        ${h.foldouts(p)}
         ${h.videos(p)}
         ${Site.layouts.gallery(p)}
         ${h.linkRow(p)}

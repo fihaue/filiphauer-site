@@ -300,7 +300,8 @@ Site.tags = {
   collaborations: "Collaborations",
   studio:         "Studio work",
   research:       "Research games",
-  writing:        "Writing",
+  writing:        "Research",
+  essays:         "Essays",
   curation:       "Curation",
   video:          "Video",
   sound:          "Sound"
@@ -437,6 +438,10 @@ Site.studio = {
      hideIn    optional list of layouts where the project is left out,
                e.g. ["p"] = not in the presentation.
      pinned    optional true → always listed first, before newer projects.
+     foldouts  optional foldable sections in the popup, like the CV blocks:
+               [{ title: "Abstract", text: ["paragraph", …] }]
+               (add  open: true  to show a section open by default)
+     textAfter optional paragraphs shown after the foldouts, e.g. a contact line.
    ===================================================================== */
 
 Site.projects = [
@@ -556,13 +561,13 @@ Site.projects = [
     tags: ["studio"],
     summary: "Four years of interface and interaction design for a large multiplayer military simulation, including the UI/UX design system and design manual used across the team.",
     text: [
-      "From 2021 to 2025 I worked as a UI/UX designer on Arma Reforger and the upcoming Arma 4: interface and interaction design for a large multiplayer military simulation in continuous live development. I built the UI/UX design system and widget library used across the project, along with the design manual that set standards for the team, and worked on menus, HUD interaction, wireframes and usability throughout.",
+      "From 2021 to 2025 I worked as a UI/UX designer on [Arma Reforger](https://store.steampowered.com/app/1874880/Arma_Reforger/) and the upcoming Arma 4: interface and interaction design for a large multiplayer military simulation in continuous live development. I built the UI/UX design system and widget library used across the project, along with the design manual that set standards for the team, and worked on menus, HUD interaction, wireframes and usability throughout.",
       // TODO: two concrete systems you designed + one problem you solved.
       "Before that, I worked at Bohemia Interactive as a junior graphic designer (from 2018) and artist (from 2019), supporting brand promotion with graphic and motion design across the studio's projects."
     ],
     gallery: 4,
     videos: [],
-    links: []
+    links: [["Arma Reforger on Steam", "https://store.steampowered.com/app/1874880/Arma_Reforger/"]]
   },
 
   {
@@ -691,27 +696,36 @@ Site.projects = [
     summary: "A framework of game exchange, alienation and performative player agency for critical game design.",
     text: [
       "The dissertation examines market, ideological and extractivist stereotypes in the exchange of player labour for game progress, and uses them as lenses for a conceptual framework of critical game design and art. Analysing capitalist allegories in selected games, it defines capitalist, authoritarian, colonial and extractive tendencies in both mainstream games and games with critical aspirations.",
-      "It argues that games can articulate a narrative and procedural critique of economic and social systems in dynamic dialogue with players, and proposes a three-level heuristic framework of game exchange, alienation and performative player agency, with shared agency and troubled utopia as alternatives to game ideological stereotypes.",
-      "## Keywords",
-      "Games, game exchange, alienation, performativity, ideology, inner game markets, game work & labour, capitalism, game economies, speculative mechanics, critical games, game art, critical design, allegorithms, ecogames, game studies, artistic research.",
-      "To request the PDF, write to the email address in Contact."
+      "It argues that games can articulate a narrative and procedural critique of economic and social systems in dynamic dialogue with players, and proposes a three-level heuristic framework of game exchange, alienation and performative player agency, with shared agency and troubled utopia as alternatives to game ideological stereotypes."
+    ],
+    foldouts: [
+      { title: "Keywords", open: true, text: [
+        "Games, game exchange, alienation, performativity, ideology, inner game markets, game work & labour, capitalism, game economies, speculative mechanics, critical games, game art, critical design, allegorithms, ecogames, game studies, artistic research."
+      ] },
+      { title: "Abstract", text: [
+        "This dissertation undertakes two primary tasks. Firstly, it examines market, ideological, and extractivist stereotypes in exchange of player labour for game progress, and employs them as analytical lenses to formulate a conceptual framework for critical game design and art. Secondly, based upon an analysis of capitalist allegories in selected games, it provides a definition of problematic capitalist, authoritarian, colonial, and extractive tendencies in both mainstream games and games with critical aspirations. This framework has normative ambitions and investigates methods for designing speculative and critical games. To this end, it formulates a three-level analytic heuristic framework oriented toward game exchange, alienation, and performative player agency. The dissertation argues that games are artistic media capable of articulating a narrative and a procedural critique of economic and social systems in a dynamic dialogue with players. However, to achieve this, a critical analysis should first be conducted on both narrative and procedural levels within the exchange, alienation, and player agency frameworks. In this regard, it is necessary to consider the forms of meaningful player agency within any given game design to be restrictive game affordances – game options to act within game market institutions, game rules, and narrative allegories – that will result in either a lack of speculative game mechanics or abundance of ideological fantasies. The question of the mode of player agency is largely connected to game economies, allegories of alienation in player labour, as well as to the degree of power players wield in each game, whether their agency is hegemonic in the game world, or whether there is a degree of agency shared with other actors.",
+        "The first chapter discusses forms of exchange in strategy games and draws a framework for the analysis of game ideologies based on their economies. The second chapter discusses the framework of game allegories of alienation in capitalism, strategies working with alienation in arts as well as in critical games and draws out the possibilities for critical design strategies based on them. The third chapter discusses forms of shared agency, performativity, and troubled utopia, as the possibilities of an alternative to game ideological stereotypes. The fourth chapter proposes a three-level heuristic framework and critical design principles for alienated game exchange. This dissertation was conducted in the context of artistic research and game studies. The game art projects that accompanied theoretical research with artist research affordances are discussed in the concluding sections."
+      ] }
+    ],
+    textAfter: [
+      "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
     ],
     gallery: 0, videos: [],
     links: [["AVU", "https://avu.cz/student/hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
   },
 
   { id: "cedit-critical-game-infrastructures", title: "Zažívat a simulovat kritické herní infrastruktury: Mapa možností kritického herního designu", year: "2025", level: "grid", practice: "writing",
-    category: "Writing", org: "CEDIT 16, CED Brno", type: "Essay", tags: ["writing"], external: "https://www.ced-brno.cz/files/4702.pdf" },
+    category: "Essay", org: "CEDIT 16, CED Brno", type: "Essay", tags: ["essays"], external: "https://www.ced-brno.cz/files/4702.pdf" },
   { id: "power-relations-in-games", with: "Ondřej Trhoň", title: "Power Relations in Games: A Guide to the Critical Field of Game Art", short: "Power Relations in Games", year: "2025", level: "grid", practice: "writing",
-    category: "Writing", org: "Prague City Gallery", type: "Book chapter", tags: ["writing"], external: "https://eshop.ghmp.cz/enter-the-room/" },
+    category: "Research", org: "Prague City Gallery", type: "Book chapter", tags: ["writing"], external: "https://eshop.ghmp.cz/enter-the-room/" },
   { id: "allegorithmic-politics", title: "Allegorithmic Politics of Game Exchange: Subversion, Ideology, and Capitalism in Strategy Games", short: "Allegorithmic Politics of Game Exchange", year: "2023", level: "grid", practice: "writing",
-    category: "Writing", org: "DiGRA 2023", type: "Peer-reviewed conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
+    category: "Research", org: "DiGRA 2023", type: "Peer-reviewed conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
   { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", year: "2022", level: "grid", practice: "writing",
-    category: "Writing", org: "A2", type: "Essay", tags: ["writing"], external: "https://advojka.cz/a2-article/2022-5-vecny-navrat-do-tamrielu/" },
+    category: "Essay", org: "A2", type: "Essay", tags: ["essays"], external: "https://advojka.cz/a2-article/2022-5-vecny-navrat-do-tamrielu/" },
   { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
-    category: "Writing", org: "Utopia Libri", type: "Book chapter", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
+    category: "Research", org: "Utopia Libri", type: "Book chapter", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
   { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",
-    category: "Writing", org: "etc. galerie", type: "Essay (PDF)", tags: ["writing"], external: "https://etcgalerie.cz/wp-content/uploads/2023/04/ETC_ESMG_A4_TISK.pdf" },
+    category: "Essay", org: "etc. galerie", type: "Essay (PDF)", tags: ["essays"], external: "https://etcgalerie.cz/wp-content/uploads/2023/04/ETC_ESMG_A4_TISK.pdf" },
 
   {
     id: "workcraft", with: "Jakub Pospíšil",
