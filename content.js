@@ -154,6 +154,7 @@ Site.texts = {
     },
     {
       title: "Teaching",
+      hideIn: ["g"],   // academic: not in the /design portfolio
       entries: [
         ["2025",       "**Game development in Unity, interactive tools and software for game creation**, semester course, course coordinator and lecturer, Ladislav Sutnar Faculty of Design and Art, University of West Bohemia, Pilsen"],
         ["2021–23",    "**Lecture series on game art and game studies**, doctoral teaching practice, Studio of New Media 1, Academy of Fine Arts in Prague"],
@@ -162,6 +163,7 @@ Site.texts = {
     },
     {
       title: "Publications",
+      hideIn: ["g"],   // academic: not in the /design portfolio
       entries: [
         ["2025", "Štvrtňová, G. and F. Hauer. “Non-domination power and player agency in ecogames: conceptualizing democratic agency.” CEEGS 2024 Proceedings. [doi.org/10.26263/5r92-a547](https://doi.org/10.26263/5r92-a547) (peer-reviewed)"],
         ["2025", "Trhoň, O. and F. Hauer. “Power Relations in Games: A Guide to the Critical Field of Game Art.” In Enter the Room, edited by Sandra Baborovská, Martin Netočný and Tjaša Pogačar. Prague City Gallery (book chapter)"],
@@ -176,6 +178,7 @@ Site.texts = {
     },
     {
       title: "Conference papers",
+      hideIn: ["g"],   // academic: not in the /design portfolio
       entries: [
         ["2026", "“Temporalities of open-world ideology: the case of Elden Ring and Genshin Impact,” with Ondřej Trhoň. Playing the Field VI: Video Games and Labour, University of Bucharest (March)"],
         ["2024", "“Non-domination power and player agency in ecogames: conceptualizing democratic agency,” with Gabriela Štvrtňová. CEEGS, Nafplio (October) and SFRA, Tartu (May)"],
@@ -185,6 +188,7 @@ Site.texts = {
     },
     {
       title: "Invited talks",
+      hideIn: ["g"],   // academic: not in the /design portfolio
       entries: [
         ["2025", "“Speculative worldbuilding with critical games.” Expert lecture and workshop, The Art and Technology Studio, Academy of Arts, Architecture and Design in Prague (November)"],
         ["2024", "“Critical game design and game art lecture.” Hraničář, Ústí nad Labem (November)"],
@@ -264,6 +268,7 @@ Site.texts = {
     },
     {
       title: "Conferences & organising",
+      hideIn: ["g"],   // academic: not in the /design portfolio
       entries: [
         ["2024",    "Co-organised the international conference session **Game Art x Game Studies: Between Ethics and Aesthetics**, with Ondřej Trhoň and Viktor Takáč, Academy of Fine Arts in Prague"],
         ["2023",    "Co-organised **[Beyond the Gaming Principle: On Crisis](https://beyondthegaming.avu.cz)**, international conference on game studies and game art, Academy of Fine Arts in Prague"],
