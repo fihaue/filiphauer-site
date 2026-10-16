@@ -403,7 +403,7 @@ Site.studio = {
 
      id        unique, lowercase, dashes. Used in the web address
                (new.filiphauer.com/#lithium) AND as the start of its
-               image file names (images/games_lithium_cover_1.png …).
+               image file names (images/games_lithium_cover_1.jpg …).
      title     full title.
      short     optional shorter title for tight spaces (prev/next).
      year      shown as text, so "2023–24", "2022/25" or "2025–26, ongoing"
@@ -425,12 +425,12 @@ Site.studio = {
      text      full text for the popup. One text = one paragraph.
                Special starts:  "## " sub-heading,  "> " quote,
                                 "``" monospaced block (keeps line breaks)
-     gallery   how many gallery images exist: images/<practice>_<id>_gallery_1.png …
+     gallery   how many gallery images exist: images/<practice>_<id>_gallery_1.jpg …
      videos    list of videos shown in the popup, either
                  { label: "Trailer", embed: "https://www.youtube-nocookie.com/embed/…" }
                  (YouTube / Vimeo), or a file stored on this site:
                  { label: "Trailer", file: "videos/lithium-trailer.mp4",
-                   poster: "images/games_lithium_hero_1.png" }   (poster optional)
+                   poster: "images/games_lithium_hero_1.jpg" }   (poster optional)
                Files go in the videos/ folder: MP4 (H.264), ideally under 50 MB,
                never over 95 MB (GitHub refuses files over 100 MB).
      links     list of [ "Label", "https://…" ].
@@ -498,7 +498,7 @@ Site.projects = [
     ],
     gallery: 4,
     videos: [
-      { label: "Trailer", file: "videos/lithium-trailer.mp4", poster: "images/games_lithium_hero_1.png" }
+      { label: "Trailer", file: "videos/lithium-trailer.mp4", poster: "images/games_lithium_hero_1.jpg" }
     ],
     links: [
       ["Play on Steam", "https://store.steampowered.com/app/3439740/Lithium/"],
@@ -523,7 +523,7 @@ Site.projects = [
     ],
     gallery: 4,
     videos: [
-      { label: "Video", file: "videos/workers-out-of-office.mp4", poster: "images/games_workers-out-of-office_hero_1.png" }
+      { label: "Video", file: "videos/workers-out-of-office.mp4", poster: "images/games_workers-out-of-office_hero_1.jpg" }
     ],
     links: [
       ["Industra", "https://industra.space/program/workers-out-of-office-dreaming-about-work"]
@@ -547,7 +547,7 @@ Site.projects = [
     ],
     gallery: 4,
     videos: [
-      { label: "Video", file: "videos/workers-out-of-office-london-dlc.mp4", poster: "images/games_workers-out-of-office-london-dlc_hero_1.png" }
+      { label: "Video", file: "videos/workers-out-of-office-london-dlc.mp4", poster: "images/games_workers-out-of-office-london-dlc_hero_1.jpg" }
     ],
     links: [
       ["Text by Ondřej Trhoň", "https://ondrejtrhon.substack.com/p/gauce-zpackane-utopie-a-stiny-na"]

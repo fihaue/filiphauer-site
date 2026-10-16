@@ -284,7 +284,7 @@ window.Site = window.Site || {};
       (!wide && p.level === "grid" && p.practice !== "writing" && p.practice !== "curation"));
     items.sort(h.newestFirst);
 
-    // Every archive entry has one image: images/<category>_<id>_cover_1.png (small in the row, larger when opened).
+    // Every archive entry has one image: images/<category>_<id>_cover_1.jpg (small in the row, larger when opened).
     return items.map(p => `
       <details class="archive-item" id="archive-${p.id}">
         <summary>

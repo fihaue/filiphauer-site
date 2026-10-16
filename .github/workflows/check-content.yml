@@ -31,8 +31,8 @@ jobs:
               for (const f of ["id", "title", "year", "level"]) if (!p[f]) problems.push(`A project is missing "${f}": ${p.title || p.id || "(unnamed)"}`);
               if (ids.has(p.id)) problems.push(`Two projects share the id "${p.id}"`);
               ids.add(p.id);
-              const img = `images/${p.practice || "archive"}_${p.id}_cover_1.png`;
-              if (!fs.existsSync(img)) problems.push(`Missing image: ${img}`);
+              const img = `images/${p.practice || "archive"}_${p.id}_cover_1`;   // .jpg, or .png for transparency
+              if (!fs.existsSync(img + ".jpg") && !fs.existsSync(img + ".png")) problems.push(`Missing image: ${img}.jpg`);
               for (const v of p.videos || []) {
                 if (!v.file) continue;
                 if (!fs.existsSync(v.file)) problems.push(`Missing video: ${v.file}`);
