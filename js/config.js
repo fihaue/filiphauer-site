@@ -40,7 +40,7 @@ Site.config = {
     hero:     "1920 × 1080 (16:9) — top of the project popup",
     gallery:  "1920 × 1080 (16:9) or larger 16:9 — gallery inside the popup",
     siteHero: "1920 × 1080 (16:9) — big image under the statement",
-    portrait: "1200 × 900 (4:3) — About section",
+    portrait: "1920 × 1200 (16:10) — About section",
     ogImage:  "1200 × 630 — preview when the link is shared"
   }
 };

@@ -185,7 +185,9 @@ body:not([data-layout="g"]) .only-g { display: none; }
 /* ---------------------------------------------------------- about & CV */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
 .bio { display: grid; gap: 14px; }
-.portrait { width: 100%; max-width: 440px; aspect-ratio: 4 / 3; object-fit: cover; }
+/* Portrait: 16:10 (1920 × 1200), exactly as wide as the bio text below it.
+   The head is in the centre, so cropping keeps it in view. */
+.portrait { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center; }
 .cv { border-top: 1px solid var(--line); }
 .cv details, .foldout { border-bottom: 1px solid var(--line); }
 .cv summary, .foldout summary { padding: 14px 0; color: var(--heading); display: flex; justify-content: space-between; cursor: pointer; list-style: none; }

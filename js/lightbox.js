@@ -38,8 +38,8 @@ window.Site = window.Site || {};
     if (!clicked) return;   // image file missing (striped box) → nothing to show
 
     // Step through all images of the same popup (or the same gallery on the page).
-    // An archive entry has one image, so it opens alone.
-    const group = button.closest("#popup-content, .gallery, .archive-body") || document;
+    // An archive entry or the portrait has one image, so it opens alone.
+    const group = button.closest("#popup-content, .gallery, .archive-body") || button;
     images = [...group.querySelectorAll(".zoom img")];
 
     returnFocus = button;
