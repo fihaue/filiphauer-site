@@ -63,7 +63,7 @@ Site.texts = {
 
   // Statement under the headline. One text = one paragraph.
   statement: [
-    "I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I seek to question stereotypical communication practices."
+    "I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I am questioning stereotypical communication practices."
   ],
 
   // Description of the big image under the statement: read by screen readers, and
@@ -470,7 +470,7 @@ Site.projects = [
       "Andre Miri Cipa is an educational game about experiences of everyday racism in the Czech Republic, made by a team of designers and Roma artists at the Faculty of Fine Arts, Brno University of Technology (FaVU VUT). It is based on participatory research with the Roma community conducted by researchers from the Faculty of Social Studies, Masaryk University (FSS MUNI), while experts from the Faculty of Education, Masaryk University (PED MUNI) contributed to its teaching structure and usability in schools. Together, the outcomes of this research became the framework for the game's design and art. Through narrative and interaction, the game tries to convey this experience critically.",
       "It was my first serious game project after my PhD, and a chance to put the design principles from my dissertation into practice. As lead game designer, I worked with critical utopia and María Lugones's concept of “loving perception”: entering another's perspective with openness, rather than as an outside observer and evaluator, is a powerful tool for de-stereotyping experiences of discrimination in digital games.",
       "Combining a critical game studies perspective on what games are and can be with the participation of the Roma community made it possible to build a realistic message. It also shaped how we approached representation, and how players are introduced to the community's perspective through the game's chapters.",
-      "The game will be used as a teaching tool in Czech schools. It is released for free to the public in Czech and English on 22 October 2026, at the gala evening of the Museum of Romani Culture in Brno. The research report and the teaching guide (“metodika”) are available in Czech on the [project website](https://andremiricipa.ffa.vutbr.cz/)."
+      "The game will be used as a teaching tool in Czech schools. It will be released for free to the public in Czech and English: on Steam on 22 October 2026, at the gala evening of the Museum of Romani Culture in Brno, followed by the iOS and Android versions at the end of October. The research report and the teaching guide (“metodika”) are available in Czech on the [project website](https://andremiricipa.ffa.vutbr.cz/)."
     ],
     gallery: 4,
     videos: [
@@ -530,7 +530,7 @@ Site.projects = [
       { label: "Video", file: "videos/workers-out-of-office.mp4", poster: "images/games_workers-out-of-office_hero_1.jpg" }
     ],
     links: [
-      ["Industra", "https://industra.space/program/workers-out-of-office-dreaming-about-work"]
+      ["Industra (archived page)", "https://web.archive.org/web/20241109095839/https://industra.space/program/workers-out-of-office-dreaming-about-work"]
     ]
   },
 
@@ -543,11 +543,11 @@ Site.projects = [
     type: "Digital game · Installation",
     meta: "Digital game, installation · made for the joint exhibition Roman Road & London DLC with Zuzana Jírová · POP-UP Galerie AVU, Prague",
     tags: ["games", "installations"],
-    summary: "You save money for a trip abroad while texting Zuzana in London, in 2040, amid drought, a collapsing job market and backsliding of social state in platform capitalism.",
+    summary: "You save money for a trip abroad while texting Zuzana in London, in 2040, amid drought, a collapsing job market and the erosion of the welfare state under platform capitalism.",
     text: [
       "You are saving money for a trip abroad, texting Zuzana, who has just returned to London to look for a new job. London DLC takes place in 2040, ten years before Workers Out of Office: Central Europe suffers from drought, the conservative right is gaining power, a desert is expanding on the border of Bohemia and Austria, and the job market is slowly collapsing. Zuzana wants to make it in the arts, but both of you spend most of your time fighting for economic survival.",
       "Through your conversations with Zuzana, the game opens questions about survival, the search for one's ability to act meaningfully, and the emerging technocracy and capitalist feudalism in a world of crisis. The crisis also opens a new way of finding one's ability to take meaningful agency, and the question of how to organise ourselves in new ways.",
-      "Made for Roman Road & London DLC, a joint exhibition with Zuzana Jírová at POP-UP Galerie AVU, Prague. The fictional conversations in the game come from discussions Zuzana and I had together imagining living in the London DLC future. Accompanying text by Ondřej Trhoň."
+      "Made for Roman Road & London DLC, a joint exhibition with Zuzana Jírová at POP-UP Galerie AVU, Prague. The fictional conversations in the game come from discussions in which Zuzana and I imagined living in the London DLC future. Accompanying text by Ondřej Trhoň."
     ],
     gallery: 4,
     videos: [
@@ -720,7 +720,7 @@ Site.projects = [
       "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
     ],
     gallery: 0, videos: [],
-    links: [["AVU", "https://avu.cz/student/hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
+    links: [["Thesis at AVU", "https://theses.avu.cz/en/prace/2025/17177-phd-filip-hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
   },
 
   { id: "cedit-critical-game-infrastructures", title: "Zažívat a simulovat kritické herní infrastruktury: Mapa možností kritického herního designu", imageAlt: "Zažívat a simulovat kritické herní infrastruktury, essay in CEDIT 16, CED Brno", year: "2025", level: "grid", practice: "writing",
@@ -874,7 +874,7 @@ Site.projects = [
     tags: ["sound"],
     summary: "Speculative ambience for a non-existent game.",
     text: [
-      "Weather Tax is speculative ambience for a non-existent game. Three EPs so far: Weather Camp 2008, Weather in 2025, and Spring & Mítov 2065."
+      "Weather Tax is speculative ambience for a non-existent game. Three EPs so far: Weather Camp 2008, Weather in 2025 and Spring & Mítov 2065."
     ],
     gallery: 0,
     videos: [],
