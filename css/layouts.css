@@ -1,5 +1,5 @@
 /* =====================================================================
-   LAYOUTS A–F — one block per layout, matching js/layouts.js.
+   LAYOUTS A–G and P — one block per layout, matching js/layouts.js.
    ===================================================================== */
 
 /* All cover images share the same shape (see --cover-ratio in tokens.css). */
@@ -133,6 +133,66 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
 .collab-row .title small { display: block; margin-top: 3px; font-size: 12.5px; color: var(--text-dim); font-weight: 300; }
 .collab-row .names { color: var(--heading); font-size: 15px; }
 .collab-row:hover .title { color: var(--green); }
+
+/* ---------------------------------------------------------- P: presentation (slides) */
+/* For talks: no sidebar, no Archive / About / Research; the intro, each project
+   and Contact fill the screen, and scrolling snaps from one slide to the next. */
+html:has(body[data-layout="p"]) { scroll-snap-type: y mandatory; }
+body[data-layout="p"] .sidebar,
+body[data-layout="p"] #archive,
+body[data-layout="p"] #about,
+body[data-layout="p"] #research,
+body[data-layout="p"] #work-title,
+body[data-layout="p"] .footer { display: none; }
+body[data-layout="p"] main { margin-left: 0; max-width: none; padding: 0 6vw; }
+body[data-layout="p"] #work { border-top: 0; padding: 0; }
+
+/* Slide 1: name, roles, headline and statement, centred on the screen. */
+body[data-layout="p"] .intro { padding: 0; gap: 0; }
+body[data-layout="p"] .intro-text {
+  display: grid; gap: 18px; align-content: center;
+  min-height: 100vh; min-height: 100dvh; padding: 6vh 0;
+  scroll-snap-align: start;
+}
+
+/* Slide 2: the big site image, filling the whole screen (edge to edge), also on phones. */
+body[data-layout="p"] .intro-image {
+  display: block;
+  width: calc(100% + 12vw); max-width: none; margin: 0 -6vw;
+  height: 100vh; height: 100dvh; aspect-ratio: auto;
+  scroll-snap-align: start;
+}
+/* Its description (heroImageAlt in content.js) sits on the bottom of the image. */
+body[data-layout="p"] .intro-caption {
+  display: block; position: relative; margin: -44px 0 0; height: 44px;
+  font-size: 13px; color: var(--heading); text-shadow: 0 1px 6px rgba(0, 0, 0, .8);
+}
+
+/* Last slide: Contact */
+body[data-layout="p"] .contact {
+  min-height: 100vh; min-height: 100dvh; align-content: center;
+  scroll-snap-align: start; padding: 6vh 0; border-top: 0;
+}
+
+/* One project per screen: big image left, text right */
+.slide {
+  min-height: 100vh; min-height: 100dvh; scroll-snap-align: start;
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 5vw; align-items: center;
+  padding: 6vh 0;
+}
+.slide .cover { max-height: 86vh; }
+.slide-text { display: grid; gap: 14px; align-content: center; }
+.slide h3 { font-size: clamp(28px, 3.6vw, 52px); }
+.slide h3 a { color: var(--heading); }
+.slide-summary { font-size: clamp(16px, 1.4vw, 20px); color: var(--heading); }
+.slide .button { justify-self: start; margin-top: 6px; }
+.slide-count { font-size: 13px; color: var(--text-dim); font-variant-numeric: tabular-nums; margin-top: 10px; }
+
+/* Phones and tall screens: image above text, and gentler snapping so long slides can scroll */
+@media (max-width: 860px), (max-aspect-ratio: 1/1) {
+  html:has(body[data-layout="p"]) { scroll-snap-type: y proximity; }
+  .slide { grid-template-columns: 1fr; gap: 20px; align-content: center; }
+}
 
 /* ---------------------------------------------------------- tablets & phones */
 @media (max-width: 1100px) {

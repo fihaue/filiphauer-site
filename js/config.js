@@ -29,7 +29,8 @@ Site.config = {
     d: { name: "Editorial rows · popup",    note: "One large image row per project, alternating sides." },
     e: { name: "Full grid · popup",         note: "Dense image grid of all work with a CATEGORY / Organisation line. Tag buttons filter it." },
     f: { name: "Grid by practice · popup",  note: "The full grid grouped into practice sections, without filter buttons." },
-    g: { name: "By practice · Game & UX route", note: "Critical games, Research & writing, Art and installation, Game & UX design (#studio), Curation, Collaborations." }
+    g: { name: "By practice · Game & UX route", note: "Critical games, Research & writing, Art and installation, Game & UX design (#studio), Curation, Collaborations." },
+    p: { name: "Presentation · slides",     note: "One full-screen slide per project, newest first, for talks. Short address: /presentation." }
   },
 
   // Image sizes, used by the README and by the placeholder generator.

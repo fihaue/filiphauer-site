@@ -1,5 +1,5 @@
 /* =====================================================================
-   LAYOUTS — one function per layout (A–F).
+   LAYOUTS — one function per layout (A–G, plus P = presentation).
    ---------------------------------------------------------------------
    Each function receives a list of projects and returns HTML text.
    main.js decides which function to call and puts the result into
@@ -17,11 +17,12 @@ window.Site = window.Site || {};
   const e = h.escape;
 
   /* Which projects appear in the main "Work" view for a layout.
-     A–D: featured projects only.  E, F: featured + grid level. */
+     A–D: featured projects only.  E, F, G, P: featured + grid level. */
   function mainList(layoutKey) {
-    const wide = layoutKey === "e" || layoutKey === "f" || layoutKey === "g";
+    const wide = ["e", "f", "g", "p"].includes(layoutKey);
     return Site.projects
       .filter(p => p.level === "featured" || (wide && p.level === "grid"))
+      .filter(p => !(p.hideIn || []).includes(layoutKey))   // hideIn: ["p"] in content.js
       .sort(h.newestFirst);                       // newest first in every layout
   }
 
@@ -322,9 +323,30 @@ window.Site = window.Site || {};
       </div>`;
   }
 
+  /* -------------------------------------------------------------------
+     P — Presentation: one full-screen slide per project, newest first.
+     For artist talks: scroll (or press ↓ / Space / Page Down) to move
+     one slide at a time. Archive and About are hidden (css/layouts.css).
+     ------------------------------------------------------------------- */
+  function layoutP(list) {
+    return list.map((p, i) => `
+      <article class="slide" id="card-${p.id}">
+        ${h.img(h.coverImage(p), p.title, "cover")}
+        <div class="slide-text">
+          ${h.kicker(p)}
+          <h3><a ${openHref(p)}>${e(p.title)}</a></h3>
+          ${p.meta ? `<p class="meta">${e(p.meta)}</p>` : ""}
+          ${h.withLine(p)}
+          ${p.summary ? `<p class="slide-summary">${e(p.summary)}</p>` : ""}
+          <a class="button" ${openHref(p)}>${e(h.t("ui.openProject"))}</a>
+          <p class="slide-count">${i + 1} / ${list.length}</p>
+        </div>
+      </article>`).join("");
+  }
+
   /* Everything other scripts may call. */
   Site.layouts = {
-    a: layoutA, b: layoutB, c: layoutC, d: layoutD, e: layoutE, f: layoutF, g: layoutG,
+    a: layoutA, b: layoutB, c: layoutC, d: layoutD, e: layoutE, f: layoutF, g: layoutG, p: layoutP,
     mainList, showPreview, gallery, archiveList, researchSection
   };
 })();

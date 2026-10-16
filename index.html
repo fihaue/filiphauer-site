@@ -52,7 +52,7 @@
     <a href="#writing"       class="only-g"                        data-text="sidebar.writing"></a>
     <a href="#installations" class="only-g"                        data-text="sidebar.installations"></a>
     <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
-    <a href="#archive"                                             data-text="sidebar.archive"></a>
+    <a href="#archive"       class="hide-in-g"                     data-text="sidebar.archive"></a>
     <a href="#about"                                               data-text="sidebar.about"></a>
     <a href="#contact"                                             data-text="sidebar.contact"></a>
   </nav>
@@ -63,17 +63,23 @@
 
   <!-- ===================== STATEMENT ===================== -->
   <header class="intro" id="top">
-    <a class="news" id="news" hidden><span class="dot"></span><span id="news-text"></span></a>
-    <p class="roles" id="roles"></p>
-    <h1 data-text="headline"></h1>
-    <div class="statement" id="statement"></div>
+    <!-- The texts are grouped so the presentation can show them as one slide.
+         On the normal page the group is invisible (css/base.css: display: contents). -->
+    <div class="intro-text">
+      <a class="news" id="news" hidden><span class="dot"></span><span id="news-text"></span></a>
+      <p class="roles" id="roles"></p>
+      <h1 data-text="headline"></h1>
+      <div class="statement" id="statement"></div>
 
-    <!-- Layout G: three entry links (from Site.pathways in content.js) -->
-    <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
+      <!-- Layout G: three entry links (from Site.pathways in content.js) -->
+      <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
+    </div>
 
     <!-- Big image under the statement. Hidden on phones (css/base.css);
          loading="lazy" means phones don't download it either. -->
     <img class="intro-image" id="intro-image" src="images/site_hero_1.png" alt="" loading="lazy">
+    <!-- Caption at the bottom of the image, shown only in the presentation (layout P) -->
+    <p class="intro-caption" id="intro-caption" aria-hidden="true"></p>
   </header>
 
   <!-- ===================== WORK (drawn by js/layouts.js) ===================== -->
@@ -90,7 +96,8 @@
   </section>
 
   <!-- ===================== ARCHIVE ===================== -->
-  <section class="section" id="archive" aria-labelledby="archive-title">
+  <!-- Hidden in layout G (/design), the portfolio for studios -->
+  <section class="section hide-in-g" id="archive" aria-labelledby="archive-title">
     <h2 class="section-title" id="archive-title" data-text="sections.archive"></h2>
     <div class="archive" id="archive-list"></div>
   </section>

@@ -96,6 +96,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
 @media (max-width: 760px) { .intro-image { display: none; } }   /* phones: no big image */
+.intro-caption { display: none; }   /* only shown in the presentation (css/layouts.css) */
+.intro-text { display: contents; }  /* a group only for the presentation; no effect here */
 
 /* ---------------------------------------------------------- sections */
 .section { padding: 64px 0; border-top: 1px solid var(--line); }

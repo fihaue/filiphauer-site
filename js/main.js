@@ -6,7 +6,8 @@
      route()  runs every time the part after "#" in the address changes.
 
    Addresses the site understands:
-     ?layout=f             choose layout A–F   (new.filiphauer.com/?layout=b)
+     ?layout=f             choose layout A–G, or P = presentation (new.filiphauer.com/?layout=b)
+     /presentation, /design  short addresses for ?layout=p and ?layout=g (see 404.html)
      #lithium              open a project       (any project id)
      #games, #writing …    filter by tag (A–E) or jump to a section (F, G)
      #studio               layout G: the "Game & UX design" section
@@ -50,6 +51,8 @@ window.Site = window.Site || {};
     h.$("#bio").insertAdjacentHTML("beforeend", (T.bio || []).map(p => `<p>${h.rich(p)}</p>`).join(""));
     const heroImage = h.$("#intro-image");   // the big image under the statement (may be removed)
     if (heroImage) heroImage.alt = T.heroImageAlt || "";
+    const caption = h.$("#intro-caption");   // same text, as a visible caption in the presentation
+    if (caption) caption.textContent = T.heroImageAlt || "";
     h.$("#portrait").alt = T.portraitAlt || "";
 
     // CV: one folding block per entry in Site.texts.cv.
@@ -76,7 +79,7 @@ window.Site = window.Site || {};
   function render() {
     const key = state.layout;
     document.body.dataset.layout = key;      // CSS uses this, e.g. hides Research in E/F
-    if (key === "f" || key === "g") state.tag = "all";   // F and G have no filter buttons
+    if (["f", "g", "p"].includes(key)) state.tag = "all";   // F, G and P have no filter buttons
     renderPathways();
 
     const all = Site.layouts.mainList(key);
@@ -107,7 +110,7 @@ window.Site = window.Site || {};
   /* Tag filter buttons above the Work view (hidden in layouts F and G). */
   function renderTagButtons(all) {
     const nav = h.$("#tag-filter");
-    nav.hidden = state.layout === "f" || state.layout === "g";
+    nav.hidden = ["f", "g", "p"].includes(state.layout);
     const count = t => t === "all" ? all.length : all.filter(p => (p.tags || []).includes(t)).length;
     const tags = ["all", ...Object.keys(Site.tags)].filter(t => count(t) > 0);
     nav.innerHTML = tags.map(t => `

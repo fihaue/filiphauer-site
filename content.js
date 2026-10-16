@@ -66,7 +66,8 @@ Site.texts = {
     "I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I seek to question stereotypical communication practices."
   ],
 
-  // Description of the big image under the statement (for screen readers).
+  // Description of the big image under the statement: read by screen readers, and
+  // shown as a caption at the bottom of the image in the presentation (/presentation).
   // (The image is shown on computers and tablets, hidden on phones.)
   heroImageAlt: "Dreaming About Work, installation at Galerie mladých, TIC Brno",
 
@@ -349,8 +350,9 @@ Site.studio = {
                image file names (images/games_lithium_cover_1.png …).
      title     full title.
      short     optional shorter title for tight spaces (prev/next).
-     year      shown as text, so "2023–24" or "2022/25" is fine.
-               Grids are sorted by it, newest first.
+     year      shown as text, so "2023–24", "2022/25" or "2025–26, ongoing"
+               is fine. Grids are sorted by it, newest first (a span by
+               its end year, so "2025–26, ongoing" sorts as 2026).
      level     where it appears:
                  "featured" → main project view in ALL layouts
                  "grid"     → main view in layouts E, F, G;
@@ -376,6 +378,9 @@ Site.studio = {
      with      optional collaborators, e.g. "Philipp Kolychev". Shown as
                a "with …" line on cards and in the popup, and the project
                is listed in the Collaborations section (layout G).
+     hideIn    optional list of layouts where the project is left out,
+               e.g. ["p"] = not in the presentation.
+     pinned    optional true → always listed first, before newer projects.
    ===================================================================== */
 
 Site.projects = [
@@ -486,6 +491,7 @@ Site.projects = [
     title: "Arma Reforger — UI/UX",
     short: "Arma Reforger",
     year: "2021–25", level: "featured", practice: "studio",
+    hideIn: ["p"],   // not shown in the presentation
     category: "UI/UX", org: "Bohemia Interactive",
     type: "Studio work",
     meta: "UI/UX designer · Bohemia Interactive",
@@ -615,6 +621,7 @@ Site.projects = [
 
   {
     id: "thesis",
+    pinned: true,   // always first, before newer projects
     title: "Digital Games and Allegorithmic Work",
     year: "2025", level: "grid", practice: "writing",
     category: "Research", org: "Academy of Fine Arts Prague",
@@ -632,6 +639,7 @@ Site.projects = [
     gallery: 0, videos: [],
     links: [["AVU", "https://avu.cz/student/hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
   },
+
   { id: "cedit-critical-game-infrastructures", title: "Zažívat a simulovat kritické herní infrastruktury?", year: "2025", level: "grid", practice: "writing",
     category: "Writing", org: "CEDIT 16, CED Brno", type: "Essay", tags: ["writing"], external: "https://www.ced-brno.cz/files/4702.pdf" },
   { id: "power-relations-in-games", with: "Ondřej Trhoň", title: "Power Relations in Games", year: "2025", level: "grid", practice: "writing",
@@ -772,7 +780,7 @@ Site.projects = [
   {
     id: "weather-tax",
     title: "Weather Tax",
-    year: "2025–", level: "grid", practice: "installations",
+    year: "2025–26, ongoing", level: "grid", practice: "installations",
     category: "Music", org: "Bandcamp", type: "Music · speculative ambience",
     meta: "Speculative ambience for a non-existent game · three EPs on Bandcamp",
     tags: ["sound"],

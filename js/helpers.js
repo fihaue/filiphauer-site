@@ -61,9 +61,11 @@ Site.helpers = {
     return parseInt(last, 10);
   },
 
-  /* Comparator: newest first; equal years keep their order in content.js. */
+  /* Comparator: newest first; equal years keep their order in content.js.
+     Projects with  pinned: true  always come first. */
   newestFirst(a, b) {
-    return Site.helpers.sortYear(b) - Site.helpers.sortYear(a);
+    const pin = Number(!!b.pinned) - Number(!!a.pinned);
+    return pin || Site.helpers.sortYear(b) - Site.helpers.sortYear(a);
   },
 
   /* True if the project opens a popup (has its own text, not only an outside link). */
