@@ -39,7 +39,7 @@ window.Site = window.Site || {};
   function layoutA(list) {
     return `<div class="grid-a">${list.map(p => `
       <article class="card-a" id="card-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="card-body">
           ${h.kicker(p)}
           <h3>${e(p.title)}</h3>
@@ -61,7 +61,7 @@ window.Site = window.Site || {};
   function layoutB(list, isFiltered) {
     return `<div class="grid-b">${list.map((p, i) => `
       <article class="card-b ${i === 0 && !isFiltered ? "wide" : ""}" id="card-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="card-body">
           ${h.kicker(p)}
           <h3><a ${openHref(p)}>${e(p.title)}</a></h3>
@@ -94,7 +94,7 @@ window.Site = window.Site || {};
     const box = document.getElementById("index-preview");
     const p = h.findProject(id);
     if (!box || !p) return;
-    box.innerHTML = `${h.img(h.coverImage(p), p.title, "cover")}${h.kicker(p)}<p>${e(p.summary)}</p>`;
+    box.innerHTML = `${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}${h.kicker(p)}<p>${e(p.summary)}</p>`;
   }
 
   /* -------------------------------------------------------------------
@@ -104,7 +104,7 @@ window.Site = window.Site || {};
     const count = String(list.length).padStart(2, "0");
     return `<div class="rows-d">${list.map((p, i) => `
       <article class="row-d" id="card-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="card-body">
           <span class="row-number">${String(i + 1).padStart(2, "0")} / ${count}</span>
           ${h.kicker(p)}
@@ -123,7 +123,7 @@ window.Site = window.Site || {};
   function thumbCard(p) {
     return `
       <a class="thumb-card" id="card-${p.id}" ${openHref(p)}>
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <span class="title">${e(p.title)}${p.external ? ' <span class="external" aria-label="opens another site">↗</span>' : ""}</span>
         ${h.categoryLine(p)}
         ${h.withLine(p)}
@@ -165,7 +165,7 @@ window.Site = window.Site || {};
   function highlightCard(p) {
     return `
       <article class="highlight" id="card-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="card-body">
           ${h.kicker(p)}
           <h4><a ${openHref(p)}>${e(p.title)}</a></h4>
@@ -182,7 +182,7 @@ window.Site = window.Site || {};
     const p = h.findProject(entry.project);
     return `
       <article class="studio-card" id="studio-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="card-body">
           <p class="kicker">${e(entry.role)}</p>
           <h4>${e(p.short || p.title)}</h4>
@@ -269,7 +269,7 @@ window.Site = window.Site || {};
   function gallery(p) {
     if (!p.gallery) return "";
     let html = "";
-    for (let n = 1; n <= p.gallery; n++) html += h.zoomImg(h.galleryImage(p, n), `${p.title}, image ${n}`, "gallery-img");
+    for (let n = 1; n <= p.gallery; n++) html += h.zoomImg(h.galleryImage(p, n), h.altText(p, "gallery", n), "gallery-img");
     return `<div class="gallery">${html}</div>`;
   }
 
@@ -293,7 +293,7 @@ window.Site = window.Site || {};
           <span class="type">${e(p.type)}</span>
         </summary>
         <div class="archive-body">
-          ${h.zoomImg(h.coverImage(p), p.title, "archive-img")}
+          ${h.zoomImg(h.coverImage(p), h.altText(p, "cover"), "archive-img")}
           <div class="archive-text">
             ${p.summary ? `<p>${e(p.summary)}</p>` : ""}
             ${h.hasPopup(p) ? `<p><a href="#${p.id}" data-open="${p.id}">${e(h.t("ui.openProject"))}</a></p>` : ""}
@@ -331,7 +331,7 @@ window.Site = window.Site || {};
   function layoutP(list) {
     return list.map((p, i) => `
       <article class="slide" id="card-${p.id}">
-        ${h.img(h.coverImage(p), p.title, "cover")}
+        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
         <div class="slide-text">
           ${h.kicker(p)}
           <h3><a ${openHref(p)}>${e(p.title)}</a></h3>
