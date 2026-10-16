@@ -146,11 +146,17 @@ Site.helpers = {
     }).join("");
   },
 
-  /* Video placeholders: the real player loads only when clicked (faster page). */
+  /* Videos, two kinds:
+       { label, embed: "https://…" }       YouTube / Vimeo: a play button until clicked,
+                                           then the outside player loads (faster page).
+       { label, file: "videos/….mp4",      a video file stored on this site, played by the
+         poster: "images/….png" }          browser's own player. poster = optional still image.
+                                           preload="none": nothing downloads until play. */
   videos(p) {
     const e = Site.helpers.escape;
-    return (p.videos || []).map(v =>
-      `<button class="video" type="button" data-embed="${e(v.embed)}" aria-label="Play video: ${e(v.label)}">
+    return (p.videos || []).map(v => v.file
+      ? `<video class="video-file" controls playsinline preload="none" src="${e(v.file)}"${v.poster ? ` poster="${e(v.poster)}"` : ""} aria-label="${e(v.label)}"></video>`
+      : `<button class="video" type="button" data-embed="${e(v.embed)}" aria-label="Play video: ${e(v.label)}">
          <span>${e(v.label)}</span></button>`).join("");
   }
 };

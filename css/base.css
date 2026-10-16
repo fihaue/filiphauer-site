@@ -143,6 +143,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .video:hover::before { transform: scale(1.1); }
 .video.playing::before { content: none; }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Video files stored on the site (videos/…), played by the browser's own player */
+.video-file { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 16px; background: #1b1b1b; }
 
 /* Tag filter buttons */
 .tag-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }

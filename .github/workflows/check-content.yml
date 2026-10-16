@@ -33,6 +33,11 @@ jobs:
               ids.add(p.id);
               const img = `images/${p.practice || "archive"}_${p.id}_cover_1.png`;
               if (!fs.existsSync(img)) problems.push(`Missing image: ${img}`);
+              for (const v of p.videos || []) {
+                if (!v.file) continue;
+                if (!fs.existsSync(v.file)) problems.push(`Missing video: ${v.file}`);
+                else if (fs.statSync(v.file).size > 95 * 1024 * 1024) problems.push(`Video over 95 MB (GitHub refuses files over 100 MB): ${v.file}`);
+              }
             }
             for (const key of ["headline", "statement", "cv", "contact", "ui"]) if (!Site.texts[key]) problems.push(`Site.texts is missing "${key}"`);
             if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
