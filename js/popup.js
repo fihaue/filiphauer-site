@@ -37,6 +37,7 @@ window.Site = window.Site || {};
         <p class="meta">${e(p.meta)}</p>
         ${h.withLine(p)}
         ${h.tagPills(p)}
+        ${h.foldouts(p, "top")}
         <div class="full-text">${h.fullText(p)}</div>
         ${h.foldouts(p)}
         ${h.videos(p)}

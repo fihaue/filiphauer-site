@@ -169,17 +169,20 @@ Site.helpers = {
   },
 
   /* Foldable sections in the popup (like the CV blocks), from the project's
+     foldouts in content.js. foldouts(p, "top") = the ones marked  top: true
+     (shown above the text); foldouts(p) = all others (shown below it).
      foldouts: [{ title: "Abstract", text: ["paragraph", …] }] in content.js.
      Closed until clicked; add  open: true  to show one open. */
-  foldouts(p) {
+  foldouts(p, where = "below") {
     const e = Site.helpers.escape;
-    return (p.foldouts || []).map(f => `
+    const list = (p.foldouts || []).filter(f => (where === "top") === !!f.top);
+    return list.map(f => `
       <details class="foldout" ${f.open ? "open" : ""}>
         <summary>${e(f.title)}</summary>
         ${(f.text || []).map(t => `<p>${Site.helpers.rich(t)}</p>`).join("")}
       </details>`).join("")
-      // textAfter: paragraphs shown below the foldouts (e.g. "To request the PDF …")
-      + (p.textAfter || []).map(t => `<p class="text-after">${Site.helpers.rich(t)}</p>`).join("");
+      // textAfter: paragraphs shown below the lower foldouts (e.g. "To request the PDF …")
+      + (where === "top" ? "" : (p.textAfter || []).map(t => `<p class="text-after">${Site.helpers.rich(t)}</p>`).join(""));
   },
 
   /* Videos, two kinds:

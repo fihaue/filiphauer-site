@@ -125,7 +125,7 @@ Site.texts = {
   bio: [
     "I am an intermedia artist, game designer and researcher working in game studies and on the critical possibilities of play in art and mainstream culture.",
     "My work explores the speculative potential of digital games. My projects address themes such as game exchange, ideology, performativity and labour through critical and speculative game art and through player agency. Within my research, art and design, I examine the problematic practices commonly found in popular games. In my practice, I particularly value critical design and art as tools to communicate social and environmental issues from multiple perspectives.",
-    "In my dissertation, defended at the Academy of Fine Arts in Prague, I explored the links between game worlds, the future of work and player agency. Following my PhD, in 2025–26 I was the lead game designer and researcher on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology.",
+    "In my dissertation, defended at the Academy of Fine Arts in Prague, I explored the links between game worlds, the future of work and player agency. Following my PhD, in 2025–26 I was the lead game designer and one of the researchers on Andre Miri Cipa at the Faculty of Fine Arts, Brno University of Technology.",
     "From 2018 to 2025 I worked at Bohemia Interactive, most recently as a UI/UX designer on Arma Reforger. In 2018 I also co-founded Blue Pulsar Games, which released 11th Dream on Steam. Together with Blue Pulsar kolektiv I made Lithium, released on Steam in 2025."
   ],
 
@@ -214,7 +214,7 @@ Site.texts = {
       title: "Positions",
       hideIn: ["f"],
       entries: [
-        ["2025–26", "Lead game designer & researcher, Andre Miri Cipa (SEGROMA), [Faculty of Fine Arts, Brno University of Technology](https://www.favu.vut.cz/)"],
+        ["2025–26", "Lead game designer and design researcher, Andre Miri Cipa, design branch of the SEGROMA research project, [Faculty of Fine Arts, Brno University of Technology](https://www.favu.vut.cz/)"],
         ["2021–25", "UI/UX designer, Bohemia Interactive — Arma Reforger and the upcoming Arma 4 (UI/UX design system, widget library and design manual)"],
         ["2018–21", "Junior graphic designer and artist, Bohemia Interactive"],
         ["2018–25", "Co-founder & game designer, Blue Pulsar Games"],
@@ -384,11 +384,11 @@ Site.studio = {
     },
     {
       project: "andre-miri-cipa",
-      role: "Lead game designer & researcher",
-      team: "FaVU VUT Brno · interdisciplinary research team · Unity",
+      role: "Lead game designer",
+      team: "FaVU VUT Brno · design branch of an interdisciplinary research project · Unity",
       shipped: "iOS, Android, Windows, macOS, 2026",
       did: [
-        "Led game design within a research project",
+        "Led the game design within an interdisciplinary research project",
         "Turned ethnographic and participatory research into play",
         "Czech and English release on four platforms"
       ]
@@ -455,7 +455,8 @@ Site.studio = {
                alts: { cover: "…", hero: "…", gallery: ["…", "…"] }.
      foldouts  optional foldable sections in the popup, like the CV blocks:
                [{ title: "Abstract", text: ["paragraph", …] }]
-               (add  open: true  to show a section open by default)
+               (add  open: true  to show a section open by default,
+                top: true  to show it above the text instead of below)
      textAfter optional paragraphs shown after the foldouts, e.g. a contact line.
    ===================================================================== */
 
@@ -469,7 +470,7 @@ Site.projects = [
     year: "2026", level: "featured", practice: "games", isNew: true,
     category: "Game", org: "FaVU VUT Brno",
     type: "Educational & research game",
-    meta: "Lead game designer & researcher · Faculty of Fine Arts, Brno University of Technology, with Masaryk University · iOS, Android, Windows, macOS · Czech & English",
+    meta: "Lead game designer and design researcher · Faculty of Fine Arts, Brno University of Technology, with Masaryk University · iOS, Android, Windows, macOS · Czech & English",
     tags: ["games", "research", "collaborations"],
     summary: "Players enter the perspective of the Roma community chapter by chapter, in an educational game about experiences of everyday racism in the Czech Republic.",
     text: [
@@ -496,16 +497,18 @@ Site.projects = [
     category: "Game", org: "Blue Pulsar kolektiv",
     type: "Ecogame",
     meta: "Blue Pulsar kolektiv · Unity · Steam, Windows & macOS · Czech & English · Hraničář Gallery",
-    tags: ["games", "collaborations", "installations"],
+    tags: ["games", "collaborations", "research"],
     summary: "Players take one of three asymmetric roles, Activists, Locals or the City, and negotiate over a shared map toward a democratic resistance to lithium mining.",
+    foldouts: [
+      { title: "Abstract", open: true, top: true, text: [
+        "Investigating lithium mining in Cínovec, Czech Republic, within the global context of energy transformation is the central theme of the ecogame Lithium, developed by the interdisciplinary Blue Pulsar kolektiv for the exhibition Symptoms of the Future at the Hraničář Gallery, Ústí nad Labem (14 September 2024 – 16 February 2025). The game was released for the first time on Friday, 28 March 2025, via Steam in Czech and English."
+      ] }
+    ],
     text: [
-      "Investigating lithium mining in Czech Cínovec within the global context of energy transformation is the central theme of the ecogame Lithium, developed by the interdisciplinary Blue Pulsar kolektiv for the exhibition Symptoms of the Future at the Hraničář Gallery (14th September 2024 - 16th February 2025). The game was released for the first time on Friday, 28 March 2025, via Steam in Czech and English.",
-      "Lithium focuses on the possibilities of mobilizing local communities to defend their landscapes from lithium mining. It builds on an original game mechanic that works by decentralizing the player's agency in the game world. The game mechanics motivate players to build a coalition with the local population to innovate democratic decision-making from below. Lithium includes interviews with local actors and experts on the environmental impacts of lithium mining. As part of the Symptoms of the Future exhibition, the game asks whether lithium mining is a solution to the climate crisis.",
+      "Lithium focuses on the possibilities of mobilising local communities to defend their landscapes from lithium mining. It builds on an original game mechanic that works by decentralising the player's agency in the game world. The game mechanics motivate players to build a coalition with the local population to innovate democratic decision-making from below. Lithium includes interviews with local actors and experts on the environmental impacts of lithium mining. As part of the Symptoms of the Future exhibition, the game asks whether lithium mining is a solution to the climate crisis.",
       "Authors: Blue Pulsar kolektiv (Filip Hauer, Gabriela Štvrtňová, Veronika Petrova, Michal Žák, Vojtěch Košař)",
       "[Available on Steam for Windows and macOS.](https://store.steampowered.com/app/3439740/Lithium/)",
-      "Release date: 28/03/2025 16:00",
-      "Players take one of three asymmetric roles: Activists, Locals or the City, each with different resources, goals and leverage, negotiating over a shared hex map. The design problem was making three unequal positions all feel playable and true to the local situation. The answer came down to building the card decks from research and interviews with local actors, and tuning what each group can spend and what its particular strengths are in political negotiation.",
-      "My contribution: game design and concept, systems and economy design, card and faction balancing, visual direction, UI design and implementation, C# scripting and production."
+      "Players take one of three asymmetric roles: Activists, Locals or the City, each with different resources, goals and leverage, negotiating over a shared hex map. The design problem was making three unequal positions all feel playable and true to the local situation. My contribution: game design and concept, systems and economy design, card and faction balancing, visual direction, UI design and implementation, C# scripting and production."
     ],
     gallery: 4,
     videos: [
@@ -618,7 +621,7 @@ Site.projects = [
       "> “We work in a culture where the workplace is a battlefield.” — GPT-2",
       "Solo project by Filip Hauer. Installation at Galerie mladých, TIC Brno.",
       "## Thanks",
-      "Michal Žák (programming of several parts of the game), Václav Janoščík (soundtrack, curation of the exhibition), Galerie mladých, TIC Brno."
+      "Michal Žák (help with programming the game scripts), Václav Janoščík (soundtrack, curation of the exhibition), Galerie mladých, TIC Brno."
     ],
     gallery: 4,
     videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/RR33j3hAPXE" }],
@@ -840,13 +843,14 @@ Site.projects = [
     title: "Neural Network Death Song I.", imageAlt: "Neural Network Death Song I., 4K video", year: "2019", level: "archive",
     category: "Video", org: "4K video", type: "4K video",
     meta: "4K video: neural-network text, synthesised voice", tags: ["video"],
+    summary: "A neural network rewrites Václav Klaus's 2002 call to bow to the impersonal market forces, read by a synthesised voice over a still of a tree in the rain.",
     text: [
-      "The danger is currently spectacular threats and economic uncertainty, publicised and depersonalised by PR agencies. Danger, as a political utility, is used, among other things, by conservative forces to attack environmental activists or to reduce emissions. The publicised danger in this case is a special mix of denying the acute impact of climate change and artificially created fear of preserving obsolete means of production (fossil fuels, internal combustion engines, ..). The whole discourse ends in a dystopian fear of the future after capitalism - which itself carries out suicide by aggressive disregard for nature. The publicised danger lies mainly in the loss of social status, labour and financial execution. The physical threat is shifted to an unclear abstract level in media coverage.",
+      "Today, danger takes the form of spectacular threats and economic uncertainty, publicised and depersonalised by PR agencies. Danger, as a political utility, is used, among other things, by conservative forces to attack environmental activists or to reduce emissions. The publicised danger in this case is a special mix of denying the acute impact of climate change and artificially created fear of preserving obsolete means of production (fossil fuels, internal combustion engines…). The whole discourse ends in a dystopian fear of the future after capitalism – which is itself committing suicide through its aggressive disregard for nature. The publicised danger lies mainly in the loss of social status, work and property through debt enforcement. The physical threat is shifted to an unclear abstract level in media coverage.",
       "Neural Network Death Song is based on the text section above.",
-      "> “Let's bow to the impersonal market forces, respect the abstract rule of respect for property rights.”",
-      "The initial quote is a total denial of the living world in favour of the ideological construct of ruthless capitalism. The songs of death appear in various folk traditions as a combat threat or as a contemplative premortal song. In 2002, Klaus legitimised the ongoing destruction of nature, which continues to this day, until 2019 when glaciers in Greenland melt and humanity is on the verge of losing its natural environment.",
-      "Another threat is the advent of artificial intelligence and neural networks, which already define our daily lives. Neural networks are becoming the main instrument of corporate power, and in the public debate about them, we are still in a phase of denial, like the climate crisis. The danger becomes real in collecting data about our behaviour on the network or when the algorithm decides to dismiss us because of reduced performance.",
-      "The video combines generated neural network text (based on V.Klaus quote) with synthesised voice and still of a tree in rain. The climate crisis, conservative texts, or neural networks are a real threat to our body."
+      "> “Let's bow to the impersonal market forces, respect the abstract rule of respect for property rights.” — Václav Klaus, 2002",
+      "The initial quote is a total denial of the living world in favour of the ideological construct of ruthless capitalism. The songs of death appear in various folk traditions as a combat threat or as a contemplative premortal song. In 2002, Klaus legitimised the destruction of nature, which continues to this day: in 2019, the glaciers in Greenland are melting and humanity is on the verge of losing its natural environment.",
+      "Another threat is the advent of artificial intelligence and neural networks, which already define our daily lives. Neural networks are becoming the main instrument of corporate power, and in the public debate about them, we are still in a phase of denial, as with the climate crisis. The danger becomes real in the collection of data about our behaviour online, or when an algorithm decides to dismiss us because of reduced performance.",
+      "The video combines generated neural network text (based on the Václav Klaus quote) with a synthesised voice and a still of a tree in the rain. The climate crisis, conservative texts and neural networks are a real threat to our bodies."
     ],
     gallery: 0, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/0sCeRYWGi2U" }], links: [["Video", "https://www.youtube.com/watch?v=0sCeRYWGi2U"]]
   },

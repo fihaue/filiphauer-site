@@ -48,7 +48,7 @@ window.Site = window.Site || {};
           ${h.tagPills(p)}
           <details id="details-${p.id}">
             <summary>${e(h.t("ui.readMore"))}</summary>
-            <div class="full-text">${h.fullText(p)}${h.foldouts(p)}${h.videos(p)}${gallery(p)}</div>
+            <div class="full-text">${h.foldouts(p, "top")}${h.fullText(p)}${h.foldouts(p)}${h.videos(p)}${gallery(p)}</div>
           </details>
           ${h.linkRow(p)}
         </div>
