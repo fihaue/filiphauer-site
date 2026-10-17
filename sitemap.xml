@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- List of pages for search engines. The site is one page, so one address.
-     Going live: use the domain from CNAME (filiphauer.com). -->
+     The address must match the domain in CNAME. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://new.filiphauer.com/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://filiphauer.com/</loc>
+    <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>

@@ -19,7 +19,7 @@ Site.config = {
   showLayoutSwitcher: false,
 
   // Used for the "Copy link" button in project popups.
-  siteUrl: "https://new.filiphauer.com",
+  siteUrl: "https://filiphauer.com",
 
   // Names and short descriptions shown in the switcher bar.
   layouts: {
