@@ -258,6 +258,7 @@ window.Site = window.Site || {};
   function setupMenu() {
     const bar = h.$(".sidebar"), button = h.$("#menu-button");
     if (!button) return;
+    button.hidden = false;   // index.html starts it hidden; from here the CSS decides (phones only)
     const setOpen = open => {
       bar.classList.toggle("menu-open", open);
       button.setAttribute("aria-expanded", String(open));
