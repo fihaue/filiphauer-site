@@ -84,14 +84,20 @@ Site.helpers = {
      So if you move a project to another practice, rename its images too. */
 
   imageName(p, type, n) { return `images/${p.practice || "archive"}_${p.id}_${type}_${n}.jpg`; },
-  /* Screen-reader description of an image (alt text), from content.js:
-       alts.cover / alts.hero / alts.gallery[n-1]  for one image, else
-       imageAlt  for all images of the project, else the title. */
+  /* Screen-reader description of an image (alt text, also shown if the image can't load).
+     A detailed description from content.js wins:  alts: { cover: "…", hero: "…", gallery: ["…", …] }.
+     Otherwise it is built from the project's data:  title, image number, medium (type), year
+       cover   → "Lithium, cover image, Ecogame, 2025"
+       hero    → "Lithium, image 1 of 5, Ecogame, 2025"     (popup top image)
+       gallery → "Lithium, image 3 of 5, Ecogame, 2025"     (gallery image 2)  */
   altText(p, kind, n = 1) {
     const one = p.alts && (kind === "gallery" ? (p.alts.gallery || [])[n - 1] : p.alts[kind]);
     if (one) return one;
-    const base = p.imageAlt || p.title;
-    return kind === "gallery" ? `${base} (image ${n} of ${p.gallery})` : base;
+    const total = 1 + (p.gallery || 0);
+    const which = kind === "cover" ? "cover image"
+                : kind === "hero"  ? `image 1 of ${total}`
+                :                    `image ${n + 1} of ${total}`;
+    return [p.title, which, p.type, p.year].filter(Boolean).join(", ");
   },
   coverImage(p)         { return Site.helpers.imageName(p, "cover", 1); },
   heroImage(p)          { return Site.helpers.imageName(p, "hero", 1); },

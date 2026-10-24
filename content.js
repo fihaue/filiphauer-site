@@ -73,7 +73,7 @@ Site.texts = {
   introImageG: {
     src: "images/site_hero-design_1.jpg",   // 1920 × 768 (5:2), the top part of the image below
     full: "images/games_lithium_gallery_1.jpg",   // shown uncut when the image is clicked
-    alt: "Lithium, game board with the map around Cínovec (Zinnwald), Blue Pulsar kolektiv"
+    alt: "Lithium, image 2 of 5, Ecogame, 2025"
   },
 
   // Statement under the headline. One text = one paragraph.
@@ -483,10 +483,10 @@ Site.studio = {
      hideIn    optional list of layouts where the project is left out,
                e.g. ["p"] = not in the presentation.
      pinned    optional true → always listed first, before newer projects.
-     imageAlt  description of the project's images for screen readers (and shown
-               if an image cannot load). Used for cover and hero; gallery images
-               get "(image 2 of 4)" added. To describe single images, add
-               alts: { cover: "…", hero: "…", gallery: ["…", "…"] }.
+     alts      optional detailed image descriptions for screen readers (also shown if
+               an image cannot load): { cover: "…", hero: "…", gallery: ["…", "…"] }.
+               Without them, each image gets "title, image number, type, year",
+               e.g. "Lithium, image 3 of 5, Ecogame, 2025".
      heroVideo optional { label, embed }: the top of the popup plays this
                video instead of showing the hero image (which becomes its thumbnail).
      foldouts  optional foldable sections in the popup, like the CV blocks:
@@ -502,7 +502,7 @@ Site.projects = [
 
   {
     id: "andre-miri-cipa", with: "SEGROMA research team, FaVU VUT Brno",
-    title: "Andre Miri Cipa", imageAlt: "Andre Miri Cipa, educational game, Faculty of Fine Arts, Brno University of Technology",
+    title: "Andre Miri Cipa",
     year: "2026", level: "featured", practice: "games", isNew: true,
     category: "Game", org: "FaVU VUT Brno",
     type: "Educational & research game",
@@ -533,7 +533,7 @@ Site.projects = [
 
   {
     id: "lithium", with: "Blue Pulsar kolektiv: Gabriela Štvrtňová, Veronika Petrova, Michal Žák, Vojtěch Košař",
-    title: "Lithium", imageAlt: "Lithium, ecogame, Blue Pulsar kolektiv, Hraničář Gallery, Ústí nad Labem",
+    title: "Lithium",
     year: "2025", level: "featured", practice: "games",
     category: "Game", org: "Blue Pulsar kolektiv",
     type: "Ecogame",
@@ -562,7 +562,7 @@ Site.projects = [
 
   {
     id: "workers-out-of-office",
-    title: "Workers Out of Office: Dreaming About Work", imageAlt: "Workers Out of Office: Dreaming About Work, game and installation at Industra, Brno",
+    title: "Workers Out of Office: Dreaming About Work",
     short: "Workers Out of Office",
     year: "2023", level: "featured", practice: "games",
     category: "Game & installation", org: "Industra Brno",
@@ -586,7 +586,7 @@ Site.projects = [
 
   {
     id: "workers-out-of-office-london-dlc",
-    title: "Workers Out of Office: London DLC", imageAlt: "Workers Out of Office: London DLC, game and installation at POP-UP Galerie AVU, Prague",
+    title: "Workers Out of Office: London DLC",
     short: "London DLC",
     year: "2024", level: "featured", practice: "games",
     category: "Game & installation", org: "POP-UP Galerie AVU",
@@ -608,7 +608,7 @@ Site.projects = [
 
   {
     id: "arma-reforger",
-    title: "Arma Reforger — UI/UX", imageAlt: "Arma Reforger, game interface, Bohemia Interactive",
+    title: "Arma Reforger — UI/UX",
     short: "Arma Reforger",
     year: "2021–25", level: "featured", practice: "studio",
     hideIn: ["p"],   // not shown in the presentation
@@ -635,7 +635,7 @@ Site.projects = [
 
   {
     id: "ultimate-spread-logics", with: "Philipp Kolychev",
-    title: "Ultimate Spread Logics", imageAlt: "Ultimate Spread Logics, digital tarot game, Enter the Room, Prague City Gallery",
+    title: "Ultimate Spread Logics",
     year: "2022/25", level: "featured", practice: "games",
     category: "Game", org: "Prague City Gallery",
     type: "Digital tarot game",
@@ -654,7 +654,7 @@ Site.projects = [
 
   {
     id: "dreaming-about-work-09",
-    title: "Dreaming About Work 0.9: For Loop Contingency", imageAlt: "Dreaming About Work 0.9: For Loop Contingency, game simulation and installation at Galerie mladých, TIC Brno",
+    title: "Dreaming About Work 0.9: For Loop Contingency",
     short: "For Loop Contingency",
     year: "2021", level: "featured", practice: "games",
     category: "Simulation", org: "TIC Brno",
@@ -680,7 +680,7 @@ Site.projects = [
 
   {
     id: "for-how-many-are-your-futures",
-    title: "For How Many Are Your Futures?", imageAlt: "For How Many Are Your Futures?, tabletop game, CoFUTURES, University of Oslo",
+    title: "For How Many Are Your Futures?",
     year: "2022", level: "featured", practice: "games",
     category: "Tabletop game", org: "CoFUTURES Oslo",
     type: "Tabletop game",
@@ -702,7 +702,7 @@ Site.projects = [
 
   {
     id: "11th-dream", with: "Blue Pulsar Games: Michal Žák, Vojtěch Košař",
-    title: "11th Dream", imageAlt: "11th Dream, third-person abstract shooter, Blue Pulsar Games",
+    title: "11th Dream",
     year: "2018–21", level: "featured", practice: "games",
     category: "Game", org: "Blue Pulsar Games",
     type: "Third-person abstract shooter",
@@ -725,7 +725,7 @@ Site.projects = [
 
   {
     id: "perfect-strike",
-    title: "Perfect Strike: After Vita Activa", imageAlt: "Perfect Strike: After Vita Activa, game installation, Academy of Fine Arts in Prague",
+    title: "Perfect Strike: After Vita Activa",
     short: "Perfect Strike",
     year: "2018", level: "featured", practice: "games",
     category: "Game installation", org: "itch.io",
@@ -750,7 +750,7 @@ Site.projects = [
   {
     id: "thesis",
     pinned: true,   // always first, before newer projects
-    title: "Digital Games and Allegorithmic Work", imageAlt: "Digital Games and Allegorithmic Work, diagram from the dissertation, Academy of Fine Arts in Prague",
+    title: "Digital Games and Allegorithmic Work",
     year: "2025", level: "grid", practice: "writing",
     category: "Research", org: "Academy of Fine Arts Prague",
     type: "PhD thesis",
@@ -778,22 +778,22 @@ Site.projects = [
     links: [["Thesis at AVU", "https://theses.avu.cz/en/prace/2025/17177-phd-filip-hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
   },
 
-  { id: "cedit-critical-game-infrastructures", title: "Zažívat a simulovat kritické herní infrastruktury: Mapa možností kritického herního designu", imageAlt: "Zažívat a simulovat kritické herní infrastruktury, essay in CEDIT 16, CED Brno", year: "2025", level: "grid", practice: "writing",
+  { id: "cedit-critical-game-infrastructures", title: "Zažívat a simulovat kritické herní infrastruktury: Mapa možností kritického herního designu", year: "2025", level: "grid", practice: "writing",
     category: "Essay", org: "CEDIT 16, CED Brno", type: "Essay", tags: ["essays"], external: "https://www.ced-brno.cz/files/4702.pdf" },
-  { id: "power-relations-in-games", with: "Ondřej Trhoň", title: "Power Relations in Games: A Guide to the Critical Field of Game Art", imageAlt: "Power Relations in Games, book chapter in Enter the Room, Prague City Gallery", short: "Power Relations in Games", year: "2025", level: "grid", practice: "writing",
+  { id: "power-relations-in-games", with: "Ondřej Trhoň", title: "Power Relations in Games: A Guide to the Critical Field of Game Art", short: "Power Relations in Games", year: "2025", level: "grid", practice: "writing",
     category: "Research", org: "Prague City Gallery", type: "Book chapter", tags: ["writing"], external: "https://eshop.ghmp.cz/enter-the-room/" },
-  { id: "allegorithmic-politics", title: "Allegorithmic Politics of Game Exchange: Subversion, Ideology, and Capitalism in Strategy Games", imageAlt: "Allegorithmic Politics of Game Exchange, conference paper, DiGRA 2023, Sevilla", short: "Allegorithmic Politics of Game Exchange", year: "2023", level: "grid", practice: "writing",
+  { id: "allegorithmic-politics", title: "Allegorithmic Politics of Game Exchange: Subversion, Ideology, and Capitalism in Strategy Games", short: "Allegorithmic Politics of Game Exchange", year: "2023", level: "grid", practice: "writing",
     category: "Research", org: "DiGRA 2023", type: "Peer-reviewed conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
-  { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", imageAlt: "Věčný návrat do Tamrielu, essay in A2 magazine", year: "2022", level: "grid", practice: "writing",
+  { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", year: "2022", level: "grid", practice: "writing",
     category: "Essay", org: "A2", type: "Essay", tags: ["essays"], external: "https://advojka.cz/a2-article/2022-5-vecny-navrat-do-tamrielu/" },
-  { id: "automatizace", title: "Automatizace", imageAlt: "Automatizace, book chapter in Neúplný atlas regenerace, Utopia Libri", year: "2022", level: "grid", practice: "writing",
+  { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
     category: "Research", org: "Utopia Libri", type: "Book chapter", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
-  { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", imageAlt: "Earthly Survival: Monstrous Games, preliminary research, exhibition catalogue, etc. galerie, Prague", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",
+  { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",
     category: "Essay", org: "etc. galerie", type: "Essay (PDF)", tags: ["essays"], external: "https://etcgalerie.cz/wp-content/uploads/2023/04/ETC_ESMG_A4_TISK.pdf" },
 
   {
     id: "workcraft", with: "Jakub Pospíšil",
-    title: "Workcraft 5.0", imageAlt: "Workcraft 5.0, gallery game at Studio Prám, Prague", year: "2018", level: "grid", practice: "installations",
+    title: "Workcraft 5.0", year: "2018", level: "grid", practice: "installations",
     category: "Installation", org: "Studio Prám", type: "Gallery game",
     meta: "Gallery game with a paid performer, open-source software / with Jakub Pospíšil / Studio Prám, Prague", tags: ["installations", "collaborations", "games"],
     summary: "You score points for the physical labour of a paid performer.",
@@ -803,7 +803,7 @@ Site.projects = [
   },
   {
     id: "little-xeno-chemistry",
-    title: "Little Xeno-Chemistry (If The Bot Was a Socialist)", imageAlt: "Little Xeno-Chemistry (If The Bot Was a Socialist), real-time simulation, Display, Prague", short: "Little Xeno-Chemistry", year: "2018", level: "grid", practice: "installations",
+    title: "Little Xeno-Chemistry (If The Bot Was a Socialist)", short: "Little Xeno-Chemistry", year: "2018", level: "grid", practice: "installations",
     category: "Simulation", org: "Display", type: "Simulation, C# in Unity",
     meta: "Real-time simulation (C# in Unity), two screens, modified text / Display, Prague", tags: ["installations"],
     summary: "A live game-engine image that removes the player's input entirely.",
@@ -816,7 +816,7 @@ Site.projects = [
   },
   {
     id: "your-sustainable-future", with: "Jakub Pospíšil",
-    title: "Your Sustainable Future", imageAlt: "Your Sustainable Future, installation at Galerie 123, Prague", year: "2017", level: "grid", practice: "installations",
+    title: "Your Sustainable Future", year: "2017", level: "grid", practice: "installations",
     category: "Installation", org: "Galerie 123", type: "Installation",
     meta: "Plywood installation, two computers playing Counter-Strike: GO, rice / with Jakub Pospíšil / Galerie 123, Prague", tags: ["installations", "collaborations"],
     summary: "Two computers play Counter-Strike: GO against each other for the whole exhibition.",
@@ -825,7 +825,7 @@ Site.projects = [
   },
   {
     id: "rooms",
-    title: "Rooms / Pokoje", imageAlt: "Rooms / Pokoje, installation at the Academy of Fine Arts in Prague", year: "2015", level: "grid", practice: "installations",
+    title: "Rooms / Pokoje", year: "2015", level: "grid", practice: "installations",
     category: "Installation", org: "AVU Prague", type: "Installation",
     meta: "Installation: iron construction 400 × 220 × 220 cm, video projected on two canvases, three-channel audio", tags: ["installations"],
     summary: "An archetypal room drawn in iron, with sound and video from six friends' rooms.",
@@ -843,7 +843,7 @@ Site.projects = [
   },
   {
     id: "dreaming-about-work-01",
-    title: "Dreaming About Work 0.1", imageAlt: "Dreaming About Work 0.1, 4K video and computer simulation", year: "2020", level: "grid", practice: "installations",
+    title: "Dreaming About Work 0.1", year: "2020", level: "grid", practice: "installations",
     category: "Video", org: "Job Quitting Simulator", type: "4K video, simulation",
     meta: "4K video 07:54, computer simulation", tags: ["video", "games"],
     summary: "Machine-learning text introduces a Job Quitting Simulator spread across an eight-hour working day.",
@@ -852,7 +852,7 @@ Site.projects = [
   },
   {
     id: "some-of-my-friends-are-killers",
-    title: "Some of My Friends Are Killers", imageAlt: "Some of My Friends Are Killers, video installation at the Academy of Fine Arts in Prague", year: "2016", level: "grid", practice: "installations",
+    title: "Some of My Friends Are Killers", year: "2016", level: "grid", practice: "installations",
     category: "Video", org: "AVU Prague", type: "Full HD video 38:29",
     meta: "Full HD video 38:29, sound recordings of play", tags: ["video"],
     summary: "Six takes of friends playing Arma 2; each ends with a friend's death.",
@@ -861,11 +861,11 @@ Site.projects = [
       "Installed in the lecture hall of the Academy of Fine Arts in Prague during the semester exams."],
     gallery: 0, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/RNKlx8Gl7hs" }], links: []
   },
-  { id: "earthly-survival", with: "John Hill", title: "Earthly Survival: Monstrous Games", imageAlt: "Earthly Survival: Monstrous Games, exhibition at etc. galerie, Prague", year: "2022", level: "grid", practice: "curation",
+  { id: "earthly-survival", with: "John Hill", title: "Earthly Survival: Monstrous Games", year: "2022", level: "grid", practice: "curation",
     category: "Curation", org: "etc. galerie", type: "Exhibition", tags: ["curation"], external: "https://etcgalerie.cz/en/earthly-survival-monstrous-games/" },
   {
     id: "ideal-prostor", with: "Jolanta Nowaczyk, Jakub Pospíšil, Argišt Alaverdyan, Šimon Sýkora",
-    title: "IDEAL Prostor", imageAlt: "IDEAL Prostor, artist-run space, Prague 4", year: "2017–19", level: "grid", practice: "curation",
+    title: "IDEAL Prostor", year: "2017–19", level: "grid", practice: "curation",
     category: "Curation", org: "Prague", type: "Artist-run space",
     meta: "Co-founder & curator / artist-run space, Prague 4",
     tags: ["curation", "collaborations"],
@@ -887,7 +887,7 @@ Site.projects = [
 
   {
     id: "neural-network-death-song",
-    title: "Neural Network Death Song I.", imageAlt: "Neural Network Death Song I., 4K video", year: "2019", level: "archive",
+    title: "Neural Network Death Song I.", year: "2019", level: "archive",
     category: "Video", org: "4K video", type: "4K video",
     meta: "4K video: neural-network text, synthesised voice", tags: ["video"],
     summary: "A neural network rewrites Václav Klaus's 2002 call to bow to the impersonal market forces, read by a synthesised voice over a still of a tree in the rain.",
@@ -903,7 +903,7 @@ Site.projects = [
   },
   {
     id: "never-ending-story", with: "Tereza Brussmannová",
-    title: "Never Ending Story; Life After Art", imageAlt: "Never Ending Story; Life After Art, multimedia installation at Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava", short: "Never Ending Story",
+    title: "Never Ending Story; Life After Art", short: "Never Ending Story",
     year: "2017", level: "grid", practice: "installations",
     category: "Installation", org: "OGV Jihlava", type: "Multimedia installation",
     meta: "Multimedia installation / with Tereza Brussmannová / Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava, 6–30 April 2017",
@@ -916,28 +916,28 @@ Site.projects = [
     videos: [{ label: "Video", embed: "https://player.vimeo.com/video/230955812" }],
     links: [["Video on Vimeo", "https://vimeo.com/230955812"], ["Press release (Artalk, CZ)", "https://artalk.info/news/tz-nikdy-nekoncici-pribeh-zivot-po-umeni"]]
   },
-  { id: "sugar-hydroxylamine", title: "Sugar – Hydroxylamine", imageAlt: "Sugar – Hydroxylamine, 4K video installation", year: "2017", level: "archive", type: "4K video installation 06:26", links: [["Video", "https://vimeo.com/227646658"]] },
-  { id: "perfect-time", title: "Perfect Time", imageAlt: "Perfect Time, HD video", year: "2017", level: "archive", type: "HD video 15:17", links: [["Video", "https://vimeo.com/248768646"]] },
-  { id: "spend-your-day-right", title: "Spend Your Day Right", imageAlt: "Spend Your Day Right, two-channel HD video, Academy of Fine Arts in Prague", year: "2016", level: "archive", type: "2-channel HD video 06:23", links: [["Video", "https://vimeo.com/197099202"]] },
-  { id: "re-time", title: "Re Time", imageAlt: "Re Time, Full HD video, UKG Prague", year: "2016", level: "archive", type: "Full HD video 03:19", links: [["Video", "https://vimeo.com/176368174"]] },
-  { id: "mediated-time", title: "Mediated Time", imageAlt: "Mediated Time, sound installation at the Royal Academy of Fine Arts Antwerp", year: "2016", level: "archive", type: "Sound installation: headphones, hidden microphone, stairs",
+  { id: "sugar-hydroxylamine", title: "Sugar – Hydroxylamine", year: "2017", level: "archive", type: "4K video installation 06:26", links: [["Video", "https://vimeo.com/227646658"]] },
+  { id: "perfect-time", title: "Perfect Time", year: "2017", level: "archive", type: "HD video 15:17", links: [["Video", "https://vimeo.com/248768646"]] },
+  { id: "spend-your-day-right", title: "Spend Your Day Right", year: "2016", level: "archive", type: "2-channel HD video 06:23", links: [["Video", "https://vimeo.com/197099202"]] },
+  { id: "re-time", title: "Re Time", year: "2016", level: "archive", type: "Full HD video 03:19", links: [["Video", "https://vimeo.com/176368174"]] },
+  { id: "mediated-time", title: "Mediated Time", year: "2016", level: "archive", type: "Sound installation: headphones, hidden microphone, stairs",
     summary: "“Dear, put on the headphones. Close your eyes and walk slowly up and down the stairs. Count one hundred steps.” A hidden microphone plays back the ambient sound of the stairs. Installed during the Open Day of In Situ3, Royal Academy of Fine Arts Antwerp.", links: [] },
-  { id: "open-source-homes", title: "Open Source domovy / Open Source Homes", imageAlt: "Open Source Homes, joint exhibition with Jakub Pospíšil at GAVU, Prague", short: "Open Source Homes", year: "2016", level: "archive", type: "Joint exhibition with Jakub Pospíšil, GAVU, Prague",
+  { id: "open-source-homes", title: "Open Source domovy / Open Source Homes", short: "Open Source Homes", year: "2016", level: "archive", type: "Joint exhibition with Jakub Pospíšil, GAVU, Prague",
     summary: "A joint exhibition with Jakub Pospíšil at GAVU, Prague (June 2016): an open forum about the nearest future. Among other works, it showed my videos Sustainable Time and Sun Rice (Melting Butter).", links: [["Blog", "https://filiphauer.blogspot.com/2016/09/open-source-homes-open-source-domovy.html"]] },
-  { id: "melting-butter", title: "Melting Butter & Sustainable Time", imageAlt: "Melting Butter & Sustainable Time, Full HD videos, Royal Academy of Fine Arts Antwerp", year: "2016", level: "archive", type: "2 Full HD videos 11:16, 04:04",
+  { id: "melting-butter", title: "Melting Butter & Sustainable Time", year: "2016", level: "archive", type: "2 Full HD videos 11:16, 04:04",
     summary: "Two videos from my study stay at the Royal Academy of Fine Arts Antwerp, Sustainable Time and Sun Rice (Melting Butter). Both are concerned with time, the construction of meaning, image and sound. Exhibited at Open Source Homes, GAVU, Prague (2016).",
     links: [["Video 1", "https://vimeo.com/179033558"], ["Video 2", "https://vimeo.com/183681112"]] },
-  { id: "taking-a-short-nap", title: "Krátká přestávka / Taking a Short Nap", imageAlt: "Taking a Short Nap, sound and video installation at the Academy of Fine Arts in Prague", short: "Taking a Short Nap", year: "2014", level: "archive", type: "Sound and video installation, two wooden steps, headphones",
+  { id: "taking-a-short-nap", title: "Krátká přestávka / Taking a Short Nap", short: "Taking a Short Nap", year: "2014", level: "archive", type: "Sound and video installation, two wooden steps, headphones",
     summary: "An installation of sound and video about the viewer's direct emotional experience. Viewers climb two wooden steps spaced along the wall and listen to sound recordings played from headphones above the steps. The viewer experiences a direct sense of personal threat, heightened by the sound. Above the first steps I repeat the titles of works from my 2014 series on the theme of art, with a recording of my heartbeat; above the second, I repeat the word “another” with my quickened breath, while in the video the sentence “Thought.” levitates above my body. The work transfers the experience of anxiety, one of the few direct, unlearned human experiences, onto the viewer.", links: [["Blog", "http://filiphauer.blogspot.com/2014/07/kratka-prestavka-taking-short-nap.html"]] },
-  { id: "formal-garden", title: "Formální zahrada / Formal Garden", imageAlt: "Formal Garden, installation at the Academy of Fine Arts in Prague", short: "Formal Garden", year: "2014", level: "archive", type: "Installation: tree, chipboard desk, web blog",
+  { id: "formal-garden", title: "Formální zahrada / Formal Garden", short: "Formal Garden", year: "2014", level: "archive", type: "Installation: tree, chipboard desk, web blog",
     summary: "An installation of a tree, a chipboard desk and a web blog. I wanted to capture the process of killing a tree: from the moment it lay in my studio, through its cutting, to the final installation, where the tree sits horizontally in an upright chipboard desk. A QR code links to the blog that documents the process. The title refers to the 17th-century French formal garden; the work itself should be seen as a formal artwork. Part of my 2014 series on the theme of art, shown at the AVU semester exhibition.", links: [["Blog", "http://formal-garden.tumblr.com/"]] },
-  { id: "friends-talking-about-art", title: "Some of My Friends Talking About Art", imageAlt: "Some of My Friends Talking About Art, three-channel video installation", year: "2014", level: "archive", type: "3-channel video installation 43:31",
+  { id: "friends-talking-about-art", title: "Some of My Friends Talking About Art", year: "2014", level: "archive", type: "3-channel video installation 43:31",
     summary: "Six takes of interviews with my friends (approx. 7 minutes each). We talked individually about basic questions connected with art practice: Why do you want to be an artist? What is the meaning of art for society and for you? What methods do you use to make good art? As in Alvin Lucier's I Am Sitting in a Room, I played the recordings back into the studio where they were made, again and again, until speech dissolved into the resonant frequencies of the room, articulated only by the rhythm of our voices.", links: [["Video", "https://www.youtube.com/watch?v=rcb23t3IPPs"]] },
-  { id: "import-export", title: "Import/Export (Monoliths A, B)", imageAlt: "Import/Export (Monoliths A, B), installation at the Academy of Fine Arts in Prague", year: "2013", level: "archive", type: "Installation: two monoliths, polystyrene, leaflets, papier-mâché",
+  { id: "import-export", title: "Import/Export (Monoliths A, B)", year: "2013", level: "archive", type: "Installation: two monoliths, polystyrene, leaflets, papier-mâché",
     summary: "Two monoliths named after the dictionary definitions: export, “to ship goods and services out of the port of a country”, and import, “to bring goods and services into the port of a country”. Inside, two blocks of EPS facade polystyrene (500 × 1000 × 250 mm) joined with spruce dowels and glue, papered with torn advertising leaflets from retail chains, reinforced with papier-mâché, painted black and wrapped in strapping tape. Installed at AVU during the semester exams, 2013.", links: [] },
   {
     id: "weather-tax",
-    title: "Weather Tax", imageAlt: "Weather Tax, speculative ambient music for a non-existent game",
+    title: "Weather Tax",
     year: "2025–26, ongoing", level: "grid", practice: "installations",
     category: "Music", org: "Bandcamp", type: "Music / speculative ambience",
     meta: "Speculative ambience for a non-existent game / three EPs on Bandcamp",
