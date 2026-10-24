@@ -26,6 +26,13 @@ window.Site = window.Site || {};
       .sort(h.newestFirst);                       // newest first in every layout
   }
 
+  /* Cover image that opens the project when clicked (same link as the title).
+     Mouse only: the title next to it is the link for keyboard and screen readers.
+     The link uses display: contents in CSS, so card layouts treat the image as before. */
+  function coverLink(p) {
+    return `<a class="cover-link" ${openHref(p)} tabindex="-1" aria-hidden="true">${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}</a>`;
+  }
+
   /* Link that opens a project: popup link, or outside link for external items. */
   function openHref(p) {
     return p.external
@@ -39,7 +46,7 @@ window.Site = window.Site || {};
   function layoutA(list) {
     return `<div class="grid-a">${list.map(p => `
       <article class="card-a" id="card-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="card-body">
           ${h.kicker(p)}
           <h3>${e(p.title)}</h3>
@@ -61,7 +68,7 @@ window.Site = window.Site || {};
   function layoutB(list, isFiltered) {
     return `<div class="grid-b">${list.map((p, i) => `
       <article class="card-b ${i === 0 && !isFiltered ? "wide" : ""}" id="card-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="card-body">
           ${h.kicker(p)}
           <h3><a ${openHref(p)}>${e(p.title)}</a></h3>
@@ -104,7 +111,7 @@ window.Site = window.Site || {};
     const count = String(list.length).padStart(2, "0");
     return `<div class="rows-d">${list.map((p, i) => `
       <article class="row-d" id="card-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="card-body">
           <span class="row-number">${String(i + 1).padStart(2, "0")} / ${count}</span>
           ${h.kicker(p)}
@@ -165,7 +172,7 @@ window.Site = window.Site || {};
   function highlightCard(p) {
     return `
       <article class="highlight" id="card-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="card-body">
           ${h.kicker(p)}
           <h4><a ${openHref(p)}>${e(p.title)}</a></h4>
@@ -182,7 +189,7 @@ window.Site = window.Site || {};
     const p = h.findProject(entry.project);
     return `
       <article class="studio-card" id="studio-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="card-body">
           <p class="kicker">${e(entry.role)}</p>
           <h4>${e(p.short || p.title)}</h4>
@@ -203,7 +210,7 @@ window.Site = window.Site || {};
     const studioSection = `
       <section class="practice studio" id="studio" aria-labelledby="practice-studio">
         <header class="practice-head">
-          <h3 id="practice-studio">${e(h.t("sections.studio"))}</h3>
+          <h3 id="practice-studio">${h.icon((Site.sectionIcons || {}).studio, "section-icon")}${e(h.t("sections.studio"))}</h3>
           <p>${e(st.intro)}</p>
           <p class="skills">${st.skills.map(s => `<span>${e(s)}</span>`).join("")}</p>
           ${st.cvLink ? `<p><a class="button" href="${st.cvLink}" target="_blank" rel="noopener">${e(h.t("ui.cvForStudios"))}</a></p>` : ""}
@@ -239,7 +246,7 @@ window.Site = window.Site || {};
       return `
         <section class="practice" id="${pid}" aria-labelledby="practice-${pid}">
           <header class="practice-head">
-            <h3 id="practice-${pid}">${s.label}<sup>${count}</sup></h3>
+            <h3 id="practice-${pid}">${h.icon((Site.sectionIcons || {})[pid], "section-icon")}${s.label}<sup>${count}</sup></h3>
             <p>${s.blurb}</p>
           </header>
           <div class="practice-body">${body}</div>
@@ -331,7 +338,7 @@ window.Site = window.Site || {};
   function layoutP(list) {
     return list.map((p, i) => `
       <article class="slide" id="card-${p.id}">
-        ${h.img(h.coverImage(p), h.altText(p, "cover"), "cover")}
+        ${coverLink(p)}
         <div class="slide-text">
           ${h.kicker(p)}
           <h3><a ${openHref(p)}>${e(p.title)}</a></h3>

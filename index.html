@@ -96,10 +96,10 @@
   <nav aria-label="Sections">
     <a href="#work"          class="hide-in-g"                     data-text="sidebar.work"></a>
     <a href="#research"      class="hide-in-e hide-in-f hide-in-g" data-text="sidebar.research"></a>
+    <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
     <a href="#games"         class="only-g"                        data-text="sidebar.games"></a>
     <a href="#writing"       class="only-g"                        data-text="sidebar.writing"></a>
     <a href="#installations" class="only-g"                        data-text="sidebar.installations"></a>
-    <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
     <a href="#archive"       class="hide-in-g"                     data-text="sidebar.archive"></a>
     <a href="#about"                                               data-text="sidebar.about"></a>
     <a href="#contact"                                             data-text="sidebar.contact"></a>
@@ -128,7 +128,9 @@
 
     <!-- Big image under the statement. Hidden on phones (css/base.css);
          loading="lazy" means phones don't download it either. -->
-    <img class="intro-image" id="intro-image" src="images/site_hero_1.jpg" alt="" loading="lazy">
+    <button type="button" class="zoom intro-zoom" id="intro-zoom" data-label="ui.showFullScreen">
+      <img class="intro-image" id="intro-image" src="images/site_hero_1.jpg" alt="" loading="lazy">
+    </button>
     <!-- Caption at the bottom of the image, shown only in the presentation (layout P) -->
     <p class="intro-caption" id="intro-caption" aria-hidden="true"></p>
   </header>
@@ -203,6 +205,13 @@
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Colour filter: turns the white icons into the site green (#6be67b) on hover (css/base.css) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="tint-green" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0 0 0 0 0.420  0 0 0 0 0.902  0 0 0 0 0.482  0 0 0 1 0"/>
+  </filter>
+</svg>
 
 <!-- If content.js has a typing mistake, show where instead of a blank page. -->
 <script>

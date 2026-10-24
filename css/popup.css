@@ -30,6 +30,10 @@
 .popup-content { overflow: auto; padding-bottom: 28px; }
 .popup-hero { width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
 .popup-content .img-missing.popup-hero { aspect-ratio: var(--hero-ratio); }
+/* heroVideo: a video at the top of the popup instead of the hero image */
+.popup-hero-video .video { margin-top: 0; aspect-ratio: var(--hero-ratio); }
+.popup-hero-video .video-poster { filter: brightness(.85); }          /* only lightly dimmed, so the play label stays readable */
+.popup-hero-video .video:hover .video-poster { filter: brightness(1); }
 .photo-credit { margin: 6px 14px 0; text-align: right; font-size: 12px; color: var(--text-dim); }   /* credits.hero in content.js */
 .popup-text { display: grid; gap: 12px; padding: 24px 28px 0; max-width: 74ch; margin-inline: auto; }   /* centred in the popup */
 .popup-text h2 { font-size: clamp(24px, 3vw, 34px); }
@@ -59,8 +63,18 @@
    ===================================================================== */
 
 /* Images you can click to see full screen */
-.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.zoom { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .zoom:hover img { opacity: .9; }
+/* Magnifier (icons/ui-zoom.svg) in the corner on hover / keyboard focus: "click to enlarge" */
+.zoom::after {
+  content: ""; position: absolute; right: 12px; bottom: 12px; width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(20, 20, 20, .6) url("../icons/ui-zoom.svg") center / 22px no-repeat;
+  opacity: 0; transition: opacity .15s; pointer-events: none;
+}
+.zoom:hover::after, .zoom:focus-visible::after { opacity: 1; }
+/* Presentation: no magnifier on the full-screen intro slide */
+body[data-layout="p"] .intro-zoom::after { content: none; }
+@media (hover: none) { .zoom::after { content: none; } }   /* touch screens: no hover */
 
 .lightbox {
   border: 0; padding: 0; margin: 0;

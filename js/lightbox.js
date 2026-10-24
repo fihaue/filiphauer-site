@@ -26,7 +26,7 @@ window.Site = window.Site || {};
   function show(i) {
     index = (i + images.length) % images.length;
     const src = images[index];
-    h.$("#lightbox-img").src = src.currentSrc || src.src;
+    h.$("#lightbox-img").src = src.dataset.full || src.currentSrc || src.src;   // data-full = uncut original
     h.$("#lightbox-img").alt = src.alt;
     h.$("#lightbox-count").textContent = images.length > 1 ? `${index + 1} / ${images.length}` : "";
     h.$("#lightbox-prev").hidden = h.$("#lightbox-next").hidden = images.length < 2;

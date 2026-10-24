@@ -29,7 +29,10 @@ window.Site = window.Site || {};
 
     h.$("#popup-address").textContent = `${Site.config.siteUrl.replace(/^https?:\/\//, "")}/#${p.id}`;
     h.$("#popup-content").innerHTML = `
-      ${h.zoomImg(h.heroImage(p), h.altText(p, "hero"), "popup-hero")}
+      ${p.heroVideo
+        // heroVideo in content.js: the top of the popup plays a video; the hero image is its thumbnail
+        ? `<div class="popup-hero-video">${h.videos(Object.assign({}, p, { videos: [Object.assign({ poster: h.heroImage(p) }, p.heroVideo)] }))}</div>`
+        : h.zoomImg(h.heroImage(p), h.altText(p, "hero"), "popup-hero")}
       ${p.credits && p.credits.hero ? `<p class="photo-credit">${e(p.credits.hero)}</p>` : ""}
       <div class="popup-text">
         ${h.kicker(p)}

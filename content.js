@@ -52,7 +52,7 @@ Site.texts = {
 
   // Short news line above the statement. Set text to "" to hide it.
   news: {
-    text: "Andre Miri Cipa launches 22 October 2026 on Steam",
+    text: "Andre Miri Cipa is now on all platforms: play it on PC or mobile.",
     link: "#andre-miri-cipa"
   },
 
@@ -60,6 +60,18 @@ Site.texts = {
   roles: ["Researcher", "Critical game designer", "Intermedia artist"],
 
   headline: "Filip Hauer (1990) is an intermedia artist, game designer and researcher currently based in Copenhagen. He is researching critical and speculative games, with a focus on how they can imagine and represent contemporary work, politics, game markets and shared futures.",
+
+  // Layout G (/design, the design portfolio): this text replaces the roles line,
+  // the headline and the statement above. Other layouts are not affected.
+  introG: "Game designer, artist and researcher based in Copenhagen. I have experience in game development across AAA, critical and independent projects. I focus on reflexive game systems, interfaces and interactions, while putting emphasis on transparency and accessibility.",
+
+  // Layout G only: the big image under the intro (a wide cut of a Lithium screenshot).
+  // Other layouts keep images/site_hero_1.jpg and heroImageAlt below.
+  introImageG: {
+    src: "images/site_hero-design_1.jpg",   // 1920 × 768 (5:2), the top part of the image below
+    full: "images/games_lithium_gallery_1.jpg",   // shown uncut when the image is clicked
+    alt: "Lithium, game board with the map around Cínovec (Zinnwald), Blue Pulsar kolektiv"
+  },
 
   // Statement under the headline. One text = one paragraph.
   statement: [
@@ -132,6 +144,7 @@ Site.texts = {
   // CV blocks, in display order. Each block folds open/closed on the page.
   //   title   heading of the block
   //   open    true = shown open when the page loads
+  //   closedIn optional list of layouts where an "open" block starts closed, e.g. ["g"]
   //   hideIn  optional list of layouts where the block is hidden, e.g. ["f"]
   //   entries [ "years", "text" ]          normal line
   //           [ "years", "text", "sub" ]   indented line (a part of the line above,
@@ -140,6 +153,7 @@ Site.texts = {
     {
       title: "Education & study stays",
       open: true,
+      closedIn: ["g"],   // folded in /design
       entries: [
         ["2020–25", "**PhD**, Academy of Fine Arts in Prague, Studio of New Media 1. Dissertation: [Digital Games and Allegorithmic Work: The Politics of Exchange, Alienation and Performative Ideology](#thesis). Supervisor: Tomáš Svoboda; consultant: Vjera Borozan; examiners: Thomas Apperley (Tampere University), Jaroslav Švelch (Charles University). Defended in May 2025."],
         ["2022",    "**Erasmus research internship**, [CoFUTURES](https://cofutures.org/): Pathways to Possible Presents, University of Oslo, Norway (May 2022)"],
@@ -326,13 +340,27 @@ Site.practices = [
 
 /* The three entry links under the statement. `target` = section id. */
 Site.pathways = [
-  { label: "Critical games & art",     target: "games",   note: "Games, installations, video, curation" },
-  { label: "Research & teaching",      target: "writing", note: "PhD, publications, critical game design" },
-  { label: "Game & UX design",         target: "studio",  note: "Shipped titles, roles, UI/UX systems" }
+  { label: "Game & UX design",         target: "studio",  note: "Shipped titles, roles, UI/UX systems",   icon: "icons/section-game-ux.png" },
+  { label: "Critical games & art",     target: "games",   note: "Games, installations, video, curation", icon: "icons/section-critical-games.svg" },
+  { label: "Research & teaching",      target: "writing", note: "PhD, publications, critical game design", icon: "icons/section-research.png" }
 ];
 
+/* Icons shown before the section titles in layout G (white icons in icons/:
+   SVG where the file is tiny, otherwise the 4× PNG, 128 × 128 px).
+   Naming: section-<section>.* for these, ui-<use>.* for interface icons
+   (ui-continue-arrow on the entry cards, ui-zoom on enlargeable images).
+   Sections without an icon just show the title. */
+Site.sectionIcons = {
+  studio:         "icons/section-game-ux.png",   // Game & UX design: the open lock (unlocking, a game UI element)
+  games:          "icons/section-critical-games.svg",   // Critical games: the heart with lightning
+  writing:        "icons/section-research.png",     // Research & writing: the pencil
+  installations:  "icons/section-art-installation.svg", // Art and installation: the installation icon (ring)
+  curation:       "icons/section-curation.png",  // Curation: the check mark (selecting, approving works)
+  collaborations: "icons/section-collaborations.png"    // Collaborations: the conversation bubble
+};
+
 /* Order of the sections in layout G. "studio" = the Game & UX design section. */
-Site.practiceOrderG = ["games", "writing", "installations", "studio", "curation", "collaborations"];
+Site.practiceOrderG = ["studio", "games", "writing", "installations", "curation", "collaborations"];
 
 /* Projects shown as large cards at the top of their section in layout G. */
 Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-dlc", "workers-out-of-office"];
@@ -389,7 +417,7 @@ Site.studio = {
       shipped: "iOS, Android, Windows, macOS, 2026",
       did: [
         "Led the game design within an interdisciplinary research project",
-        "Turned ethnographic and participatory research into play",
+        "Turned participatory research and design research into game mechanics",
         "Czech and English release on four platforms"
       ]
     }
@@ -453,6 +481,8 @@ Site.studio = {
                if an image cannot load). Used for cover and hero; gallery images
                get "(image 2 of 4)" added. To describe single images, add
                alts: { cover: "…", hero: "…", gallery: ["…", "…"] }.
+     heroVideo optional { label, embed }: the top of the popup plays this
+               video instead of showing the hero image (which becomes its thumbnail).
      foldouts  optional foldable sections in the popup, like the CV blocks:
                [{ title: "Abstract", text: ["paragraph", …] }]
                (add  open: true  to show a section open by default,
@@ -474,20 +504,25 @@ Site.projects = [
     tags: ["games", "research", "collaborations"],
     summary: "Players enter the perspective of the Roma community chapter by chapter, in an educational game about experiences of everyday racism in the Czech Republic.",
     text: [
+      "Play the game on [linktr.ee/andremiricipa](https://linktr.ee/andremiricipa) now.",
       "Andre Miri Cipa is an educational game about experiences of everyday racism in the Czech Republic, made by a team of designers and Roma artists at the Faculty of Fine Arts, Brno University of Technology (FaVU VUT). It is based on participatory research with the Roma community conducted by researchers from the Faculty of Social Studies, Masaryk University (FSS MUNI), while experts from the Faculty of Education, Masaryk University (PED MUNI) contributed to its teaching structure and usability in schools. Together, the outcomes of this research became the framework for the game's design and art. Through narrative and interaction, the game tries to convey this experience critically.",
       "It was my first serious game project after my PhD, and a chance to put the design principles from my dissertation into practice. As lead game designer, I worked with critical utopia and María Lugones's concept of “loving perception”: entering another's perspective with openness, rather than as an outside observer and evaluator, is a powerful tool for de-stereotyping experiences of discrimination in digital games.",
       "Combining a critical game studies perspective on what games are and can be with the participation of the Roma community made it possible to build a realistic message. It also shaped how we approached representation, and how players are introduced to the community's perspective through the game's chapters.",
-      "The game will be used as a teaching tool in Czech schools. It will be released for free to the public in Czech and English: on Steam on 22 October 2026, at the gala evening of the Museum of Romani Culture in Brno, followed by the iOS and Android versions at the end of October. The research report and the teaching guide (“metodika”) are available in Czech on the [project website](https://andremiricipa.ffa.vutbr.cz/)."
+      "The game will be used as a teaching tool in Czech schools. It was released for free to the public in Czech and English: on Steam on 22 October 2026, at the gala evening of the Museum of Romani Culture in Brno, followed by the iOS and Android versions. The research report and the teaching guide (“metodika”) are available in Czech on the [project website](https://andremiricipa.ffa.vutbr.cz/)."
     ],
     gallery: 4,
+    // Top of the popup: the teaser (hero image = thumbnail). Bottom: the full cinematic trailer.
+    heroVideo: { label: "Teaser (EN)", embed: "https://www.youtube-nocookie.com/embed/5QqtH1Zd2mE" },
     videos: [
       { label: "Cinematic trailer (CZ)", embed: "https://www.youtube-nocookie.com/embed/sZ58f7H1mKQ" }
     ],
     links: [
+      ["Download the game (all platforms)", "https://linktr.ee/andremiricipa"],
       ["Steam", "https://store.steampowered.com/app/4972430/Andre_Miri_Cipa/"],
       ["Research report & teaching guide (CZ)", "https://andremiricipa.ffa.vutbr.cz/"],
-      ["Trailer on YouTube", "https://www.youtube.com/watch?v=sZ58f7H1mKQ"]
-    ] // TODO: App Store and Google Play links after release
+      ["Teaser on YouTube", "https://www.youtube.com/watch?v=5QqtH1Zd2mE"],
+      ["Cinematic trailer on YouTube", "https://www.youtube.com/watch?v=sZ58f7H1mKQ"]
+    ]
   },
 
   {
@@ -582,6 +617,8 @@ Site.projects = [
       "My work on Arma Reforger is shown in detail in my design portfolio (PDF), available on request: [mail@filiphauer.com](mailto:mail@filiphauer.com)."
     ],
     gallery: 0,
+    // The top of the popup plays this trailer (hero image = thumbnail)
+    heroVideo: { label: "Arma Reforger: PlayStation 5 launch trailer", embed: "https://www.youtube-nocookie.com/embed/-JsDfd_oMvw" },
     videos: [],
     links: [["Arma Reforger on Steam", "https://store.steampowered.com/app/1874880/Arma_Reforger/"]]
   },

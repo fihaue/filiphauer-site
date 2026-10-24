@@ -58,7 +58,8 @@ window.Site = window.Site || {};
     // CV: one folding block per entry in Site.texts.cv.
     // hideIn: ["f"] adds class "hide-in-f", which the CSS hides in layout F.
     h.$("#cv").innerHTML = (T.cv || []).map(block => `
-      <details class="${(block.hideIn || []).map(k => "hide-in-" + k).join(" ")}" ${block.open ? "open" : ""}>
+      <details class="${(block.hideIn || []).map(k => "hide-in-" + k).join(" ")}" ${block.open ? "open" : ""}
+               data-open="${block.open ? 1 : 0}" data-closed-in="${(block.closedIn || []).join(" ")}">
         <summary>${h.escape(block.title)}</summary>
         <ul>${(block.entries || []).map(([years, text, kind]) => `
           <li><span>${h.escape(years)}</span><span${kind === "sub" ? ' class="sub"' : ""}>${h.rich(text)}</span></li>`).join("")}
@@ -81,6 +82,7 @@ window.Site = window.Site || {};
     document.body.dataset.layout = key;      // CSS uses this, e.g. hides Research in E/F
     if (["f", "g", "p"].includes(key)) state.tag = "all";   // F, G and P have no filter buttons
     renderPathways();
+    renderIntro();
 
     const all = Site.layouts.mainList(key);
     const list = state.tag === "all" ? all : all.filter(p => (p.tags || []).includes(state.tag));
@@ -104,7 +106,36 @@ window.Site = window.Site || {};
     nav.hidden = state.layout !== "g";
     if (nav.hidden) return;
     nav.innerHTML = Site.pathways.map(p => `
-      <a href="#${p.target}"><b>${p.label} →</b><span>${p.note}</span></a>`).join("");
+      <a href="#${p.target}">${h.icon(p.icon, "pathway-icon")}<b>${p.label} ${h.icon("icons/ui-continue-arrow.svg", "pathway-arrow")}</b><span>${p.note}</span></a>`).join("");
+  }
+
+  /* Intro: layout G shows the shorter design-portfolio text (introG in content.js)
+     instead of the roles line, headline and statement. */
+  function renderIntro() {
+    const g = state.layout === "g" && Site.texts.introG;
+    h.$("h1[data-text='headline']").textContent = g ? Site.texts.introG : h.t("headline");
+    h.$("#roles").hidden = !!g;
+
+    // CV blocks: "open" blocks start closed in the layouts listed in closedIn (content.js).
+    // Only when the layout changes, so blocks a visitor opened stay open on redraws.
+    if (renderIntro.layout !== state.layout) {
+      renderIntro.layout = state.layout;
+      document.querySelectorAll("#cv details").forEach(d => {
+        d.open = d.dataset.open === "1" && !d.dataset.closedIn.split(" ").includes(state.layout);
+      });
+    }
+    h.$("#statement").hidden = !!g;
+
+    // The big image: layout G can use its own (introImageG in content.js)
+    const img = h.$("#intro-image"), alt = Site.texts.introImageG;
+    if (img) {
+      img.dataset.defaultSrc = img.dataset.defaultSrc || img.getAttribute("src");
+      const useG = state.layout === "g" && alt && alt.src;
+      img.src = useG ? alt.src : img.dataset.defaultSrc;
+      img.alt = useG ? (alt.alt || "") : (Site.texts.heroImageAlt || "");
+      img.classList.toggle("intro-image-wide", !!useG);
+      if (useG && alt.full) img.dataset.full = alt.full; else delete img.dataset.full;
+    }
   }
 
   /* Tag filter buttons above the Work view (hidden in layouts F and G). */

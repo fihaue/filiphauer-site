@@ -67,6 +67,11 @@
 .thumb-card:hover { text-decoration: none; }
 .thumb-card .cover { transition: filter .2s; }
 .thumb-card:hover .cover { filter: brightness(1.2); }
+/* Cover images in cards open the project (js/layouts.js coverLink). The link takes no
+   space of its own, so the card layout sees the image directly. */
+.cover-link { display: contents; }
+.cover-link .cover { transition: filter .2s; }
+.cover-link:hover .cover { filter: brightness(1.15); }
 .thumb-card .title { color: var(--heading); font-size: 15px; font-weight: 400; line-height: 1.35; margin-top: 6px; }
 .thumb-card:hover .title { color: var(--violet); }
 .thumb-card .external { color: var(--text-dim); font-size: 12px; }
@@ -101,7 +106,7 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
 /* The image fills its whole column, down to the bottom of the card, even when
    the text beside it is taller. It is never shorter than its normal 4:3 shape;
    object-fit: cover crops it instead of stretching it. */
-.highlight > .cover { height: 100%; min-height: 0; }
+.highlight .cover { height: 100%; min-height: 0; }
 .highlight h4 { font-size: 22px; }
 .highlight h4 a { color: var(--heading); }
 .highlight .button { justify-self: start; margin-top: 4px; }
@@ -156,6 +161,7 @@ body[data-layout="p"] .intro-text {
 }
 
 /* Slide 2: the big site image, filling the whole screen (edge to edge), also on phones. */
+body[data-layout="p"] .intro-zoom { margin-top: 0; cursor: default; }
 body[data-layout="p"] .intro-image {
   display: block;
   width: calc(100% + 12vw); max-width: none; margin: 0 -6vw;
@@ -213,7 +219,7 @@ body[data-layout="p"] .contact {
   .index-row .type { display: none; }
   .grid-e, .grid-f { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
   .highlight, .studio-grid { grid-template-columns: 1fr; }
-  .highlight > .cover { height: auto; }   /* phones: image on top, normal 4:3 shape */
+  .highlight .cover { height: auto; }   /* phones: image on top, normal 4:3 shape */
   .collab-row { grid-template-columns: 48px minmax(0, 1fr); }
   .collab-row .names { grid-column: 2; font-size: 14px; }
   .thumb-card .title { font-size: 14px; }

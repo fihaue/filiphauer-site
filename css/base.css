@@ -64,7 +64,15 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .pathways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 1000px; margin-top: 14px; }
 .pathways a { display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--line); color: var(--text); }
 .pathways a:hover { border-color: var(--green); text-decoration: none; }
-.pathways b { color: var(--heading); font-weight: 500; }
+.pathways b { color: var(--heading); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+
+/* Icons (helpers.icon): white SVG images from icons/ */
+.icon { display: inline-block; flex: none; width: 1em; height: 1em; }
+.pathway-icon { width: 32px; height: 32px; margin-bottom: 6px; }
+/* Hover: icons turn the site green, like the title (filter "tint-green" in index.html) */
+.pathways a:hover .icon, .pathways a:focus-visible .icon { filter: url(#tint-green); }
+.pathway-arrow { width: 18px; height: 18px; }
+.section-icon { width: 26px; height: 26px; margin-right: 10px; vertical-align: -4px; }
 .pathways a:hover b { color: var(--green); }
 .pathways span { font-size: 13px; color: var(--text-dim); }
 @media (max-width: 760px) { .pathways { grid-template-columns: 1fr; } }
@@ -95,7 +103,13 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .statement p:first-child::before { content: "\201C"; }   /* “ */
 .statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
-@media (max-width: 760px) { .intro-image { display: none; } }   /* phones: no big image */
+.intro-image.intro-image-wide { aspect-ratio: 5 / 2; object-position: center top; }   /* layout G: wide Lithium image (1920 × 768), cut from the top so the game's top UI stays visible */
+.intro-zoom { margin-top: 30px; }   /* the button around the big image carries the spacing */
+.intro-zoom .intro-image { margin-top: 0; }
+@media (max-width: 760px) {   /* phones: no big image (except in the presentation) */
+  .intro-image { display: none; }
+  body:not([data-layout="p"]) .intro-zoom { display: none; }
+}
 .intro-caption { display: none; }   /* only shown in the presentation (css/layouts.css) */
 .intro-text { display: contents; }  /* a group only for the presentation; no effect here */
 

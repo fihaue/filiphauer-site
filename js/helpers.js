@@ -115,6 +115,12 @@ Site.helpers = {
     el.replaceWith(Object.assign(document.createElement("div"), { className: "img-missing " + className }));
   },
 
+  /* A small icon from icons/ (white SVG), shown as a normal image.
+     Decorative: alt="" so screen readers skip it. */
+  icon(src, className = "") {
+    return src ? `<img class="icon ${className}" src="${Site.helpers.escape(src)}" alt="" aria-hidden="true">` : "";
+  },
+
   /* Same image, wrapped in a button: clicking it opens it full screen (js/lightbox.js). */
   zoomImg(src, alt, className = "") {
     const e = Site.helpers.escape;
