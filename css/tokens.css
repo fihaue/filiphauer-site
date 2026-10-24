@@ -12,8 +12,8 @@
   --surface-2:  #313131;  /* card on hover */
   --line:       #383838;  /* thin dividing lines */
   --text:       #999999;  /* body text */
-  --text-dim:   #767676;  /* small meta text */
-  --nav:        #888888;  /* sidebar links */
+  --text-dim:   #909090;  /* small meta text (4.5:1 contrast on cards, 5:1 on the page: WCAG AA) */
+  --nav:        #959595;  /* sidebar links (WCAG AA contrast) */
   --heading:    #eeeeee;  /* titles, active links */
   --green:      #6be67b;  /* accent: years, labels, highlights */
   --violet:     #7b86f5;  /* links */

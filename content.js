@@ -65,6 +65,9 @@ Site.texts = {
   // the headline and the statement above. Other layouts are not affected.
   introG: "Game designer, artist and researcher based in Copenhagen. I have experience in game development across AAA, critical and independent projects. I focus on reflexive game systems, interfaces and interactions, while putting emphasis on transparency and accessibility.",
 
+  // Layout G only: a short contact line under the intro text, for quick scanning.
+  contactG: "For game design and UI/UX work: [mail@filiphauer.com](mailto:mail@filiphauer.com)",
+
   // Layout G only: the big image under the intro (a wide cut of a Lithium screenshot).
   // Other layouts keep images/site_hero_1.jpg and heroImageAlt below.
   introImageG: {
@@ -111,6 +114,7 @@ Site.texts = {
   // Small interface words: buttons, labels.
   ui: {
     skipLink: "Skip to work",
+    menu: "Menu",
     all: "All",
     noProjects: "No projects with this tag.",
     readMore: "Read more",
@@ -451,6 +455,7 @@ Site.studio = {
      tags      list of tag ids (see Site.tags above).
      summary   1–2 sentences for cards. Start with what the player does.
      text      full text for the popup. One text = one paragraph.
+               A text starting with "- " is a bullet point (several in a row = one list).
                Special starts:  "## " sub-heading,  "> " quote,
                                 "``" monospaced block (keeps line breaks)
      gallery   how many gallery images exist: images/<practice>_<id>_gallery_1.jpg …
@@ -612,7 +617,11 @@ Site.projects = [
     tags: ["studio"],
     summary: "Four years of interface and interaction design for a large multiplayer military simulation, including the UI/UX design system and design manual used across the team.",
     text: [
-      "From 2021 to 2025 I worked as a UI/UX designer on [Arma Reforger](https://store.steampowered.com/app/1874880/Arma_Reforger/) and the upcoming Arma 4: interface and interaction design for a large multiplayer military simulation in continuous live development. I built the UI/UX design system and widget library used across the project, along with the design manual that set standards for the team, and worked on menus, HUD interaction, wireframes and usability throughout.",
+      "From 2021 to 2025 I worked as a UI/UX designer on [Arma Reforger](https://store.steampowered.com/app/1874880/Arma_Reforger/) and the upcoming Arma 4:",
+      "- Four years designing interface and interaction for a large multiplayer military simulation in continuous live development.",
+      "- Built the UI/UX design system and widget library used across the project.",
+      "- Wrote the design manual that set standards for the team.",
+      "- Worked on HUD interaction, wireframes and usability throughout.",
       // TODO: two concrete systems you designed + one problem you solved.
       "My work on Arma Reforger is shown in detail in my design portfolio (PDF), available on request: [mail@filiphauer.com](mailto:mail@filiphauer.com)."
     ],

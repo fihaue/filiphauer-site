@@ -164,14 +164,18 @@ Site.helpers = {
   },
 
   /* Turns the project's text array into paragraphs, headings, quotes, code. */
+  /* Text lines that start with "- " become a bullet list (consecutive lines = one list). */
   fullText(p) {
     const e = Site.helpers.escape;
     return (p.text || []).map(t => {
+      if (t.startsWith("- "))  return `<li>${Site.helpers.rich(t.slice(2))}</li>`;
       if (t.startsWith("## ")) return `<h4>${e(t.slice(3))}</h4>`;
       if (t.startsWith("> "))  return `<blockquote>${e(t.slice(2))}</blockquote>`;
       if (t.startsWith("``"))  return `<pre>${e(t.slice(2))}</pre>`;
       return `<p>${Site.helpers.rich(t)}</p>`;
-    }).join("");
+    }).join("")
+      .replace(/(<li>.*?<\/li>)(?!<li>)/g, "$1</ul>")          // close each run of items…
+      .replace(/(^|<\/(?:p|h4|blockquote|pre|ul)>)<li>/g, "$1<ul class=\"text-list\"><li>");   // …and open it
   },
 
   /* Foldable sections in the popup (like the CV blocks), from the project's

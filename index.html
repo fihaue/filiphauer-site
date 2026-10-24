@@ -93,7 +93,11 @@
 <!-- ===================== SIDEBAR ===================== -->
 <aside class="sidebar">
   <a class="logo" href="#top" data-text="sidebar.name"></a>
-  <nav aria-label="Sections">
+  <!-- Phones only: opens the menu below (js/main.js setupMenu) -->
+  <button type="button" class="menu-button" id="menu-button" aria-expanded="false" aria-controls="site-nav" data-label="ui.menu">
+    <img src="icons/ui-menu.png" alt="">
+  </button>
+  <nav aria-label="Sections" id="site-nav">
     <a href="#work"          class="hide-in-g"                     data-text="sidebar.work"></a>
     <a href="#research"      class="hide-in-e hide-in-f hide-in-g" data-text="sidebar.research"></a>
     <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
@@ -123,6 +127,8 @@
       <div class="statement" id="statement"><p>I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I am questioning stereotypical communication practices.</p></div>
 
       <!-- Layout G: three entry links (from Site.pathways in content.js) -->
+      <!-- Layout G: short contact line (contactG in content.js) -->
+      <p class="intro-contact" id="intro-contact" hidden></p>
       <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
     </div>
 

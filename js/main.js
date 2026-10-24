@@ -115,6 +115,9 @@ window.Site = window.Site || {};
     const g = state.layout === "g" && Site.texts.introG;
     h.$("h1[data-text='headline']").textContent = g ? Site.texts.introG : h.t("headline");
     h.$("#roles").hidden = !!g;
+    const contact = h.$("#intro-contact");
+    contact.hidden = !(g && Site.texts.contactG);
+    if (!contact.hidden) contact.innerHTML = h.rich(Site.texts.contactG);
 
     // CV blocks: "open" blocks start closed in the layouts listed in closedIn (content.js).
     // Only when the layout changes, so blocks a visitor opened stay open on redraws.
@@ -251,6 +254,20 @@ window.Site = window.Site || {};
     Site.toast.timer = setTimeout(() => t.classList.remove("show"), 2200);
   };
 
+  /* Phone menu: the ☰ button opens and closes the sidebar links (css/base.css). */
+  function setupMenu() {
+    const bar = h.$(".sidebar"), button = h.$("#menu-button");
+    if (!button) return;
+    const setOpen = open => {
+      bar.classList.toggle("menu-open", open);
+      button.setAttribute("aria-expanded", String(open));
+    };
+    button.addEventListener("click", () => setOpen(!bar.classList.contains("menu-open")));
+    h.$("#site-nav").addEventListener("click", ev => { if (ev.target.closest("a")) setOpen(false); });   // a link was chosen
+    document.addEventListener("click", ev => { if (!bar.contains(ev.target)) setOpen(false); });        // tap outside
+    document.addEventListener("keydown", ev => { if (ev.key === "Escape") setOpen(false); });
+  }
+
   /* Highlights the current section in the sidebar while scrolling. */
   function setupNavHighlight() {
     const links = [...document.querySelectorAll(".sidebar nav a")];
@@ -278,6 +295,7 @@ window.Site = window.Site || {};
     Site.popup.setup();
     setupClicks();
     setupNavHighlight();
+    setupMenu();
     window.addEventListener("hashchange", route);
     route();
   }

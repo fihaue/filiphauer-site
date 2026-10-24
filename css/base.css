@@ -45,7 +45,15 @@ img { max-width: 100%; display: block; }
 .sidebar nav { display: flex; flex-direction: column; gap: 10px; }
 .sidebar nav a { color: var(--nav); font-size: 17px; }
 .sidebar nav a:hover, .sidebar nav a.active { color: var(--heading); text-decoration: none; }
-.sidebar-foot { margin-top: auto; font-size: 13px; color: #666; }
+.sidebar-foot { margin-top: auto; font-size: 13px; color: var(--text-dim); }
+
+/* Menu button: only on phones (see the 860px block below) */
+.menu-button {
+  display: none; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -8px -10px -8px 0;
+  padding: 0; border: 0; background: none; cursor: pointer;
+}
+.menu-button img { width: 26px; height: 26px; }
+.sidebar.menu-open .menu-button img, .menu-button:hover img { filter: url(#tint-green); }
 
 main {
   margin-left: var(--sidebar-width);
@@ -103,6 +111,7 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .statement p:first-child::before { content: "\201C"; }   /* “ */
 .statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
+.intro-contact { font-size: 15px; color: var(--text); }   /* layout G: contact line under the intro */
 .intro-image.intro-image-wide { aspect-ratio: 5 / 2; object-position: center top; }   /* layout G: wide Lithium image (1920 × 768), cut from the top so the game's top UI stays visible */
 .intro-zoom { margin-top: 30px; }   /* the button around the big image carries the spacing */
 .intro-zoom .intro-image { margin-top: 0; }
@@ -219,6 +228,10 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .foldout { border-top: 1px solid var(--line); }
 .foldout p { margin-bottom: 12px; }
 .text-after { margin-top: 16px; }
+/* Bullet lists in project texts (text lines starting with "- ") */
+.text-list { list-style: none; display: grid; gap: 6px; margin: 4px 0 12px; }
+.text-list li { padding-left: 18px; position: relative; }
+.text-list li::before { content: "–"; position: absolute; left: 0; color: var(--green); }
 .cv ul { list-style: none; padding-bottom: 16px; }
 .cv li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 4px 0; font-size: 14.5px; }
 .cv li span:first-child { color: var(--green); }
@@ -232,7 +245,7 @@ body:not([data-layout="g"]) .only-g { display: none; }
 /* Intro text white; the email is a normal violet link like the others. */
 .contact p { color: var(--heading); }
 .contact .link-row a::after { font-size: .7em; }
-.footer { padding: 36px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: #666; }
+.footer { padding: 36px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-dim); }
 
 /* ---------------------------------------------------------- toast */
 .toast {
@@ -270,9 +283,16 @@ body:has(.layout-switcher:not([hidden])) .sidebar { top: 92px; }
   }
   body:has(.layout-switcher:not([hidden])) .sidebar { top: 0; }
   .layout-switcher { position: static; padding-left: 16px; }
-  .sidebar nav { flex-direction: row; gap: 14px; overflow-x: auto; }
-  .sidebar nav a { font-size: 14px; white-space: nowrap; }
-  .sidebar nav a[href="#archive"], .sidebar-foot { display: none; }
+  /* Phone menu: the ☰ button (icons/ui-menu.png) opens the links as a panel below the bar */
+  .menu-button { display: flex; }
+  .sidebar nav { display: none; }
+  .sidebar.menu-open nav {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    padding: 6px 16px 14px; background: rgba(34, 34, 34, .98); border-bottom: 1px solid var(--line);
+  }
+  .sidebar.menu-open nav a { font-size: 18px; padding: 10px 0; }   /* big enough to tap */
+  .sidebar-foot { display: none; }
   main { margin-left: 0; padding: 0 16px; }
   html { scroll-padding-top: 64px; }
   .statement { grid-auto-flow: row; gap: 12px; }
