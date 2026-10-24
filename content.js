@@ -385,8 +385,8 @@ Site.studio = {
     {
       project: "arma-reforger",
       role: "UI/UX designer",
-      team: "Bohemia Interactive · UI/UX team · Enfusion engine",
-      shipped: "PC, Xbox, PlayStation · 2021–25",
+      team: "Bohemia Interactive – UI/UX team / Enfusion engine",
+      shipped: "PC, Xbox, PlayStation / 2021–25",
       did: [
         "Built the UI/UX design system and widget library used across the project",
         "Wrote the design manual that set interface standards for the team",
@@ -396,8 +396,8 @@ Site.studio = {
     {
       project: "11th-dream",
       role: "Game designer & artist",
-      team: "Blue Pulsar Games · team of three · in-house engine",
-      shipped: "Steam · Early Access 2018, full release 2021",
+      team: "Blue Pulsar Games / team of three / in-house engine",
+      shipped: "Steam / Early Access 2018, full release 2021",
       did: [
         "Designed the game mechanics",
         "Wrote the narrative",
@@ -407,7 +407,7 @@ Site.studio = {
     {
       project: "lithium",
       role: "Game designer",
-      team: "Blue Pulsar kolektiv · team of five",
+      team: "Blue Pulsar kolektiv / team of five",
       shipped: "Steam, Windows & macOS, 2025",
       did: [
         "Three asymmetric roles, each with different resources, goals and leverage",
@@ -418,7 +418,7 @@ Site.studio = {
     {
       project: "andre-miri-cipa",
       role: "Lead game designer",
-      team: "FaVU VUT Brno · design branch of an interdisciplinary research project · Unity",
+      team: "FaVU VUT Brno / design branch of an interdisciplinary research project / Unity",
       shipped: "iOS, Android, Windows, macOS, 2026",
       did: [
         "Led the game design within an interdisciplinary research project",
@@ -452,7 +452,7 @@ Site.studio = {
      category  first word of the small line under thumbnails.
      org       second part of that line: "CATEGORY / org, year".
      type      short label above the title in cards.
-     meta      one line: role · venue · platform.
+     meta      one line: role / venue / platform.
      tags      list of tag ids (see Site.tags above).
      summary   1–2 sentences for cards. Start with what the player does.
      text      full text for the popup. One text = one paragraph.
@@ -506,7 +506,7 @@ Site.projects = [
     year: "2026", level: "featured", practice: "games", isNew: true,
     category: "Game", org: "FaVU VUT Brno",
     type: "Educational & research game",
-    meta: "Lead game designer and design researcher · Faculty of Fine Arts, Brno University of Technology, with Masaryk University · iOS, Android, Windows, macOS · Czech & English",
+    meta: "Lead game designer and design researcher / Faculty of Fine Arts, Brno University of Technology, with Masaryk University / iOS, Android, Windows, macOS / Czech & English",
     tags: ["games", "research", "collaborations"],
     summary: "Players enter the perspective of the Roma community chapter by chapter, in an educational game about experiences of everyday racism in the Czech Republic.",
     text: [
@@ -537,7 +537,7 @@ Site.projects = [
     year: "2025", level: "featured", practice: "games",
     category: "Game", org: "Blue Pulsar kolektiv",
     type: "Ecogame",
-    meta: "Blue Pulsar kolektiv · Unity · Steam, Windows & macOS · Czech & English · Hraničář Gallery",
+    meta: "Blue Pulsar kolektiv / Unity / Steam, Windows & macOS / Czech & English / Hraničář Gallery",
     tags: ["games", "collaborations", "research"],
     summary: "Players take one of three asymmetric roles, Activists, Locals or the City, and negotiate over a shared map toward a democratic resistance to lithium mining.",
     foldouts: [
@@ -566,7 +566,7 @@ Site.projects = [
     short: "Workers Out of Office",
     year: "2023", level: "featured", practice: "games",
     category: "Game & installation", org: "Industra Brno",
-    type: "Digital game · Installation",
+    type: "Digital game / Installation",
     meta: "Industra, Brno",
     tags: ["games", "installations"],
     summary: "Players lead a group of workers displaced by automation, searching for emancipation and meaningful survival in a post-work, climate-stricken near future.",
@@ -590,8 +590,8 @@ Site.projects = [
     short: "London DLC",
     year: "2024", level: "featured", practice: "games",
     category: "Game & installation", org: "POP-UP Galerie AVU",
-    type: "Digital game · Installation",
-    meta: "Digital game, installation · made for the joint exhibition Roman Road & London DLC with Zuzana Jírová · POP-UP Galerie AVU, Prague",
+    type: "Digital game / Installation",
+    meta: "Digital game, installation / made for the joint exhibition Roman Road & London DLC with Zuzana Jírová / POP-UP Galerie AVU, Prague",
     tags: ["games", "installations"],
     summary: "You save money for a trip abroad while texting Zuzana in London, in 2040, amid drought, a collapsing job market and the erosion of the welfare state under platform capitalism.",
     text: [
@@ -614,7 +614,7 @@ Site.projects = [
     hideIn: ["p"],   // not shown in the presentation
     category: "UI/UX", org: "Bohemia Interactive",
     type: "Studio work",
-    meta: "UI/UX designer · Bohemia Interactive · Enfusion engine · PC, Xbox, PlayStation",
+    meta: "UI/UX designer – Bohemia Interactive / Enfusion engine / PC, Xbox, PlayStation",
     tags: ["studio"],
     summary: "Four years of interface and interaction design for a large multiplayer military simulation, including the UI/UX design system and design manual used across the team.",
     text: [
@@ -639,7 +639,7 @@ Site.projects = [
     year: "2022/25", level: "featured", practice: "games",
     category: "Game", org: "Prague City Gallery",
     type: "Digital tarot game",
-    meta: "with Philipp Kolychev · Pragovka Gallery · Enter the Room, Prague City Gallery",
+    meta: "with Philipp Kolychev / Pragovka Gallery / Enter the Room, Prague City Gallery",
     tags: ["games", "installations", "collaborations"],
     summary: "A digital tarot deck in which the game's algorithm draws the spread, generating speculative images of the future for players to read.",
     text: [
@@ -658,8 +658,8 @@ Site.projects = [
     short: "For Loop Contingency",
     year: "2021", level: "featured", practice: "games",
     category: "Simulation", org: "TIC Brno",
-    type: "Game simulation · Installation",
-    meta: "Game simulation, installation, Full HD video · concept, design, programming · Galerie mladých, TIC Brno",
+    type: "Game simulation / Installation",
+    meta: "Game simulation, installation, Full HD video / concept, design, programming / Galerie mladých, TIC Brno",
     tags: ["games", "installations"],
     summary: "The player becomes an office manager who must keep workers meeting an unsustainable production norm while they are slowly replaced by algorithms.",
     text: [
@@ -684,7 +684,7 @@ Site.projects = [
     year: "2022", level: "featured", practice: "games",
     category: "Tabletop game", org: "CoFUTURES Oslo",
     type: "Tabletop game",
-    meta: "CoFUTURES, University of Oslo · print & play",
+    meta: "CoFUTURES, University of Oslo / print & play",
     tags: ["games", "research"],
     summary: "Each turn, players choose agendas that alter their stats and decide which future of work they end up in. Free to print and play.",
     text: [
@@ -706,7 +706,7 @@ Site.projects = [
     year: "2018–21", level: "featured", practice: "games",
     category: "Game", org: "Blue Pulsar Games",
     type: "Third-person abstract shooter",
-    meta: "Blue Pulsar Games: Filip Hauer, Michal Žák, Vojtěch Košař · mechanics, narrative, all 2D/3D visuals · Steam",
+    meta: "Blue Pulsar Games: Filip Hauer, Michal Žák, Vojtěch Košař / mechanics, narrative, all 2D/3D visuals / Steam",
     tags: ["games", "collaborations"],
     summary: "A fast-paced abstract shooter set after biological history, where bots became tools for other tools. Built by a team of three at Blue Pulsar Games on the studio's own engine.",
     text: [
@@ -730,7 +730,7 @@ Site.projects = [
     year: "2018", level: "featured", practice: "games",
     category: "Game installation", org: "itch.io",
     type: "Game installation",
-    meta: "Computer game installation · 4K video 40:00",
+    meta: "Computer game installation / 4K video 40:00",
     tags: ["games", "installations"],
     summary: "Do you ever imagine a world without your body? A game about work, staged as a cognitive test of the future.",
     text: [
@@ -754,7 +754,7 @@ Site.projects = [
     year: "2025", level: "grid", practice: "writing",
     category: "Research", org: "Academy of Fine Arts Prague",
     type: "PhD thesis",
-    meta: "The Politics of Exchange, Alienation and Performative Ideology · Supervisor: Tomáš Svoboda · Consultant: Vjera Borozan · Examiners: Thomas Apperley, Jaroslav Švelch",
+    meta: "The Politics of Exchange, Alienation and Performative Ideology / Supervisor: Tomáš Svoboda / Consultant: Vjera Borozan / Examiners: Thomas Apperley, Jaroslav Švelch",
     tags: ["writing"],
     summary: "A framework of game exchange, alienation and performative player agency for critical game design.",
     text: [
@@ -795,7 +795,7 @@ Site.projects = [
     id: "workcraft", with: "Jakub Pospíšil",
     title: "Workcraft 5.0", imageAlt: "Workcraft 5.0, gallery game at Studio Prám, Prague", year: "2018", level: "grid", practice: "installations",
     category: "Installation", org: "Studio Prám", type: "Gallery game",
-    meta: "Gallery game with a paid performer, open-source software · with Jakub Pospíšil · Studio Prám, Prague", tags: ["installations", "collaborations", "games"],
+    meta: "Gallery game with a paid performer, open-source software / with Jakub Pospíšil / Studio Prám, Prague", tags: ["installations", "collaborations", "games"],
     summary: "You score points for the physical labour of a paid performer.",
     text: ["A game in the gallery where you control a generic activity carried out for you by a paid worker, for whom the game creates work. You score points for his physical labour. Open source, playable at home."],
     credits: { hero: "Photo: Studio Prám" },
@@ -805,7 +805,7 @@ Site.projects = [
     id: "little-xeno-chemistry",
     title: "Little Xeno-Chemistry (If The Bot Was a Socialist)", imageAlt: "Little Xeno-Chemistry (If The Bot Was a Socialist), real-time simulation, Display, Prague", short: "Little Xeno-Chemistry", year: "2018", level: "grid", practice: "installations",
     category: "Simulation", org: "Display", type: "Simulation, C# in Unity",
-    meta: "Real-time simulation (C# in Unity), two screens, modified text · Display, Prague", tags: ["installations"],
+    meta: "Real-time simulation (C# in Unity), two screens, modified text / Display, Prague", tags: ["installations"],
     summary: "A live game-engine image that removes the player's input entirely.",
     text: ["Radovan Richta's Civilisation at the Crossroads (1966), with “society” replaced by “artificial intelligence”, runs beside two screens generating a world and a society that infinitely approach 100%. A live game-engine image that removes the player's input entirely.",
       "Made for and exhibited in the group exhibition [Civilizace na rozcestí: strůjci vědecko-technické revoluce](https://www.display.cz/en/projects/civilizace-na-rozcesti-strujci-vedecko-technicke-revoluce) at [Display](https://www.display.cz/en), Prague (2018)."
@@ -818,7 +818,7 @@ Site.projects = [
     id: "your-sustainable-future", with: "Jakub Pospíšil",
     title: "Your Sustainable Future", imageAlt: "Your Sustainable Future, installation at Galerie 123, Prague", year: "2017", level: "grid", practice: "installations",
     category: "Installation", org: "Galerie 123", type: "Installation",
-    meta: "Plywood installation, two computers playing Counter-Strike: GO, rice · with Jakub Pospíšil · Galerie 123, Prague", tags: ["installations", "collaborations"],
+    meta: "Plywood installation, two computers playing Counter-Strike: GO, rice / with Jakub Pospíšil / Galerie 123, Prague", tags: ["installations", "collaborations"],
     summary: "Two computers play Counter-Strike: GO against each other for the whole exhibition.",
     text: ["Two computers play a competitive match of Counter-Strike: GO against each other for the whole exhibition. A cognitive map of a near future from which humans may be excluded by AI and automation; for the visitor, only rice scattered on the table remains."],
     gallery: 2, videos: [], links: []
@@ -867,7 +867,7 @@ Site.projects = [
     id: "ideal-prostor", with: "Jolanta Nowaczyk, Jakub Pospíšil, Argišt Alaverdyan, Šimon Sýkora",
     title: "IDEAL Prostor", imageAlt: "IDEAL Prostor, artist-run space, Prague 4", year: "2017–19", level: "grid", practice: "curation",
     category: "Curation", org: "Prague", type: "Artist-run space",
-    meta: "Co-founder & curator · artist-run space, Prague 4",
+    meta: "Co-founder & curator / artist-run space, Prague 4",
     tags: ["curation", "collaborations"],
     summary: "An artist-run space in Prague giving young, not yet established artists room, equipment and support for exhibitions, events and talks.",
     text: [
@@ -906,7 +906,7 @@ Site.projects = [
     title: "Never Ending Story; Life After Art", imageAlt: "Never Ending Story; Life After Art, multimedia installation at Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava", short: "Never Ending Story",
     year: "2017", level: "grid", practice: "installations",
     category: "Installation", org: "OGV Jihlava", type: "Multimedia installation",
-    meta: "Multimedia installation · with Tereza Brussmannová · Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava, 6–30 April 2017",
+    meta: "Multimedia installation / with Tereza Brussmannová / Galerie Alternativa, Oblastní galerie Vysočiny, Jihlava, 6–30 April 2017",
     tags: ["installations", "collaborations"],
     summary: "Multimedia installation on aggression, commerce and new conceptions of work, drawing a symbolic map of moral and technical means for the future.",
     text: [
@@ -939,8 +939,8 @@ Site.projects = [
     id: "weather-tax",
     title: "Weather Tax", imageAlt: "Weather Tax, speculative ambient music for a non-existent game",
     year: "2025–26, ongoing", level: "grid", practice: "installations",
-    category: "Music", org: "Bandcamp", type: "Music · speculative ambience",
-    meta: "Speculative ambience for a non-existent game · three EPs on Bandcamp",
+    category: "Music", org: "Bandcamp", type: "Music / speculative ambience",
+    meta: "Speculative ambience for a non-existent game / three EPs on Bandcamp",
     tags: ["sound"],
     summary: "Speculative ambience for a non-existent game.",
     text: [

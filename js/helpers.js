@@ -129,10 +129,10 @@ Site.helpers = {
 
   /* ---------- small pieces of HTML shared by several layouts ---------- */
 
-  /* "ECOGAME · 2025 · NEW" line above titles. */
+  /* "ECOGAME / 2025 / NEW" line above titles. */
   kicker(p) {
     const e = Site.helpers.escape;
-    return `<p class="kicker">${e(p.type)} · ${e(p.year)}${p.isNew ? ` · <span class="badge">${e(Site.helpers.t("ui.newBadge"))}</span>` : ""}</p>`;
+    return `<p class="kicker">${e(p.type)} / ${e(p.year)}${p.isNew ? ` / <span class="badge">${e(Site.helpers.t("ui.newBadge"))}</span>` : ""}</p>`;
   },
 
   /* "GAME / Blue Pulsar kolektiv, 2025" line under thumbnails (E, F). */

@@ -254,7 +254,7 @@ window.Site = window.Site || {};
     }).join("");
   }
 
-  /* Collaborations list (layout G): year · project · collaborators.
+  /* Collaborations list (layout G): year / project / collaborators.
      Links open the popup, the outside page, or the archive entry. */
   function collaborationList() {
     const items = Site.projects.filter(p => p.with)
@@ -325,7 +325,7 @@ window.Site = window.Site || {};
         </article>
         <ul class="publications">${texts.map(p => `
           <li><span class="year">${e(p.year)}</span>
-              <span><a href="${p.external}" target="_blank" rel="noopener">${e(p.title)}</a><br><small>${e(p.type)} · ${e(p.org)}</small></span></li>`).join("")}
+              <span><a href="${p.external}" target="_blank" rel="noopener">${e(p.title)}</a><br><small>${e(p.type)} / ${e(p.org)}</small></span></li>`).join("")}
         </ul>
       </div>`;
   }
