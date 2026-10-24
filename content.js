@@ -52,7 +52,7 @@ Site.texts = {
 
   // Short news line above the statement. Set text to "" to hide it.
   news: {
-    text: "Andre Miri Cipa is now on all platforms: play it on PC or mobile.",
+    text: "Andre Miri Cipa is out now / play it on PC and mobile",
     link: "#andre-miri-cipa"
   },
 
@@ -344,9 +344,9 @@ Site.practices = [
 
 /* The three entry links under the statement. `target` = section id. */
 Site.pathways = [
-  { label: "Game & UX design",         target: "studio",  note: "Shipped titles, roles, UI/UX systems",   icon: "icons/section-game-ux.png" },
-  { label: "Critical games & art",     target: "games",   note: "Games, installations, video, curation", icon: "icons/section-critical-games.svg" },
-  { label: "Research & teaching",      target: "writing", note: "PhD, publications, critical game design", icon: "icons/section-research.png" }
+  { label: "Game & UX design",         target: "studio",  note: "Studio and independent titles, game design, UI/UX systems",   icon: "icons/section-game-ux.png" },
+  { label: "Critical games",           target: "games",   note: "Critical games, game art and research based games", icon: "icons/section-critical-games.svg" },
+  { label: "Research & teaching",      target: "writing", note: "PhD, game studies, critical game design", icon: "icons/section-research.png" }
 ];
 
 /* Icons shown before the section titles in layout G (white icons in icons/:
@@ -364,7 +364,8 @@ Site.sectionIcons = {
 };
 
 /* Order of the sections in layout G. "studio" = the Game & UX design section. */
-Site.practiceOrderG = ["studio", "games", "writing", "installations", "curation", "collaborations"];
+// Art and installation and Curation are left out of /design (they stay on the main site).
+Site.practiceOrderG = ["studio", "games", "writing", "collaborations"];
 
 /* Projects shown as large cards at the top of their section in layout G. */
 Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-dlc", "workers-out-of-office"];
