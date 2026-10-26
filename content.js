@@ -1,12 +1,8 @@
 /* =====================================================================
-   CONTENT.JS — ALL TEXTS OF THE WEBSITE, IN ONE PLACE
+   CONTENT.JS — ALL TEXTS IN ONE PLACE
    =====================================================================
 
-   Everything a visitor reads comes from this file: the statement,
-   section titles, buttons, every project, the bio, the full CV and
-   the contact block. Edit here, save (Commit on GitHub), and the site
-   updates within a minute or two. You never need to touch index.html
-   or the scripts in js/ to change words.
+   Everything a visitor reads comes from this file.
 
    WHAT'S IN THIS FILE (search for the capital words to jump):
      1. PAGE TEXTS     statement, headline, sidebar, section titles, buttons
@@ -15,7 +11,7 @@
      4. GAME & UX      the studio section
      5. PROJECTS       every work, with texts, links, videos, images
 
-   HOW TO WRITE TEXTS
+   HOW TO EDIT
      • Every text sits between "double quotes". To use a double quote
        inside a text, use typographic quotes “like this” instead.
      • Every entry in a list ends with a comma — except it may also be
@@ -24,9 +20,6 @@
          **bold words**                    → bold
          [link text](https://example.com)  → a link (opens in a new tab)
          [link text](#lithium)             → a link to a project / section
-       Nothing else is interpreted, so a text can never break the page
-       or run code.
-     • Lines starting with  //  are notes for you; the site ignores them.
 
    IF SOMETHING GOES WRONG
      A missing comma or quote stops the file from loading. The page then
@@ -380,7 +373,7 @@ Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-d
 Site.studio = {
   intro: "Game designer and researcher with a focus on speculative game design and game studies. I have shipped titles on Steam and mobile and spent four years building the UI/UX system of a AAA game. Systems design, game economies, narrative and interface design.",
   skills: ["Game design", "Mechanics & systems design", "UX interaction design", "UI design", "Figma & design systems", "Unity", "C# scripting", "Prototyping & research", "Playtesting", "Blender", "Motion design"],
-  cvLink: "", // TODO: link to a studio CV PDF, e.g. "files/filip-hauer-cv-games.pdf"
+  cvLink: "", // Space for pdf link if needed
   entries: [
     {
       project: "arma-reforger",
@@ -623,7 +616,6 @@ Site.projects = [
       "- Built the UI/UX design system and widget library used across the project.",
       "- Wrote the design manual that set standards for the team.",
       "- Worked on HUD interaction, wireframes and usability throughout.",
-      // TODO: two concrete systems you designed + one problem you solved.
       "My work on Arma Reforger is shown in detail in my design portfolio (PDF), available on request: [mail@filiphauer.com](mailto:mail@filiphauer.com)."
     ],
     gallery: 0,
