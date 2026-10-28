@@ -185,6 +185,53 @@ window.Site = window.Site || {};
       </article>`;
   }
 
+  /* Layout G: project card with the same look as the studio cards (image on top). */
+  function gridCard(p) {
+    return `
+      <article class="studio-card" id="card-${p.id}">
+        ${coverLink(p)}
+        <div class="card-body">
+          ${h.kicker(p)}
+          <h4><a ${openHref(p)}>${e(p.short || p.title)}</a></h4>
+          ${p.meta ? `<p class="meta">${e(p.meta)}</p>` : ""}
+          ${h.withLine(p)}
+          ${p.summary ? `<p>${e(p.summary)}</p>` : ""}
+          <div class="studio-actions"><a class="button" ${openHref(p)}>${e(h.t("ui.openProject"))}</a></div>
+        </div>
+      </article>`;
+  }
+
+  /* Layout G, Research & writing: the pinned project (pinned: true, now the dissertation)
+     as the first row, hero image left and text right (lined up with the 2-column grid),
+     then the other texts as a list beneath it. */
+  function researchSectionG() {
+    const writing = Site.projects.filter(p => p.practice === "writing");
+    const lead = writing.find(p => p.pinned) || h.findProject("thesis");
+    const texts = writing.filter(p => p !== lead).sort(h.newestFirst);
+    const leadLink = lead && h.hasPopup(lead) ? `href="#${lead.id}" data-open="${lead.id}"` : (lead && lead.external ? `href="${lead.external}" target="_blank" rel="noopener"` : "");
+    return `
+      <div class="research-g">
+        ${lead ? `
+        <article class="studio-card pinned-card" id="card-${lead.id}">
+          <a class="cover-link" ${leadLink} tabindex="-1" aria-hidden="true">${h.img(h.heroImage(lead), h.altText(lead, "hero"), "cover pinned-image")}</a>
+          <div class="card-body">
+            ${h.kicker(lead)}
+            <h4><a ${leadLink}>${e(lead.title)}</a></h4>
+            ${lead.meta ? `<p class="meta">${e(lead.meta)}</p>` : ""}
+            ${lead.summary ? `<p>${e(lead.summary)}</p>` : ""}
+            <div class="studio-actions">
+              <a class="button" ${leadLink}>${e(h.t(lead.id === "thesis" ? "ui.readAbstract" : "ui.openProject"))}</a>
+              ${h.linkRow(lead)}
+            </div>
+          </div>
+        </article>` : ""}
+        <ul class="publications">${texts.map(p => `
+          <li><span class="year">${e(p.year)}</span>
+              <span><a ${openHref(p)}>${e(p.title)}</a><br><small>${e(p.type)} / ${e(p.org)}</small></span></li>`).join("")}
+        </ul>
+      </div>`;
+  }
+
   function studioCard(entry) {
     const p = h.findProject(entry.project);
     return `
@@ -226,18 +273,19 @@ window.Site = window.Site || {};
       let body;
 
       if (pid === "writing") {
-        // Research is read, not browsed: thesis card + plain publication list.
-        body = researchSection();
+        // Research is read, not browsed: pinned project with its hero image, then a list.
+        body = researchSectionG();
       } else if (pid === "collaborations") {
         // Every project with collaborators, from all sections, names first.
         body = collaborationList();
       } else {
-        const big = Site.highlights.map(h.findProject).filter(p => p && items.includes(p)).sort(h.newestFirst);
-        const rest = items.filter(p => !big.includes(p))
-                          .sort(h.newestFirst);
+        // Projects in Site.highlights: large two-column cards (like the Game & UX section);
+        // all others: smaller three-column tiles beneath them. Both newest first.
+        const big = items.filter(p => Site.highlights.includes(p.id)).sort(h.newestFirst);
+        const small = items.filter(p => !Site.highlights.includes(p.id)).sort(h.newestFirst);
         body = `
-          ${big.length ? `<div class="highlights">${big.map(highlightCard).join("")}</div>` : ""}
-          ${rest.length ? `<div class="grid-f">${rest.map(thumbCard).join("")}</div>` : ""}`;
+          ${big.length ? `<div class="studio-grid">${big.map(gridCard).join("")}</div>` : ""}
+          ${small.length ? `<div class="grid-f">${small.map(thumbCard).join("")}</div>` : ""}`;
       }
 
       const count = pid === "writing"        ? Site.projects.filter(p => p.practice === "writing").length

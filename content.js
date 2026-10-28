@@ -357,10 +357,12 @@ Site.sectionIcons = {
 };
 
 /* Order of the sections in layout G. "studio" = the Game & UX design section. */
-// Art and installation and Curation are left out of /design (they stay on the main site).
-Site.practiceOrderG = ["studio", "games", "writing", "collaborations"];
+// Art and installation, Curation and Collaborations are left out of /design
+// (they stay on the main site).
+Site.practiceOrderG = ["studio", "games", "writing"];
 
-/* Projects shown as large cards at the top of their section in layout G. */
+/* Projects shown as large cards at the top of their section in layout G (/design);
+   the other projects of that section get smaller tiles beneath them. */
 Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-dlc", "workers-out-of-office"];
 
 /* =====================================================================

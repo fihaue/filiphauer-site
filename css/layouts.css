@@ -118,6 +118,14 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
 .studio-card { background: var(--surface); display: flex; flex-direction: column; }
 .studio-card .card-body { padding: 18px 20px 22px; flex: 1; }
 .studio-card .kicker { font-size: 13px; }
+.studio-card h4 a { color: var(--heading); }
+
+/* G: Research & writing – pinned project as a full row (image left, text right, lined up
+   with the 2-column grid), the list of texts beneath it */
+.research-g { display: grid; gap: var(--gap); }
+.pinned-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.pinned-card .pinned-image { height: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
+.pinned-card .card-body { padding: 18px 20px 22px 0; }
 .studio-card h4 { font-size: 20px; }
 .did { list-style: none; display: grid; gap: 4px; font-size: 14.5px; }
 .did li { padding-left: 16px; position: relative; }
@@ -218,7 +226,8 @@ body[data-layout="p"] .contact {
   .index-row { grid-template-columns: 48px minmax(0, 1fr); }
   .index-row .type { display: none; }
   .grid-e, .grid-f { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
-  .highlight, .studio-grid { grid-template-columns: 1fr; }
+  .highlight, .studio-grid, .pinned-card { grid-template-columns: 1fr; }
+  .pinned-card .card-body { padding: 18px 20px 22px; }
   .highlight .cover { height: auto; }   /* phones: image on top, normal 4:3 shape */
   .collab-row { grid-template-columns: 48px minmax(0, 1fr); }
   .collab-row .names { grid-column: 2; font-size: 14px; }
