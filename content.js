@@ -779,9 +779,14 @@ Site.projects = [
   { id: "allegorithmic-politics", title: "Allegorithmic Politics of Game Exchange: Subversion, Ideology, and Capitalism in Strategy Games", short: "Allegorithmic Politics of Game Exchange", year: "2023", level: "grid", practice: "writing",
     category: "Research", org: "DiGRA 2023", type: "Peer-reviewed conference paper", tags: ["writing"], external: "https://dl.digra.org/index.php/dl/article/view/1929" },
   { id: "vecny-navrat-do-tamrielu", with: "Ondřej Trhoň", title: "Věčný návrat do Tamrielu", year: "2022", level: "grid", practice: "writing",
+    hideIn: ["p"],   // not in the presentation
     category: "Essay", org: "A2", type: "Essay", tags: ["essays"], external: "https://advojka.cz/a2-article/2022-5-vecny-navrat-do-tamrielu/" },
   { id: "automatizace", title: "Automatizace", year: "2022", level: "grid", practice: "writing",
     category: "Research", org: "Utopia Libri", type: "Book chapter", tags: ["writing"], external: "https://www.pagefive.com/product/23484-neuplny-atlas-regenerace" },
+  // The exhibition sits here (not under CURATION) so it comes right before its essay in
+  // mixed lists like the presentation: projects with the same year keep this file's order.
+  { id: "earthly-survival", with: "John Hill", title: "Earthly Survival: Monstrous Games", year: "2022", level: "grid", practice: "curation",
+    category: "Curation", org: "etc. galerie", type: "Exhibition", tags: ["curation"], external: "https://etcgalerie.cz/en/earthly-survival-monstrous-games/" },
   { id: "monstrous-games-research", title: "Earthly Survival: Monstrous Games — Preliminary Research", short: "Monstrous Games", year: "2022", level: "grid", practice: "writing",
     category: "Essay", org: "etc. galerie", type: "Essay (PDF)", tags: ["essays"], external: "https://etcgalerie.cz/wp-content/uploads/2023/04/ETC_ESMG_A4_TISK.pdf" },
 
@@ -819,6 +824,7 @@ Site.projects = [
   },
   {
     id: "rooms",
+    hideIn: ["p"],   // not in the presentation
     title: "Rooms / Pokoje", year: "2015", level: "grid", practice: "installations",
     category: "Installation", org: "AVU Prague", type: "Installation",
     meta: "Installation: iron construction 400 × 220 × 220 cm, video projected on two canvases, three-channel audio", tags: ["installations"],
@@ -846,6 +852,7 @@ Site.projects = [
   },
   {
     id: "some-of-my-friends-are-killers",
+    hideIn: ["p"],   // not in the presentation
     title: "Some of My Friends Are Killers", year: "2016", level: "grid", practice: "installations",
     category: "Video", org: "AVU Prague", type: "Full HD video 38:29",
     meta: "Full HD video 38:29, sound recordings of play", tags: ["video"],
@@ -855,8 +862,6 @@ Site.projects = [
       "Installed in the lecture hall of the Academy of Fine Arts in Prague during the semester exams."],
     gallery: 0, videos: [{ label: "Video", embed: "https://www.youtube-nocookie.com/embed/RNKlx8Gl7hs" }], links: []
   },
-  { id: "earthly-survival", with: "John Hill", title: "Earthly Survival: Monstrous Games", year: "2022", level: "grid", practice: "curation",
-    category: "Curation", org: "etc. galerie", type: "Exhibition", tags: ["curation"], external: "https://etcgalerie.cz/en/earthly-survival-monstrous-games/" },
   {
     id: "ideal-prostor", with: "Jolanta Nowaczyk, Jakub Pospíšil, Argišt Alaverdyan, Šimon Sýkora",
     title: "IDEAL Prostor", year: "2017–19", level: "grid", practice: "curation",
