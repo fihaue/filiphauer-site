@@ -764,9 +764,10 @@ Site.projects = [
         "The first chapter discusses forms of exchange in strategy games and draws a framework for the analysis of game ideologies based on their economies. The second chapter discusses the framework of game allegories of alienation in capitalism, strategies working with alienation in arts as well as in critical games and draws out the possibilities for critical design strategies based on them. The third chapter discusses forms of shared agency, performativity, and troubled utopia, as the possibilities of an alternative to game ideological stereotypes. The fourth chapter proposes a three-level heuristic framework and critical design principles for alienated game exchange. This dissertation was conducted in the context of artistic research and game studies. The game art projects that accompanied theoretical research with artist research affordances are discussed in the concluding sections."
       ] }
     ],
-    textAfter: [
-      "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
-    ],
+    //,
+    //textAfter: [
+    //  "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
+    //],
     gallery: 1, galleryUncropped: true, videos: [],
     alts: { gallery: ["Screenshots from three games made alongside the dissertation"] },
     links: [["Thesis at AVU", "https://theses.avu.cz/en/prace/2025/17177-phd-filip-hauer"], ["ORCID", "https://orcid.org/0009-0004-3111-6345"]]
