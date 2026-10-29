@@ -940,11 +940,13 @@ Site.projects = [
     title: "Weather Tax",
     year: "2025–26, ongoing", level: "grid", practice: "installations",
     category: "Music", org: "Bandcamp", type: "Music / speculative ambience",
-    meta: "Speculative ambience for a non-existent game / three EPs on Bandcamp",
+    meta: "Speculative ambience for a non-existent game / three electronic ambient EPs",
     tags: ["sound"],
     summary: "Speculative ambience for a non-existent game.",
     text: [
-      "Weather Tax is speculative ambience for a non-existent game. Three EPs so far: Weather Camp 2008, Weather in 2025 and Spring & Mítov 2065."
+      "Weather Tax's three EPs are a work of speculative worldbuilding of an fictional past, present and future.",
+      "The Weather Camp 2008 EP is a soundtrack for game worlds that stage imaginations of the next economic crisis by looking to the past. What if the 2008 crisis had ended differently and, after a series of protests, a weather tax for polluters had been introduced instead of a bailout? As a soundtrack for staying with the dark present, the Weather in 2025 EP is for living through heatwaves, while also talking about ghosts. The Spring & Mítov 2065 EP is a set of soundscapes for a dark future with a glimmer of hope. In the spring of 2065, West Bohemia is slowly being covered in dust, but thankfully the old techno-feudal platforms are collapsing, and with that, the communities' ambitions are growing.",
+      "The tracks feature field recordings from Monte Amiata, Copenhagen, Pilsen, Mítov and Prague. The EPs were recorded with a set of analogue and digital synths from autumn 2024 to early 2026."
     ],
     gallery: 1,
     alts: { gallery: ["Weather Tax teaser: wind turbines in fog over a grey sea"] },
