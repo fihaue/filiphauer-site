@@ -169,8 +169,8 @@ Site.helpers = {
       .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener"${isOwnPdf(url) ? " download" : ""}>${e(label)}</a>`).join("")}</p>`;
   },
 
-  /* Turns the project's text array into paragraphs, headings, quotes, code. */
-  /* Text lines that start with "- " become a bullet list (consecutive lines = one list). */
+  /* Turns the project's text array into paragraphs, headings ("## "), quotes ("> "),
+     monospaced blocks ("``") and bullet lists ("- ", consecutive lines = one list). */
   fullText(p) {
     const e = Site.helpers.escape;
     return (p.text || []).map(t => {

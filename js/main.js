@@ -6,11 +6,11 @@
      route()  runs every time the part after "#" in the address changes.
 
    Addresses the site understands:
-     ?layout=f             choose layout A–G, or P = presentation (new.filiphauer.com/?layout=b)
-     /presentation, /design  short addresses for ?layout=p and ?layout=g (see 404.html)
+     ?layout=f             choose a layout: a, b, c, d = design, e, f, p = presentation
+     /presentation, /design  short addresses for ?layout=p and ?layout=d (see design/, presentation/)
      #lithium              open a project       (any project id)
-     #games, #writing …    filter by tag (A–E) or jump to a section (F, G)
-     #studio               layout G: the "Game & UX design" section
+     #games, #writing …    filter by tag (A–E) or jump to a section (F, D)
+     #studio               layout D (design): the "Game & UX design" section
      #work, #about …       normal jump to a section on the page
    ===================================================================== */
 
@@ -79,8 +79,8 @@ window.Site = window.Site || {};
   /* Draws the Work section, tag buttons, archive and research. */
   function render() {
     const key = state.layout;
-    document.body.dataset.layout = key;      // CSS uses this, e.g. hides Research in E/F
-    if (["f", "g", "p"].includes(key)) state.tag = "all";   // F, G and P have no filter buttons
+    document.body.dataset.layout = key;      // CSS uses this, e.g. class="hide-in-d"
+    if (["f", "d", "p"].includes(key)) state.tag = "all";   // F, D and P have no filter buttons
     renderPathways();
     renderIntro();
 
@@ -100,24 +100,24 @@ window.Site = window.Site || {};
     renderSwitcher();
   }
 
-  /* Layout G: three entry links under the statement (Research / Critical games / Studios). */
+  /* Layout D (design): the entry cards under the intro (Site.pathways in content.js). */
   function renderPathways() {
     const nav = h.$("#pathways");
-    nav.hidden = state.layout !== "g";
+    nav.hidden = state.layout !== "d";
     if (nav.hidden) return;
     nav.innerHTML = Site.pathways.map(p => `
       <a href="#${p.target}">${h.icon(p.icon, "pathway-icon")}<b>${p.label} ${h.icon("icons/ui-continue-arrow.svg", "pathway-arrow")}</b><span>${p.note}</span></a>`).join("");
   }
 
-  /* Intro: layout G shows the shorter design-portfolio text (introG in content.js)
+  /* Intro: layout D (design) shows the shorter design-portfolio text (introDesign in content.js)
      instead of the roles line, headline and statement. */
   function renderIntro() {
-    const g = state.layout === "g" && Site.texts.introG;
-    h.$("h1[data-text='headline']").textContent = g ? Site.texts.introG : h.t("headline");
+    const g = state.layout === "d" && Site.texts.introDesign;
+    h.$("h1[data-text='headline']").textContent = g ? Site.texts.introDesign : h.t("headline");
     h.$("#roles").hidden = !!g;
     const contact = h.$("#intro-contact");
-    contact.hidden = !(g && Site.texts.contactG);
-    if (!contact.hidden) contact.innerHTML = h.rich(Site.texts.contactG);
+    contact.hidden = !(g && Site.texts.contactDesign);
+    if (!contact.hidden) contact.innerHTML = h.rich(Site.texts.contactDesign);
 
     // CV blocks: "open" blocks start closed in the layouts listed in closedIn (content.js).
     // Only when the layout changes, so blocks a visitor opened stay open on redraws.
@@ -129,11 +129,11 @@ window.Site = window.Site || {};
     }
     h.$("#statement").hidden = !!g;
 
-    // The big image: layout G can use its own (introImageG in content.js)
-    const img = h.$("#intro-image"), alt = Site.texts.introImageG;
+    // The big image: layout D (design) can use its own (introImageDesign in content.js)
+    const img = h.$("#intro-image"), alt = Site.texts.introImageDesign;
     if (img) {
       img.dataset.defaultSrc = img.dataset.defaultSrc || img.getAttribute("src");
-      const useG = state.layout === "g" && alt && alt.src;
+      const useG = state.layout === "d" && alt && alt.src;
       img.src = useG ? alt.src : img.dataset.defaultSrc;
       img.alt = useG ? (alt.alt || "") : (Site.texts.heroImageAlt || "");
       img.classList.toggle("intro-image-wide", !!useG);
@@ -141,10 +141,10 @@ window.Site = window.Site || {};
     }
   }
 
-  /* Tag filter buttons above the Work view (hidden in layouts F and G). */
+  /* Tag filter buttons above the Work view (hidden in layouts F, D and P). */
   function renderTagButtons(all) {
     const nav = h.$("#tag-filter");
-    nav.hidden = ["f", "g", "p"].includes(state.layout);
+    nav.hidden = ["f", "d", "p"].includes(state.layout);
     const count = t => t === "all" ? all.length : all.filter(p => (p.tags || []).includes(t)).length;
     const tags = ["all", ...Object.keys(Site.tags)].filter(t => count(t) > 0);
     nav.innerHTML = tags.map(t => `
@@ -191,7 +191,7 @@ window.Site = window.Site || {};
 
     // A practice or tag id.
     const isPractice = Site.practices.some(s => s.id === id) || id === "studio";
-    if ((state.layout === "f" || state.layout === "g") && isPractice && document.getElementById(id)) {
+    if ((state.layout === "f" || state.layout === "d") && isPractice && document.getElementById(id)) {
       Site.popup.close();
       document.getElementById(id)?.scrollIntoView({ block: "start" });
       return;
@@ -245,15 +245,6 @@ window.Site = window.Site || {};
     document.addEventListener("focusin", preview);
   }
 
-  /* Small message at the bottom of the screen. */
-  Site.toast = function (text) {
-    const t = h.$("#toast");
-    t.textContent = text;
-    t.classList.add("show");
-    clearTimeout(Site.toast.timer);
-    Site.toast.timer = setTimeout(() => t.classList.remove("show"), 2200);
-  };
-
   /* Phone menu: the ☰ button opens and closes the sidebar links (css/base.css). */
   function setupMenu() {
     const bar = h.$(".sidebar"), button = h.$("#menu-button");
@@ -289,7 +280,8 @@ window.Site = window.Site || {};
     }
     renderPageTexts();
 
-    const fromAddress = new URLSearchParams(location.search).get("layout");
+    let fromAddress = new URLSearchParams(location.search).get("layout");
+    if (fromAddress === "g") fromAddress = "d";   // old links: the design layout was "g" until Nov 2026
     if (fromAddress && Site.config.layouts[fromAddress]) state.layout = fromAddress;
 
     render();

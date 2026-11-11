@@ -1,5 +1,5 @@
 /* =====================================================================
-   LAYOUTS — one function per layout (A–G, plus P = presentation).
+   LAYOUTS — one function per layout (A, B, C, E, F, D = design, P = presentation).
    ---------------------------------------------------------------------
    Each function receives a list of projects and returns HTML text.
    main.js decides which function to call and puts the result into
@@ -17,9 +17,9 @@ window.Site = window.Site || {};
   const e = h.escape;
 
   /* Which projects appear in the main "Work" view for a layout.
-     A–D: featured projects only.  E, F, G, P: featured + grid level. */
+     A–C: featured projects only.  D, E, F, P: featured + grid level. */
   function mainList(layoutKey) {
-    const wide = ["e", "f", "g", "p"].includes(layoutKey);
+    const wide = ["d", "e", "f", "p"].includes(layoutKey);
     return Site.projects
       .filter(p => p.level === "featured" || (wide && p.level === "grid"))
       .filter(p => !(p.hideIn || []).includes(layoutKey))   // hideIn: ["p"] in content.js
@@ -105,26 +105,6 @@ window.Site = window.Site || {};
   }
 
   /* -------------------------------------------------------------------
-     D — Editorial rows, alternating sides
-     ------------------------------------------------------------------- */
-  function layoutD(list) {
-    const count = String(list.length).padStart(2, "0");
-    return `<div class="rows-d">${list.map((p, i) => `
-      <article class="row-d" id="card-${p.id}">
-        ${coverLink(p)}
-        <div class="card-body">
-          <span class="row-number">${String(i + 1).padStart(2, "0")} / ${count}</span>
-          ${h.kicker(p)}
-          <h3>${e(p.title)}</h3>
-          <p class="meta">${e(p.meta)}</p>
-          <p>${e(p.summary)}</p>
-          ${h.tagPills(p)}
-          <a class="button" ${openHref(p)}>${e(h.t("ui.openProject"))}</a>
-        </div>
-      </article>`).join("")}</div>`;
-  }
-
-  /* -------------------------------------------------------------------
      E — Full grid of all work (thumbnail, title, CATEGORY / org line)
      ------------------------------------------------------------------- */
   function thumbCard(p) {
@@ -167,25 +147,9 @@ window.Site = window.Site || {};
   }
 
   /* -------------------------------------------------------------------
-     G — Research first, critical games, then a route for game studios
+     D — Design portfolio (/design): Game & UX design, critical games, research
      ------------------------------------------------------------------- */
-  function highlightCard(p) {
-    return `
-      <article class="highlight" id="card-${p.id}">
-        ${coverLink(p)}
-        <div class="card-body">
-          ${h.kicker(p)}
-          <h4><a ${openHref(p)}>${e(p.title)}</a></h4>
-          <p class="meta">${e(p.meta)}</p>
-          ${h.withLine(p)}
-          <p>${e(p.summary)}</p>
-          ${h.tagPills(p)}
-          <a class="button" ${openHref(p)}>${e(h.t("ui.openProject"))}</a>
-        </div>
-      </article>`;
-  }
-
-  /* Layout G: project card with the same look as the studio cards (image on top). */
+  /* Layout D (design): project card with the same look as the studio cards (image on top). */
   function gridCard(p) {
     return `
       <article class="studio-card" id="card-${p.id}">
@@ -201,7 +165,7 @@ window.Site = window.Site || {};
       </article>`;
   }
 
-  /* Layout G, Research & writing: the pinned project (pinned: true, now the dissertation)
+  /* Layout D (design), Research & writing: the pinned project (pinned: true, now the dissertation)
      as the first row, hero image left and text right (lined up with the 2-column grid),
      then the other texts as a list beneath it. */
   function researchSectionG() {
@@ -250,7 +214,7 @@ window.Site = window.Site || {};
       </article>`;
   }
 
-  function layoutG(list) {
+  function layoutDesign(list) {
     const label = id => Site.practices.find(s => s.id === id);
 
     const st = Site.studio;
@@ -265,8 +229,8 @@ window.Site = window.Site || {};
         <div class="practice-body"><div class="studio-grid">${[...st.entries].sort((a, b) => h.newestFirst(h.findProject(a.project), h.findProject(b.project))).map(studioCard).join("")}</div></div>
       </section>`;
 
-    // Sections in the order of Site.practiceOrderG ("studio" = the Game & UX design section).
-    return Site.practiceOrderG.map(pid => {
+    // Sections in the order of Site.practiceOrderDesign ("studio" = the Game & UX design section).
+    return Site.practiceOrderDesign.map(pid => {
       if (pid === "studio") return studioSection;
       const s = label(pid);
       const items = list.filter(p => p.practice === pid);
@@ -302,7 +266,8 @@ window.Site = window.Site || {};
     }).join("");
   }
 
-  /* Collaborations list (layout G): year / project / collaborators.
+  /* Collaborations list (shown if "collaborations" is in Site.practiceOrderDesign):
+     year / project / collaborators.
      Links open the popup, the outside page, or the archive entry. */
   function collaborationList() {
     const items = Site.projects.filter(p => p.with)
@@ -332,8 +297,8 @@ window.Site = window.Site || {};
      Archive list and Research section (shown under the main view)
      ------------------------------------------------------------------- */
   function archiveList(layoutKey) {
-    // A–D also list grid-level works here (except writing/curation, which have their own places).
-    const wide = layoutKey === "e" || layoutKey === "f" || layoutKey === "g";
+    // A–C also list grid-level works here (except writing/curation, which have their own places).
+    const wide = ["d", "e", "f", "p"].includes(layoutKey);
     const items = Site.projects.filter(p =>
       p.level === "archive" ||
       (!wide && p.level === "grid" && p.practice !== "writing" && p.practice !== "curation"));
@@ -401,7 +366,7 @@ window.Site = window.Site || {};
 
   /* Everything other scripts may call. */
   Site.layouts = {
-    a: layoutA, b: layoutB, c: layoutC, d: layoutD, e: layoutE, f: layoutF, g: layoutG, p: layoutP,
+    a: layoutA, b: layoutB, c: layoutC, d: layoutDesign, e: layoutE, f: layoutF, p: layoutP,
     mainList, showPreview, gallery, archiveList, researchSection
   };
 })();

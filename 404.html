@@ -31,10 +31,10 @@
 
       // Short addresses for layouts (filiphauer.com/presentation, /design)
       "/presentation":                  "/?layout=p",
-      "/design":                        "/?layout=g"
+      "/design":                        "/?layout=d"
     };
     const path = location.pathname.replace(/\/+$/, "").toLowerCase();
-    // Keep a #project part, e.g. /design#studio → /?layout=g#studio
+    // Keep a #project part, e.g. /design#studio → /?layout=d#studio
     if (OLD_PAGES[path]) location.replace(OLD_PAGES[path] + (OLD_PAGES[path].includes("#") ? "" : location.hash));
   </script>
   <style>

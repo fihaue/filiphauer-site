@@ -1,5 +1,5 @@
 /* =====================================================================
-   LAYOUTS A–G and P — one block per layout, matching js/layouts.js.
+   LAYOUTS A, B, C, D (design), E, F and P — one block per layout, matching js/layouts.js.
    ===================================================================== */
 
 /* All cover images share the same shape (see --cover-ratio in tokens.css). */
@@ -50,15 +50,6 @@
 .index-preview { position: sticky; top: 110px; display: grid; gap: 12px; font-size: 14px; }
 
 
-/* ---------------------------------------------------------- D: editorial rows */
-.rows-d { display: grid; gap: 64px; }
-.row-d { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 36px; align-items: center; }
-.row-d:nth-child(even) .cover { order: 2; }   /* alternate image side */
-.row-d h3 { font-size: clamp(26px, 3.2vw, 40px); }
-.row-d .button { justify-self: start; margin-top: 6px; }
-.row-number { font-family: var(--mono); font-size: 12px; color: var(--text-dim); }
-
-
 /* ---------------------------------------------------------- E & F: thumbnail grids */
 .grid-e { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 22px; }
 .grid-f { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 20px; }
@@ -94,22 +85,10 @@
 .practice-head p { font-size: 13.5px; line-height: 1.55; }
 
 
-/* ---------------------------------------------------------- G: research first, studio route */
+/* ---------------------------------------------------------- D: design portfolio (/design) */
 .practice-body { display: grid; gap: 36px; min-width: 0; }
-body[data-layout="g"] #work { border-top: 0; padding-top: 0; }
-body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
-
-/* Large highlighted project cards (first projects in a section) */
-.highlights { display: grid; gap: var(--gap); }
-.highlight { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); background: var(--surface); }
-.highlight .card-body { padding: 22px 24px; }
-/* The image fills its whole column, down to the bottom of the card, even when
-   the text beside it is taller. It is never shorter than its normal 4:3 shape;
-   object-fit: cover crops it instead of stretching it. */
-.highlight .cover { height: 100%; min-height: 0; }
-.highlight h4 { font-size: 22px; }
-.highlight h4 a { color: var(--heading); }
-.highlight .button { justify-self: start; margin-top: 4px; }
+body[data-layout="d"] #work { border-top: 0; padding-top: 0; }
+body[data-layout="d"] .practice:first-of-type { margin-top: 0; }
 
 /* Studio section: role-focused cards */
 .studio .practice-head .skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
@@ -120,7 +99,7 @@ body[data-layout="g"] .practice:first-of-type { margin-top: 0; }
 .studio-card .kicker { font-size: 13px; }
 .studio-card h4 a { color: var(--heading); }
 
-/* G: Research & writing – pinned project as a full row (image left, text right, lined up
+/* D: Research & writing – pinned project as a full row (image left, text right, lined up
    with the 2-column grid), the list of texts beneath it */
 .research-g { display: grid; gap: var(--gap); }
 .pinned-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
@@ -221,14 +200,11 @@ body[data-layout="p"] .contact {
 @media (max-width: 760px) {
   .grid-a, .grid-b { grid-template-columns: 1fr; }
   .card-b.wide { grid-template-columns: 1fr; }
-  .row-d { grid-template-columns: 1fr; gap: 16px; }
-  .row-d:nth-child(even) .cover { order: 0; }
   .index-row { grid-template-columns: 48px minmax(0, 1fr); }
   .index-row .type { display: none; }
   .grid-e, .grid-f { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; }
-  .highlight, .studio-grid, .pinned-card { grid-template-columns: 1fr; }
+  .studio-grid, .pinned-card { grid-template-columns: 1fr; }
   .pinned-card .card-body { padding: 18px 20px 22px; }
-  .highlight .cover { height: auto; }   /* phones: image on top, normal 4:3 shape */
   .collab-row { grid-template-columns: 48px minmax(0, 1fr); }
   .collab-row .names { grid-column: 2; font-size: 14px; }
   .thumb-card .title { font-size: 14px; }

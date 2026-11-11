@@ -20,6 +20,8 @@
          **bold words**                    → bold
          [link text](https://example.com)  → a link (opens in a new tab)
          [link text](#lithium)             → a link to a project / section
+         [link text](mailto:a@b.com)       → an email link
+       In project texts, a line starting with "- " is a bullet point.
 
    IF SOMETHING GOES WRONG
      A missing comma or quote stops the file from loading. The page then
@@ -54,16 +56,16 @@ Site.texts = {
 
   headline: "Filip Hauer (1990) is an intermedia artist, game designer and researcher currently based in Copenhagen. He is researching critical and speculative games, with a focus on how they can imagine and represent contemporary work, politics, game markets and shared futures.",
 
-  // Layout G (/design, the design portfolio): this text replaces the roles line,
+  // Layout D (/design, the design portfolio): this text replaces the roles line,
   // the headline and the statement above. Other layouts are not affected.
-  introG: "Game designer, artist and researcher based in Copenhagen. I have experience in game development across AAA, critical and independent projects. I focus on reflexive game systems, interfaces and interactions, while putting emphasis on transparency and accessibility.",
+  introDesign: "Game designer, artist and researcher based in Copenhagen. I have experience in game development across AAA, critical and independent projects. I focus on reflexive game systems, interfaces and interactions, while putting emphasis on transparency and accessibility.",
 
-  // Layout G only: a short contact line under the intro text, for quick scanning.
-  contactG: "For game design and UI/UX work: [mail@filiphauer.com](mailto:mail@filiphauer.com)",
+  // Layout D (/design) only: a short contact line under the intro text, for quick scanning.
+  contactDesign: "For game design and UI/UX work: [mail@filiphauer.com](mailto:mail@filiphauer.com)",
 
-  // Layout G only: the big image under the intro (a wide cut of a Lithium screenshot).
+  // Layout D (/design) only: the big image under the intro (a wide cut of a Lithium screenshot).
   // Other layouts keep images/site_hero_1.jpg and heroImageAlt below.
-  introImageG: {
+  introImageDesign: {
     src: "images/site_hero-design_1.jpg",   // 1920 × 768 (5:2), the top part of the image below
     full: "images/games_lithium_gallery_1.jpg",   // shown uncut when the image is clicked
     alt: "Lithium, image 2 of 5, Ecogame, 2025"
@@ -141,7 +143,7 @@ Site.texts = {
   // CV blocks, in display order. Each block folds open/closed on the page.
   //   title   heading of the block
   //   open    true = shown open when the page loads
-  //   closedIn optional list of layouts where an "open" block starts closed, e.g. ["g"]
+  //   closedIn optional list of layouts where an "open" block starts closed, e.g. ["d"]
   //   hideIn  optional list of layouts where the block is hidden, e.g. ["f"]
   //   entries [ "years", "text" ]          normal line
   //           [ "years", "text", "sub" ]   indented line (a part of the line above,
@@ -150,7 +152,7 @@ Site.texts = {
     {
       title: "Education & study stays",
       open: true,
-      closedIn: ["g"],   // folded in /design
+      closedIn: ["d"],   // folded in /design
       entries: [
         ["2020–25", "**PhD**, Academy of Fine Arts in Prague, Studio of New Media 1. Dissertation: [Digital Games and Allegorithmic Work: The Politics of Exchange, Alienation and Performative Ideology](#thesis). Supervisor: Tomáš Svoboda; consultant: Vjera Borozan; examiners: Thomas Apperley (Tampere University), Jaroslav Švelch (Charles University). Defended in May 2025."],
         ["2022",    "**Erasmus research internship**, [CoFUTURES](https://cofutures.org/): Pathways to Possible Presents, University of Oslo, Norway (May 2022)"],
@@ -165,7 +167,7 @@ Site.texts = {
     },
     {
       title: "Teaching",
-      hideIn: ["g"],   // academic: not in the /design portfolio
+      hideIn: ["d"],   // academic: not in the /design portfolio
       entries: [
         ["2025",       "**Game development in Unity, interactive tools and software for game creation**, semester course, course coordinator and lecturer, Ladislav Sutnar Faculty of Design and Art, University of West Bohemia, Pilsen"],
         ["2021–23",    "**Lecture series on game art and game studies**, doctoral teaching practice, Studio of New Media 1, Academy of Fine Arts in Prague"],
@@ -174,7 +176,7 @@ Site.texts = {
     },
     {
       title: "Publications",
-      hideIn: ["g"],   // academic: not in the /design portfolio
+      hideIn: ["d"],   // academic: not in the /design portfolio
       entries: [
         ["2025", "Štvrtňová, G. and F. Hauer. “Non-domination power and player agency in ecogames: conceptualizing democratic agency.” CEEGS 2024 Proceedings. [doi.org/10.26263/5r92-a547](https://doi.org/10.26263/5r92-a547) (peer-reviewed)"],
         ["2025", "Trhoň, O. and F. Hauer. “Power Relations in Games: A Guide to the Critical Field of Game Art.” In Enter the Room, edited by Sandra Baborovská, Martin Netočný and Tjaša Pogačar. Prague City Gallery (book chapter)"],
@@ -189,7 +191,7 @@ Site.texts = {
     },
     {
       title: "Conference papers",
-      hideIn: ["g"],   // academic: not in the /design portfolio
+      hideIn: ["d"],   // academic: not in the /design portfolio
       entries: [
         ["2026", "“Temporalities of open-world ideology: the case of Elden Ring and Genshin Impact,” with Ondřej Trhoň. Playing the Field VI: Video Games and Labour, University of Bucharest (March)"],
         ["2024", "“Non-domination power and player agency in ecogames: conceptualizing democratic agency,” with Gabriela Štvrtňová. CEEGS, Nafplio (October) and SFRA, Tartu (May)"],
@@ -199,7 +201,7 @@ Site.texts = {
     },
     {
       title: "Invited talks",
-      hideIn: ["g"],   // academic: not in the /design portfolio
+      hideIn: ["d"],   // academic: not in the /design portfolio
       entries: [
         ["2025", "“Speculative worldbuilding with critical games.” Expert lecture and workshop, The Art and Technology Studio, Academy of Arts, Architecture and Design in Prague (November)"],
         ["2024", "“Critical game design and game art lecture.” Hraničář, Ústí nad Labem (November)"],
@@ -279,7 +281,7 @@ Site.texts = {
     },
     {
       title: "Conferences & organising",
-      hideIn: ["g"],   // academic: not in the /design portfolio
+      hideIn: ["d"],   // academic: not in the /design portfolio
       entries: [
         ["2024",    "Co-organised the international conference session **Game Art x Game Studies: Between Ethics and Aesthetics**, with Ondřej Trhoň and Viktor Takáč, Academy of Fine Arts in Prague"],
         ["2023",    "Co-organised **[Beyond the Gaming Principle: On Crisis](https://beyondthegaming.avu.cz)**, international conference on game studies and game art, Academy of Fine Arts in Prague"],
@@ -333,7 +335,7 @@ Site.practices = [
   { id: "studio",        label: "Studio work",          blurb: "UI/UX and design for commercial games." }
 ];
 
-/* Layout G — critical games, research, art, then the Game & UX route. */
+/* Layout D (/design) — the design portfolio. */
 
 /* The three entry links under the statement. `target` = section id. */
 Site.pathways = [
@@ -342,7 +344,7 @@ Site.pathways = [
   { label: "Research & teaching",      target: "writing", note: "PhD, game studies, critical game design", icon: "icons/section-research.png" }
 ];
 
-/* Icons shown before the section titles in layout G (white icons in icons/:
+/* Icons shown before the section titles in layout D (/design) (white icons in icons/:
    SVG where the file is tiny, otherwise the 4× PNG, 128 × 128 px).
    Naming: section-<section>.* for these, ui-<use>.* for interface icons
    (ui-continue-arrow on the entry cards, ui-zoom on enlargeable images).
@@ -356,17 +358,17 @@ Site.sectionIcons = {
   collaborations: "icons/section-collaborations.png"    // Collaborations: the conversation bubble
 };
 
-/* Order of the sections in layout G. "studio" = the Game & UX design section. */
+/* Order of the sections in layout D (/design). "studio" = the Game & UX design section. */
 // Art and installation, Curation and Collaborations are left out of /design
 // (they stay on the main site).
-Site.practiceOrderG = ["studio", "games", "writing"];
+Site.practiceOrderDesign = ["studio", "games", "writing"];
 
-/* Projects shown as large cards at the top of their section in layout G (/design);
+/* Projects shown as large cards at the top of their section in layout D (/design);
    the other projects of that section get smaller tiles beneath them. */
 Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-dlc", "workers-out-of-office"];
 
 /* =====================================================================
-   4. GAME & UX — the studio section (layout G)
+   4. GAME & UX — the studio section (layout D, /design)
    ===================================================================== */
 
 /* Studio section: shipped work described for game studios.
@@ -375,7 +377,7 @@ Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-d
 Site.studio = {
   intro: "Game designer and researcher with a focus on speculative game design and game studies. I have shipped titles on Steam and mobile and spent four years building the UI/UX system of a AAA game. I have experience with mechanics design, visual direction, narrative and interface design.",
   skills: ["Game design", "Mechanics & systems design", "UX interaction design", "UI design", "Figma & design systems", "Unity", "C# scripting", "Prototyping & research", "Level design","Playtesting", "Blender 3D", "Motion design"],
-  cvLink: "", // Space for pdf link if needed
+  cvLink: "", // optional: a studio CV PDF, e.g. "files/filip-hauer-cv.pdf" (shows a button)
   entries: [
     {
       project: "arma-reforger",
@@ -430,7 +432,7 @@ Site.studio = {
    One project = one { ... } block. Fields:
 
      id        unique, lowercase, dashes. Used in the web address
-               (new.filiphauer.com/#lithium) AND as the start of its
+               (filiphauer.com/#lithium) AND as part of its
                image file names (images/games_lithium_cover_1.jpg …).
      title     full title.
      short     optional shorter title for tight spaces (prev/next).
@@ -439,10 +441,10 @@ Site.studio = {
                its end year, so "2025–26, ongoing" sorts as 2026).
      level     where it appears:
                  "featured" → main project view in ALL layouts
-                 "grid"     → main view in layouts E, F, G;
-                              in A–D it appears in Archive or Research
+                 "grid"     → main view in layouts D (design), E, F, P;
+                              in A–C it appears in Archive or Research
                  "archive"  → only in the Archive list
-     practice  section in layouts F/G: games | writing | installations |
+     practice  section in layouts F and D (design): games | writing | installations |
                curation | studio
      category  first word of the small line under thumbnails.
      org       second part of that line: "CATEGORY / org, year".
@@ -473,8 +475,7 @@ Site.studio = {
                of opening a popup. Used for texts that live elsewhere.
      isNew     optional true → shows a "new" badge.
      with      optional collaborators, e.g. "Philipp Kolychev". Shown as
-               a "with …" line on cards and in the popup, and the project
-               is listed in the Collaborations section (layout G).
+               a "with …" line on cards and in the popup.
      hideIn    optional list of layouts where the project is left out,
                e.g. ["p"] = not in the presentation.
      pinned    optional true → always listed first, before newer projects.
@@ -739,7 +740,7 @@ Site.projects = [
     links: [["Play on itch.io", "https://filip-hauer.itch.io/perfect-strike"]]
   },
 
-  /* ---------------------------------------------- GRID (E/F main view) */
+  /* ---------------------------------------------- GRID (main view in D, E, F, P) */
 
   {
     id: "thesis",
@@ -764,7 +765,7 @@ Site.projects = [
         "The first chapter discusses forms of exchange in strategy games and draws a framework for the analysis of game ideologies based on their economies. The second chapter discusses the framework of game allegories of alienation in capitalism, strategies working with alienation in arts as well as in critical games and draws out the possibilities for critical design strategies based on them. The third chapter discusses forms of shared agency, performativity, and troubled utopia, as the possibilities of an alternative to game ideological stereotypes. The fourth chapter proposes a three-level heuristic framework and critical design principles for alienated game exchange. This dissertation was conducted in the context of artistic research and game studies. The game art projects that accompanied theoretical research with artist research affordances are discussed in the concluding sections."
       ] }
     ],
-    //,
+    // Switched off. To show it again, remove the // at the start of these 3 lines:
     //textAfter: [
     //  "To request the PDF, write to [mail@filiphauer.com](mailto:mail@filiphauer.com?subject=Dissertation%20PDF%20request)."
     //],

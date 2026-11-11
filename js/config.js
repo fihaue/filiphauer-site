@@ -10,15 +10,15 @@ window.Site = window.Site || {};
 Site.config = {
 
   // Which layout loads when no ?layout= is in the address.
-  // "a" … "g" — see the list below. Other layouts stay reachable
-  // with ?layout=x in the address (e.g. ?layout=g).
+  // "a", "b", "c", "d" (design), "e", "f", "p" — see the list below. Other layouts
+  // stay reachable with ?layout=x in the address (e.g. ?layout=d).
   defaultLayout: "f",
 
-  // Shows the A–G switcher bar at the top of the page.
+  // Shows the layout switcher bar at the top of the page.
   // true while testing layouts; false = visitors don't see it.
   showLayoutSwitcher: false,
 
-  // Used for the "Copy link" button in project popups.
+  // The site's address, shown in the top bar of project popups.
   siteUrl: "https://filiphauer.com",
 
   // Names and short descriptions shown in the switcher bar.
@@ -26,15 +26,14 @@ Site.config = {
     a: { name: "Grid / expand in place",    note: "Cards in a grid; “Read more” opens the full text inside the card." },
     b: { name: "Grid / popup cards",        note: "Same grid; each card opens a popup with text, videos and gallery." },
     c: { name: "Index list / popup",        note: "A text catalogue (year, title, type). Hover previews, click opens the popup." },
-    d: { name: "Editorial rows / popup",    note: "One large image row per project, alternating sides." },
+    d: { name: "Design portfolio / Game & UX route", note: "The /design page: Game & UX design (#studio), Critical games, Research & writing." },
     e: { name: "Full grid / popup",         note: "Dense image grid of all work with a CATEGORY / Organisation line. Tag buttons filter it." },
     f: { name: "Grid by practice / popup",  note: "The full grid grouped into practice sections, without filter buttons." },
-    g: { name: "By practice / Game & UX route", note: "Critical games, Research & writing, Art and installation, Game & UX design (#studio), Curation, Collaborations." },
     p: { name: "Presentation / slides",     note: "One full-screen slide per project, newest first, for talks. Short address: /presentation." }
   },
 
-  // Image sizes, used by the README and by the placeholder generator.
-  // Every layout reads the SAME files, so one set of images serves all.
+  // Image sizes to export (a reminder only; the code doesn't read this list).
+  // Every layout uses the same files, so one set of images serves all.
   imageSizes: {
     cover:    "1600 × 1200 (4:3) — thumbnail in every layout",
     hero:     "1920 × 1080 (16:9) — top of the project popup",

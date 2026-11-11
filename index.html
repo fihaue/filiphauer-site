@@ -68,10 +68,10 @@
        ?v=… is a version number: browsers keep old copies of these files for a while,
        so after changing a .css or .js file, change the date here (and on the scripts
        at the bottom) to make every visitor load the new files together. -->
-  <link rel="stylesheet" href="css/tokens.css?v=2026-10-28">
-  <link rel="stylesheet" href="css/base.css?v=2026-10-28">
-  <link rel="stylesheet" href="css/layouts.css?v=2026-10-28">
-  <link rel="stylesheet" href="css/popup.css?v=2026-10-28">
+  <link rel="stylesheet" href="css/tokens.css?v=2026-11-11d">
+  <link rel="stylesheet" href="css/base.css?v=2026-11-11d">
+  <link rel="stylesheet" href="css/layouts.css?v=2026-11-11d">
+  <link rel="stylesheet" href="css/popup.css?v=2026-11-11d">
 </head>
 <body>
 
@@ -98,12 +98,12 @@
     <img src="icons/ui-menu.png" alt="">
   </button>
   <nav aria-label="Sections" id="site-nav">
-    <a href="#work"          class="hide-in-g"                     data-text="sidebar.work"></a>
-    <a href="#research"      class="hide-in-e hide-in-f hide-in-g" data-text="sidebar.research"></a>
-    <a href="#studio"        class="only-g"                        data-text="sidebar.studio"></a>
-    <a href="#games"         class="only-g"                        data-text="sidebar.games"></a>
-    <a href="#writing"       class="only-g"                        data-text="sidebar.writing"></a>
-    <a href="#archive"       class="hide-in-g"                     data-text="sidebar.archive"></a>
+    <a href="#work"          class="hide-in-d"                     data-text="sidebar.work"></a>
+    <a href="#research"      class="hide-in-e hide-in-f hide-in-d" data-text="sidebar.research"></a>
+    <a href="#studio"        class="only-d"                        data-text="sidebar.studio"></a>
+    <a href="#games"         class="only-d"                        data-text="sidebar.games"></a>
+    <a href="#writing"       class="only-d"                        data-text="sidebar.writing"></a>
+    <a href="#archive"       class="hide-in-d"                     data-text="sidebar.archive"></a>
     <a href="#about"                                               data-text="sidebar.about"></a>
     <a href="#contact"                                             data-text="sidebar.contact"></a>
   </nav>
@@ -125,8 +125,8 @@
       <h1 data-text="headline">Filip Hauer (1990) is an intermedia artist, game designer and researcher currently based in Copenhagen. He is researching critical and speculative games, with a focus on how they can imagine and represent contemporary work, politics, game markets and shared futures.</h1>
       <div class="statement" id="statement"><p>I am exploring the speculative potential of digital games. My projects address game exchange, ideology, performativity and labour through critical, speculative and alienated game art. Working within game studies and artistic research, with a focus on critical play and player agency in fictional economies, I am questioning stereotypical communication practices.</p></div>
 
-      <!-- Layout G: three entry links (from Site.pathways in content.js) -->
-      <!-- Layout G: short contact line (contactG in content.js) -->
+      <!-- Layout D (design): three entry links (from Site.pathways in content.js) -->
+      <!-- Layout D (design): short contact line (contactDesign in content.js) -->
       <p class="intro-contact" id="intro-contact" hidden></p>
       <nav class="pathways" id="pathways" aria-label="Start here" hidden></nav>
     </div>
@@ -142,20 +142,20 @@
 
   <!-- ===================== WORK (drawn by js/layouts.js) ===================== -->
   <section class="section" id="work" aria-labelledby="work-title">
-    <h2 class="section-title hide-in-g" id="work-title" data-text="sections.work"></h2>
+    <h2 class="section-title hide-in-d" id="work-title" data-text="sections.work"></h2>
     <nav class="tag-filter" id="tag-filter" aria-label="Filter by tag"></nav>
     <div id="work-view"></div>
   </section>
 
-  <!-- ===================== RESEARCH (hidden in E/F/G, where writing is in the grid) ===================== -->
-  <section class="section hide-in-e hide-in-f hide-in-g" id="research" aria-labelledby="research-title">
+  <!-- ===================== RESEARCH (hidden in D/E/F, where writing is in the grid) ===================== -->
+  <section class="section hide-in-e hide-in-f hide-in-d" id="research" aria-labelledby="research-title">
     <h2 class="section-title" id="research-title" data-text="sections.research"></h2>
     <div id="research-view"></div>
   </section>
 
   <!-- ===================== ARCHIVE ===================== -->
-  <!-- Hidden in layout G (/design), the portfolio for studios -->
-  <section class="section hide-in-g" id="archive" aria-labelledby="archive-title">
+  <!-- Hidden in layout D (/design), the portfolio for studios -->
+  <section class="section hide-in-d" id="archive" aria-labelledby="archive-title">
     <h2 class="section-title" id="archive-title" data-text="sections.archive"></h2>
     <div class="archive" id="archive-list"></div>
   </section>
@@ -209,8 +209,6 @@
   <button type="button" class="lightbox-next" id="lightbox-next" data-label="ui.next">→</button>
 </dialog>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
 <!-- Colour filter: turns the white icons into the site green (#6be67b) on hover (css/base.css) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <filter id="tint-green" color-interpolation-filters="sRGB">
@@ -230,12 +228,12 @@
 </script>
 
 <!-- Scripts, in this order: settings → ALL TEXTS → helpers → layouts → popup → start -->
-<script src="js/config.js?v=2026-10-28"></script>
-<script src="content.js?v=2026-10-28"></script>
-<script src="js/helpers.js?v=2026-10-28"></script>
-<script src="js/layouts.js?v=2026-10-28"></script>
-<script src="js/popup.js?v=2026-10-28"></script>
-<script src="js/lightbox.js?v=2026-10-28"></script>
-<script src="js/main.js?v=2026-10-28"></script>
+<script src="js/config.js?v=2026-11-11d"></script>
+<script src="content.js?v=2026-11-11d"></script>
+<script src="js/helpers.js?v=2026-11-11d"></script>
+<script src="js/layouts.js?v=2026-11-11d"></script>
+<script src="js/popup.js?v=2026-11-11d"></script>
+<script src="js/lightbox.js?v=2026-11-11d"></script>
+<script src="js/main.js?v=2026-11-11d"></script>
 </body>
 </html>

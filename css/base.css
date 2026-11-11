@@ -6,6 +6,9 @@
 [hidden] { display: none !important; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+/* Gentle snapping: when you scroll close to a slide-like section (Contact), the page
+   glides so it fills the screen, like the slides in /presentation (which snaps harder). */
+html { scroll-snap-type: y proximity; }
 html.popup-open { overflow: hidden; }
 
 body {
@@ -45,7 +48,7 @@ img { max-width: 100%; display: block; }
 .sidebar nav { display: flex; flex-direction: column; gap: 10px; }
 .sidebar nav a { color: var(--nav); font-size: 17px; }
 .sidebar nav a:hover, .sidebar nav a.active { color: var(--heading); text-decoration: none; }
-.sidebar-foot { margin-top: auto; font-size: 13px; color: var(--text-dim); }
+.sidebar-foot { margin-top: auto; font-size: 13px; line-height: 1.7; color: var(--text-dim); }
 
 /* Menu button: only on phones (see the 860px block below) */
 .menu-button {
@@ -64,11 +67,11 @@ main {
 /* Hide things per layout: class="hide-in-e" hides the element in layout E, etc. */
 body[data-layout="a"] .hide-in-a, body[data-layout="b"] .hide-in-b, body[data-layout="c"] .hide-in-c,
 body[data-layout="d"] .hide-in-d, body[data-layout="e"] .hide-in-e, body[data-layout="f"] .hide-in-f,
-body[data-layout="g"] .hide-in-g { display: none; }
-/* class="only-g" shows the element only in layout G */
-body:not([data-layout="g"]) .only-g { display: none; }
+body[data-layout="p"] .hide-in-p { display: none; }
+/* class="only-d" shows the element only in layout D (design) */
+body:not([data-layout="d"]) .only-d { display: none; }
 
-/* Layout G: three entry links under the statement */
+/* Layout D (design): three entry links under the statement */
 .pathways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 1000px; margin-top: 14px; }
 .pathways a { display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--line); color: var(--text); }
 .pathways a:hover { border-color: var(--green); text-decoration: none; }
@@ -111,8 +114,8 @@ body:not([data-layout="g"]) .only-g { display: none; }
 .statement p:first-child::before { content: "\201C"; }   /* “ */
 .statement p:last-child::after   { content: "\201D"; }   /* ” */
 .intro-image { margin-top: 30px; width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
-.intro-contact { font-size: 15px; color: var(--text); }   /* layout G: contact line under the intro */
-.intro-image.intro-image-wide { aspect-ratio: 5 / 2; object-position: center top; }   /* layout G: wide Lithium image (1920 × 768), cut from the top so the game's top UI stays visible */
+.intro-contact { font-size: 15px; color: var(--text); }   /* layout D (design): contact line under the intro */
+.intro-image.intro-image-wide { aspect-ratio: 5 / 2; object-position: center top; }   /* layout D (design): wide Lithium image (1920 × 768), cut from the top so the game's top UI stays visible */
 .intro-zoom { margin-top: 30px; }   /* the button around the big image carries the spacing */
 .intro-zoom .intro-image { margin-top: 0; }
 @media (max-width: 760px) {   /* phones: no big image (except in the presentation) */
@@ -240,20 +243,18 @@ body:not([data-layout="g"]) .only-g { display: none; }
 
 /* ---------------------------------------------------------- contact */
 .contact { display: grid; gap: 14px; justify-items: start; }
+/* Contact as a full-screen slide (like the slides in /presentation): it fills the
+   screen and its content sits in the vertical middle. The footer follows below. */
+.contact { min-height: 100vh; min-height: 100dvh; align-content: center; scroll-snap-align: start; scroll-margin-top: -24px; }
+@media (max-width: 860px) { .contact { min-height: calc(100dvh - 64px); scroll-margin-top: 0; } }   /* phones: minus the top bar */
 /* One size for the whole block: intro line, email and links all use --intro-size. */
 .contact p, .contact .email, .contact .link-row { font-size: var(--intro-size); font-weight: 300; line-height: 1.6; }
 /* Intro text white; the email is a normal violet link like the others. */
 .contact p { color: var(--heading); }
 .contact .link-row a::after { font-size: .7em; }
-.footer { padding: 36px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text-dim); }
-
-/* ---------------------------------------------------------- toast */
-.toast {
-  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 60;
-  background: var(--green); color: var(--ink); padding: 7px 14px; font-size: 13px;
-  opacity: 0; transition: opacity .2s; pointer-events: none; max-width: calc(100vw - 32px);
-}
-.toast.show { opacity: 1; }
+/* Bottom padding = the sidebar's (44px), so the copyright line and the "Copenhagen/Prague"
+   line in the sidebar sit on the same line when the page is scrolled to the end. */
+.footer { padding: 36px 0 44px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.7; color: var(--text-dim); }
 
 /* ---------------------------------------------------------- layout switcher (testing only) */
 .layout-switcher {
