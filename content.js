@@ -373,8 +373,8 @@ Site.highlights = ["andre-miri-cipa", "lithium", "workers-out-of-office-london-d
    Each entry points to a project (same popup, same images) and adds
    the role-focused facts a studio reviewer looks for. */
 Site.studio = {
-  intro: "Game designer and researcher with a focus on speculative game design and game studies. I have shipped titles on Steam and mobile and spent four years building the UI/UX system of a AAA game. Systems design, game economies, narrative and interface design.",
-  skills: ["Game design", "Mechanics & systems design", "UX interaction design", "UI design", "Figma & design systems", "Unity", "C# scripting", "Prototyping & research", "Playtesting", "Blender", "Motion design"],
+  intro: "Game designer and researcher with a focus on speculative game design and game studies. I have shipped titles on Steam and mobile and spent four years building the UI/UX system of a AAA game. I have experience with mechanics design, visual direction, narrative and interface design.",
+  skills: ["Game design", "Mechanics & systems design", "UX interaction design", "UI design", "Figma & design systems", "Unity", "C# scripting", "Prototyping & research", "Level design","Playtesting", "Blender 3D", "Motion design"],
   cvLink: "", // Space for pdf link if needed
   entries: [
     {
@@ -395,8 +395,8 @@ Site.studio = {
       shipped: "Steam / Early Access 2018, full release 2021",
       did: [
         "Designed the game mechanics",
-        "Wrote the narrative",
-        "Made all 2D and 3D visuals"
+        "Wrote the game story",
+        "Directed game visuals and level design"
       ]
     },
     {
