@@ -15,19 +15,18 @@
 /* Only a small slide, no fade: if a browser stalls the animation, the popup is still visible. */
 @keyframes popup-in { from { transform: translateY(10px); } to { transform: none; } }
 
-/* Three rows: top bar, scrolling content, bottom prev/next */
-.popup-frame { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; max-height: inherit; }
+/* Two rows: scrolling content, bottom prev/next. The close button floats over the top of the image. */
+.popup-frame { position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; max-height: inherit; }
 
-.popup-bar {
-  display: flex; align-items: center; gap: 8px; padding: 10px 14px;
-  background: var(--surface); border-bottom: 1px solid var(--line);
-}
-.popup-address { flex: 1; min-width: 0; font: 12px var(--mono); color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.popup-bar { position: absolute; top: 10px; right: 10px; z-index: 2; }
+.popup-address { display: none; }   /* link hidden; js/popup.js still fills it */
 .popup-bar button {
-  background: transparent; border: 1px solid var(--line); color: var(--heading);
-  font: inherit; font-size: 13px; padding: 5px 10px; cursor: pointer;
+  display: grid; place-items: center; width: 28px; height: 28px; padding: 0;
+  background: rgba(20, 20, 20, .65); border: 0; color: var(--heading);
+  font: inherit; font-size: 12px; line-height: 1; cursor: pointer;
 }
-.popup-bar button:hover { border-color: var(--nav); }
+.popup-bar button:hover { background: rgba(20, 20, 20, .9); }
+.popup-bar button img, .popup-bar button svg { width: 12px; height: 12px; }
 
 .popup-content { overflow: auto; padding-bottom: 28px; }
 .popup-hero { width: 100%; aspect-ratio: var(--hero-ratio); object-fit: cover; }
@@ -42,7 +41,7 @@
 
 .popup-nav {
   display: flex; justify-content: space-between; gap: 8px; padding: 10px 14px;
-  background: var(--surface); border-top: 1px solid var(--line);
+  background: var(--surface);
 }
 .popup-nav button {
   background: transparent; border: 0; color: var(--nav); font: inherit; font-size: 13px;

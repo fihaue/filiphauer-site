@@ -12,7 +12,7 @@
 .card-a { background: var(--surface); }
 .card-a .card-body { padding: 20px 22px 22px; }
 .card-a h3 { font-size: 21px; }
-.card-a details { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 10px; }
+.card-a details { margin-top: 8px; padding-top: 10px; }
 .card-a summary { color: var(--heading); font-size: 14px; cursor: pointer; list-style: none; }
 .card-a summary::-webkit-details-marker { display: none; }
 .card-a summary::before { content: "+ "; color: var(--green); }
@@ -37,10 +37,9 @@
 
 /* ---------------------------------------------------------- C: index list */
 .index-c { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 36px; align-items: start; }
-.index-rows { border-top: 1px solid var(--line); }
 .index-row {
   display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 16px; align-items: baseline;
-  padding: 14px 6px; border-bottom: 1px solid var(--line); color: var(--text);
+  padding: 14px 6px; color: var(--text);
 }
 .index-row:hover, .index-row:focus-visible { background: var(--surface); text-decoration: none; }
 .index-row .year { color: var(--green); font-size: 14px; font-variant-numeric: tabular-nums; }
@@ -76,7 +75,7 @@
 .practice-jump sup, .practice-head sup { font-size: 11px; color: var(--green); margin-left: 4px; }
 .practice {
   display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 28px;
-  padding: 44px 0; border-top: 1px solid var(--line); scroll-margin-top: 110px;
+  padding: 44px 0; scroll-margin-top: 110px;
 }
 .practice:first-of-type { margin-top: 22px; }
 /* Section title + description stay at the top of their section (they don't follow the scroll). */
@@ -92,7 +91,7 @@ body[data-layout="d"] .practice:first-of-type { margin-top: 0; }
 
 /* Studio section: role-focused cards */
 .studio .practice-head .skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-.studio .skills span { font-size: 12px; border: 1px solid var(--line); padding: 2px 8px; color: var(--heading); }
+.studio .skills span { font-size: 12px; background: var(--surface-2); padding: 2px 8px; color: var(--heading); }
 .studio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
 .studio-card { background: var(--surface); display: flex; flex-direction: column; }
 .studio-card .card-body { padding: 18px 20px 22px; flex: 1; }
@@ -114,10 +113,9 @@ body[data-layout="d"] .practice:first-of-type { margin-top: 0; }
 /* Collaborations: "with …" line on cards, and the names-first list */
 .with { font-size: 12.5px; color: var(--violet); line-height: 1.4; }
 .with::before { content: "↔ "; color: var(--green); }
-.collab-list { border-top: 1px solid var(--line); }
 .collab-row {
   display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: baseline;
-  padding: 14px 6px; border-bottom: 1px solid var(--line); color: var(--text);
+  padding: 14px 6px; color: var(--text);
 }
 .collab-row:hover, .collab-row:focus-visible { background: var(--surface); text-decoration: none; }
 .collab-row .year { color: var(--green); font-size: 14px; font-variant-numeric: tabular-nums; }

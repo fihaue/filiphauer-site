@@ -757,7 +757,7 @@ Site.projects = [
       "It argues that games can articulate a narrative and procedural critique of economic and social systems in dynamic dialogue with players, and proposes a three-level heuristic framework of game exchange, alienation and performative player agency, with shared agency and troubled utopia as alternatives to game ideological stereotypes."
     ],
     foldouts: [
-      { title: "Keywords", open: true, text: [
+      { title: "Keywords", text: [
         "Games, game exchange, alienation, performativity, ideology, inner game markets, game work & labour, capitalism, game economies, speculative mechanics, critical games, game art, critical design, allegorithms, ecogames, game studies, artistic research."
       ] },
       { title: "Abstract", text: [

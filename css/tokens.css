@@ -10,7 +10,7 @@
   --bg:         #222222;  /* page background */
   --surface:    #2a2a2a;  /* cards, popup bars */
   --surface-2:  #313131;  /* card on hover */
-  --line:       #383838;  /* thin dividing lines */
+  --line:       #2e2e2e;  /* 4px dividers on foldable sections */
   --text:       #999999;  /* body text */
   --text-dim:   #909090;  /* small meta text (4.5:1 contrast on cards, 5:1 on the page: WCAG AA) */
   --nav:        #959595;  /* sidebar links (WCAG AA contrast) */
