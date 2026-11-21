@@ -47,7 +47,7 @@ Site.texts = {
 
   // Short news line above the statement. Set text to "" to hide it.
   news: {
-    text: "Andre Miri Cipa is out now / play it on PC and mobile",
+    text: "",
     link: "#andre-miri-cipa"
   },
 
@@ -499,14 +499,14 @@ Site.projects = [
   {
     id: "andre-miri-cipa", with: "SEGROMA research team, FaVU VUT Brno",
     title: "Andre Miri Cipa",
-    year: "2026", level: "featured", practice: "games", isNew: true,
+    year: "2026", level: "featured", practice: "games", isNew: false,
     category: "Game", org: "FaVU VUT Brno",
     type: "Educational & research game",
     meta: "Lead game designer and design researcher / Faculty of Fine Arts, Brno University of Technology, with Masaryk University / iOS, Android, Windows, macOS / Czech & English",
     tags: ["games", "research", "collaborations"],
     summary: "Players enter the perspective of the Roma community chapter by chapter, in an educational game about experiences of everyday racism in the Czech Republic.",
     text: [
-      "Play the game on [linktr.ee/andremiricipa](https://linktr.ee/andremiricipa) now.",
+      "Play the game on [linktr.ee/andremiricipa](https://linktr.ee/andremiricipa).",
       "Andre Miri Cipa is an educational game about experiences of everyday racism in the Czech Republic, made by a team of designers and Roma artists at the Faculty of Fine Arts, Brno University of Technology (FaVU VUT). It is based on participatory research with the Roma community conducted by researchers from the Faculty of Social Studies, Masaryk University (FSS MUNI), while experts from the Faculty of Education, Masaryk University (PED MUNI) contributed to its teaching structure and usability in schools. Together, the outcomes of this research became the framework for the game's design and art. Through narrative and interaction, the game tries to convey this experience critically.",
       "It was my first serious game project after my PhD, and a chance to put the design principles from my dissertation into practice. As lead game designer, I worked with critical utopia and María Lugones's concept of “loving perception”: entering another's perspective with openness, rather than as an outside observer and evaluator, is a powerful tool for de-stereotyping experiences of discrimination in digital games.",
       "Combining a critical game studies perspective on what games are and can be with the participation of the Roma community made it possible to build a realistic message. It also shaped how we approached representation, and how players are introduced to the community's perspective through the game's chapters.",
@@ -567,7 +567,7 @@ Site.projects = [
     tags: ["games", "installations"],
     summary: "Players lead a group of workers displaced by automation, searching for emancipation and meaningful survival in a post-work, climate-stricken near future.",
     text: [
-      "Players take control of a group of former corporate employees displaced by automation, living on the outskirts of a simulated near-future city. Navigating poor material conditions and a deteriorating climate, they must find new positions in society, political stances and an agenda, while preserving their collective well-being. They can become researchers of future politics, succumb to the illusion of being re-employed in an automated society, or struggle to survive a fictional breakdown of the welfare state.",
+      "You play as of a former corporate employee displaced by automation, living on the outskirts of a simulated near-future city. Navigating poor material conditions and a deteriorating climate, they must find new positions in society, political stances and an agenda, while preserving their collective well-being. They can become researchers of future politics, succumb to the illusion of being re-employed in an automated society, or struggle to survive a fictional breakdown of the welfare state.",
       "The game draws on RPG adventure and TTRPG mechanics, and its collective world is shaped by interviews with participants. It lets players speculate about futures that encompass emancipation as well as, in the bad scenario, planetary extinction. To speculate here means to become critically aware of one's own (perhaps limited, but existing) possibilities for political struggle beyond the game.",
       "Installation at Industra, Brno. The first instalment of the Workers Out of Office series; continued by London DLC (2024)."
     ],
